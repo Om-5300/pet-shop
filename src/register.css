@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.register-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 474px;
+    max-width: 90%;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 35px;
+    text-align: center;
+}
+
+h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 25px;
+    text-align: left;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    width: calc(100% - 24px);
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+button {
+    width: calc(100%);
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+button:disabled {
+    background: #e0e0e0;
+    color: #888;
+    cursor: not-allowed;
+}
+
+button:not(:disabled) {
+    background: #007bff;
+    color: white;
+}
+
+.login {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    text-align: left;
+    margin-left: 12px;
+}
+
+.login:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .register-box {
+        width: 90%;
+        height: auto;
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    input, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-box {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    input, button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
