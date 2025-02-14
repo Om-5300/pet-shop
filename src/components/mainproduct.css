@@ -1,0 +1,135 @@
+.mainproduct {
+  background-color: #ebebeb;
+}
+.mainproduct .product1,
+.mainproduct .product2,
+.mainproduct .product3 {
+  display: flex;
+}
+.mainproduct .product1 .product1image {
+  display: flex;
+}
+.mainproduct .product1 h1 {
+  width: 538px;
+  height: auto;
+  margin: 376px 0px 0px 277px;
+  font-family: "Geologica";
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: 0%;
+}
+.mainproduct .product1 p {
+  width: 452px;
+  height: auto;
+  margin: 36px 0px 0px 277px;
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0%;
+}
+.mainproduct .product1 h2 {
+  width: 109px;
+  height: auto;
+  font-family: "DM Sans";
+  margin: 28px 0px 0px 277px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.83px;
+  letter-spacing: 1%;
+  text-align: center;
+  padding: 18px 62px 18px 62px;
+  border-radius: 100px;
+  background-color: #147099;
+  color: white;
+
+}
+.mainproduct .product1image #dogbag {
+  margin: 290px 0px 0px 136px;
+}
+.mainproduct .product2 h1 {
+  width: 534px;
+  height: auto;
+  margin: 198px 0px 0px 263px;
+  font-family: "Geologica";
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: 0%;
+  
+}
+.mainproduct .product2 p {
+  width: 452px;
+  height: auto;
+  margin: 36px 0px 0px 263px;
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0%;
+}
+.mainproduct .product2image #catbelt {
+  margin: 111px 0px 0px 220px;
+  width: 598px;
+  height: 598px;
+}
+.mainproduct .product2 h2 {
+  width: 109px;
+  height: auto;
+  font-family: "DM Sans";
+  margin: 28px 0px 0px 263px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.83px;
+  letter-spacing: 1%;
+  text-align: center;
+  padding: 18px 62px 18px 62px;
+  border-radius: 100px;
+  background-color: #147099;
+  color: white;
+
+}
+.mainproduct .product3 .product3paw img{
+  width: 337.43px;
+  height: auto;
+  margin: 58px 0px 0px 0px;
+}
+.mainproduct .product3 h1 {
+  width: 538px;
+  height: auto;
+  margin: 174px 0px 0px -52px;
+  font-family: "Geologica";
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: 0%;
+}
+.mainproduct .product3 p {
+  width: 452px;
+  height: auto;
+  margin: 36px 0px 0px -52px;
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0%;
+}
+.mainproduct .product3image #vest {
+  margin: 119px auto auto 180px;
+}
+.mainproduct .product3 h2 {
+  width: 109px;
+  height: auto;
+  font-family: "DM Sans";
+  margin: 28px 0px 0px -52px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.83px;
+  letter-spacing: 1%;
+  text-align: center;
+  padding: 18px 62px 18px 62px;
+  border-radius: 100px;
+  background-color: #147099;
+  color: white;
+}
