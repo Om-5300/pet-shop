@@ -1,0 +1,70 @@
+.header {
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .header .mainheader {
+    display: flex;
+    margin: 0%;
+  }
+  .header .mainheader nav {
+    display: flex;
+    margin: 42px 0px 38px 66px;
+    gap: 23px;
+  }
+  .header .mainheader nav a {
+    gap: 6px;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20.83px;
+    text-align: left;
+    text-underline-position: "from-font";
+    text-decoration-skip-ink: none;
+  }
+  .header .mainheader nav img {
+    width: 11px;
+    height: 6px;
+    gap: 0px;
+    opacity: 0px;
+    padding-left: 4px;
+  }
+  .header .mainheader .logo {
+    margin-left: 425px;
+    gap: 0px;
+    opacity: 0px;
+  }
+  .header .mainheader .logo img {
+    width: 110;
+    height: 99;
+  }
+  .header .mainheader .contact {
+    width: 87px;
+    height: 21px;
+    gap: 0px;
+    opacity: 0px;
+    margin-left: 591.71px;
+    margin-top: 41.5px;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20.83px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    color: #121212;
+  }
+  .header .mainheader .social {
+    display: flex;
+    width: 120px;
+    height: 24px;
+    gap: 31px;
+    opacity: 0px;
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+  .header .mainheader .social img {
+    width: 24px;
+    height: 24px;
+    gap: 0px;
+    opacity: 0px;
+  }

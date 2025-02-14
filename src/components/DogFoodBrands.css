@@ -1,0 +1,54 @@
+.dogfoodbrands {
+    width: 1024px;
+    height: 130px;
+    top: 832px;
+    left: 448px;
+    gap: 0px;
+    opacity: 0px;
+  }
+  .dogfoodbrands h1 {
+    width: 236px;
+    height: 22px;
+    margin: 24px 0px 0px 851px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: "Geologica";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.6px;
+    text-align: left;
+    text-underline-position: "from-font";
+    text-decoration-skip-ink: none;
+  }
+  .dogfoodbrands .dogfoodbrandslogo {
+    display: flex;
+    gap: 136px;
+  }
+  .dogfoodbrands .dogfoodbrandslogo .brand1 {
+    width: 179px;
+    height: 39px;
+    gap: 0px;
+    opacity: 0px;
+    margin: 40px 0px 0px 448px;
+  }
+  .dogfoodbrands .dogfoodbrandslogo .brand2 {
+    width: 122px;
+    height: 97px;
+    margin-top: 11px;
+    gap: 0px;
+    opacity: 0px;
+  }
+  .dogfoodbrands .dogfoodbrandslogo .brand3 {
+    width: 167px;
+    height: 75px;
+    margin-top: 22px;
+    gap: 0px;
+    opacity: 0px;
+  }
+  .dogfoodbrands .dogfoodbrandslogo .brand4 {
+    width: 148px;
+    height: 47px;
+    margin-top: 36px;
+    gap: 0px;
+    opacity: 0px;
+  }

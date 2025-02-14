@@ -1,0 +1,196 @@
+.seller .sellerheading {
+    display: flex;
+    gap: 943px;
+  }
+  .seller .sellerheading h1 {
+    width: 365px;
+    height: 35px;
+    font-family: "Geologica";
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 55px;
+    letter-spacing: 0%;
+    margin-left: 228px;
+    margin-top: 211px;
+    padding: 0%;
+  }
+  .seller .sellerheading a {
+    font-family: "DM Sans";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20.83px;
+    text-align: center;
+    margin: 226.5px 0px 0px 0px;
+    background-color: #147099;
+    color: #ffffff;
+    gap: 16px;
+    padding: 14.5px 0px 14.5px 24px;
+    border-radius: 100px;
+    display: block;
+  }
+  .seller .sellerheading a img {
+    width: 12px;
+    height: 12px;
+    padding-right: 24px;
+    padding-left: 14px;
+    padding-top: 6px;
+  }
+  .fordog h1 {
+    width: 169px;
+    height: 28px;
+    font-family: "Geologica";
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 0%;
+    margin-left: 231px;
+    margin-top: 109px;
+  }
+  .fordog .dogitem {
+    display: flex;
+    gap: 24.9px;
+    margin-top: 74px;
+  }
+  .fordog .dogitem a {
+    width: 94;
+    height: 10;
+    font-family: "DM Sans";
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18.23px;
+    letter-spacing: 0%;
+    text-align: center;
+    padding: 14.02px 98.16px 14.02px 98.16px;
+    background-color: #147099;
+    border-radius: 100px;
+    color: #ffffff;
+  }
+  .fordog .dogitem h2 {
+    width: 279px;
+    height: 26px;
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0%;
+    margin-top: 23.04px;
+  }
+  .fordog .dogitem p {
+    width: 99px;
+    height: 18px;
+    font-family: "DM Sans";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23.44px;
+    letter-spacing: 0%;
+    margin: 41px 0px 40px 0px;
+  }
+  .fordog .dogitem .dogitem1 {
+    margin-left: 231px;
+  }
+  .forcat h1 {
+    width: 169px;
+    height: 28px;
+    font-family: "Geologica";
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 0%;
+    margin-left: 231px;
+    margin-top: 109px;
+  }
+  .forcat .catitem {
+    display: flex;
+    gap: 24.9px;
+    margin-top: 74px;
+  }
+  .forcat .catitem a {
+    width: 94;
+    height: 10;
+    font-family: "DM Sans";
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18.23px;
+    letter-spacing: 0%;
+    text-align: center;
+    padding: 14.02px 98.16px 14.02px 98.16px;
+    background-color: #147099;
+    border-radius: 100px;
+    color: #ffffff;
+  }
+  .forcat .catitem h2 {
+    width: 279px;
+    height: 26px;
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0%;
+    margin-top: 23.04px;
+  }
+  .forcat .catitem p {
+    width: 99px;
+    height: 18px;
+    font-family: "DM Sans";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23.44px;
+    letter-spacing: 0%;
+    margin: 41px 0px 40px 0px;
+  }
+  .forcat .catitem .catitem1 {
+    margin-left: 231px;
+  }
+  .forfish h1 {
+    width: 169px;
+    height: 28px;
+    font-family: "Geologica";
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 0%;
+    margin-left: 231px;
+    margin-top: 109px;
+  }
+  .forfish .fishitem {
+    display: flex;
+    gap: 24.9px;
+    margin-top: 74px;
+  }
+  .forfish .fishitem a {
+    width: 94;
+    height: 10;
+    font-family: "DM Sans";
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18.23px;
+    letter-spacing: 0%;
+    text-align: center;
+    padding: 14.02px 98.16px 14.02px 98.16px;
+    background-color: #147099;
+    border-radius: 100px;
+    color: #ffffff;
+  }
+  .forfish .fishitem h2 {
+    width: 279px;
+    height: 26px;
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0%;
+    margin-top: 23.04px;
+  }
+  .forfish .fishitem p {
+    width: 99px;
+    height: 18px;
+    font-family: "DM Sans";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23.44px;
+    letter-spacing: 0%;
+    margin: 41px 0px 40px 0px;
+  }
+  .forfish .fishitem .fishitem1 {
+    margin-left: 231px;
+  }

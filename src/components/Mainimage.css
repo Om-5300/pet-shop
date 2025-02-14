@@ -1,0 +1,70 @@
+.mainimage {
+    background-image: url(/public/image/mainimage.png);
+    gap: 0px;
+    opacity: 1;
+    height: 675px;
+    width: auto;
+  }
+  .mainimage h1 {
+    padding: 187px 577px 24px 581px;
+    margin-top: 0%;
+    width: 762px;
+    height: 159px;
+    top: 316px;
+    left: 581px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: "Geologica";
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 53px;
+    text-align: center;
+    text-underline-position: "from-font";
+    text-decoration-skip-ink: none;
+    color: #ffffff;
+    overflow: hidden;
+  }
+  .mainimage p {
+    padding-left: 628px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: 669px;
+    top: 499px;
+    left: 628px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.4px;
+    text-align: center;
+    text-underline-position: "from-font";
+    text-decoration-skip-ink: none;
+    color: #ffffff;
+  }
+  .mainimage .mainimagebutton {
+    gap: 8px;
+    opacity: 0px;
+    border-radius: 100%;
+    height: 56px;
+    width: 274px;
+    margin-bottom: 168px;
+  }
+  .mainimage h2 {
+    margin: 44px 0px 0px 825px;
+    padding: 22.5px 82.5px 22.5px 82.5px;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20.83px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-underline-position: "from-font";
+    text-decoration-skip-ink: none;
+    background-color: #ffffff;
+    border-radius: 100px;
+    width: 109px;
+    gap: 0px;
+    opacity: 0px;
+    color: #147099;
+  }

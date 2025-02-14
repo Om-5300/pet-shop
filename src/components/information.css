@@ -1,0 +1,135 @@
+.information {
+    margin-top: 22px;
+    width: auto;
+    height: 859px;
+    gap: 0px;
+    opacity: 0px;
+    background-color: #ebebeb;
+    display: flex;
+  }
+  .information .left {
+    flex: 1;
+    background-color: #ebebeb;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .information .rightinformation {
+    flex: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 104px;
+  }
+  
+  .box {
+    background-color: #ebebeb;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+  
+  .leftinformation h1 {
+    width: 471px;
+    height: 106px;
+    margin: 206px 0px 0px 286px;
+    font-family: "Geologica";
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 53px;
+    text-align: center;
+    text-underline-position: "from-font";
+    text-decoration-skip-ink: none;
+  }
+  .leftinformation p {
+    width: 387px;
+    height: 247px;
+    margin: 23px 0px 0px 314px;
+    font-family: "DM Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 31px;
+    text-align: center;
+    text-underline-position: "from-font";
+    text-decoration-skip-ink: none;
+  }
+  .leftinformation h2 {
+    margin: 20px 0px 0px 371px;
+    padding: 22.5px 82.5px 22.5px 82.5px;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20.83px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-underline-position: "from-font";
+    text-decoration-skip-ink: none;
+    color: #ffffff;
+    border-radius: 100px;
+    width: 109px;
+    gap: 0px;
+    opacity: 0px;
+    background-color: #147099;
+  }
+  .leftinformation .leftbutton {
+    opacity: 0px;
+    border-radius: 100%;
+    height: 56px;
+    width: 274px;
+  }
+  .rightinformation .right1 {
+    margin: 207px 0px 0px 169px;
+    padding: 0%;
+  }
+  .rightinformation .right1 img {
+    width: 60.74px;
+    height: 55.47px;
+    margin-bottom: 10.53px;
+  }
+  .rightinformation .right2 {
+    margin: 180px 0px 0px 0px;
+  }
+  .rightinformation .right2 img {
+    width: 57px;
+    height: 76px;
+    margin-bottom: 7px;
+  }
+  .rightinformation .right3 {
+    margin: 0px 0px 0px 169px;
+  }
+  .rightinformation .right3 img {
+    width: 49.11px;
+    height: 52.92px;
+    margin-bottom: 10.08px;
+  }
+  .rightinformation .right4 img {
+    width: 64.18px;
+    height: 42px;
+    margin-bottom: 10px;
+  }
+  .rightinformation h3 {
+    margin: 0px;
+    width: 126px;
+    height: 33px;
+    font-family: "Geologica";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32.86px;
+    text-align: left;
+    text-underline-position: "from-font";
+    text-decoration-skip-ink: none;
+  }
+  .rightinformation p {
+    margin: 4px 0px 0px 0px;
+    width: 275px;
+    height: 84px;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+    text-underline-position: "from-font";
+    text-decoration-skip-ink: none;
+  }
+  .rightinformation .right3 p {
+    margin-bottom: 182px;
+  }

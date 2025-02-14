@@ -1,0 +1,120 @@
+.customer {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    text-align: center;
+  }
+  
+  .customer .customermain {
+    text-align: center;
+  }
+  
+  .customer .customermain h1 {
+    font-family: "Geologica";
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 60px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .customer .customermain img {
+    margin: 151px auto 0 auto; 
+    display: block;
+  }
+  
+  .customer .customermain p {
+    margin-top: 8px;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .customer .customerframe {
+    background-color: #ebebeb;
+    width: 90%;
+    max-width: 1326px;
+    height: 400px;
+    margin-top: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .reviews {
+    padding: 3rem 0;
+    text-align: center;
+  }
+  
+  .reviews .heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .reviews-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 reviews per row */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .slide {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+  }
+  
+  .slide::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #ffffff; 
+  }
+  
+  .slide p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .user {
+    margin-top: 1rem;
+    text-align: left;
+  }
+  
+  .user h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+    margin: 0%;
+  }
+  
+  .stars {
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 10px;
+    justify-content: flex-start;
+  }
+  
+  .star-img {
+    width: 15px;
+    height: 15px;
+  }
+  
+  

@@ -1,0 +1,48 @@
+.aboutus {
+    background-color: #ebebeb;
+    width: auto;
+    height: 1242px;
+    margin-top: 212px;
+  }
+  .aboutus .aboutusdetails h1 {
+    width: 571px;
+    height: 54px;
+    padding-top: 166px;
+    margin: 0px 0px 0px 712px;
+    font-family: "Geologica";
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 72px;
+    letter-spacing: 1.1px;
+    text-align: center;
+  }
+  .aboutus .aboutusdetails p {
+    width: 1166px;
+    height: 163px;
+    font-family: "DM Sans";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 31px;
+    letter-spacing: 0%;
+    text-align: center;
+    margin: 53px 0px 0px 378px;
+  }
+  .aboutus .aboutusdetails .aboutusimg {
+    margin-top: 125px;
+    margin-left: 231px;
+  }
+  .aboutus .aboutusdetails .aboutusimg .aboutimg1 {
+    margin-bottom: 80.19px;
+  }
+  .aboutus .aboutusdetails .aboutusimg .aboutimg2 {
+    margin-bottom: 0px;
+  }
+  .aboutus .aboutusdetails .aboutusimg .aboutimg3 {
+    margin-bottom: 101.15px;
+  }
+  .aboutus .aboutusdetails .aboutusimg .aboutimg4 {
+    margin-bottom: 0px;
+  }
+  .aboutus .aboutusdetails .aboutusimg .aboutimg5 {
+    margin-bottom: 101.15px;
+  }
