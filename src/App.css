@@ -607,7 +607,7 @@ body {
 
 .customer .customermain p {
   margin-top: 8px;
-  margin-left: 150px;
+  margin-left: 10px;
   font-size: 1.2rem;
   color: #333;
 }
@@ -616,7 +616,7 @@ body {
   background-color: #ebebeb;
   width: 90%;
   max-width: 1326px;
-  height: 500px;
+  height: 400px;
   margin-top: 33px;
   display: flex;
   justify-content: center;
@@ -655,7 +655,7 @@ body {
 .slide::after {
   content: "";
   position: absolute;
-  bottom: -15px;
+  bottom: -12px;
   left: 20px;
   width: 0;
   height: 0;
@@ -672,18 +672,21 @@ body {
 
 .user {
   margin-top: 1rem;
+  text-align: left;
 }
 
 .user h3 {
   font-size: 1.2rem;
   font-weight: bold;
   color: #000;
+  margin: 0%;
 }
 
 .stars {
-  justify-content: center;
+  display: flex;
   gap: 0.3rem;
   margin-top: 10px;
+  justify-content: flex-start;
 }
 
 .star-img {

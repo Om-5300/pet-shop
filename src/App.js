@@ -208,15 +208,17 @@ const Customer = () => {
   return (
     <div className="customer">
       <div className="customermain">
-        <img src="image\customermainstar.svg" />
+        <img src="image/customermainstar.svg" alt="Main Star" />
         <h1>Over 300,000+ Happy Customers</h1>
         <p>Let’s Hear What Our Customers Have To Say</p>
       </div>
       <div className="customerframe">
-      <div className="reviews-container">
+        <div className="reviews-container">
           {reviewsData.map((review, index) => (
-            <div className="slide" key={index}>
-              <p>{review.text}</p>
+            <div key={index}>
+              <div className="slide">
+                <p>{review.text}</p>
+              </div>
               <div className="user">
                 <h3>{review.author}</h3>
               </div>
@@ -233,29 +235,30 @@ const Customer = () => {
   );
 };
 
+
 const reviewsData = [
   {
-    text: "Pawfect Pet Store has been a lifesaver for us! Their wide range of pet supplies and high-quality food keep our furry friends happy and healthy. The customer service is outstanding, and deliveries are always on time!",
+    text: "We've been purchasing pet supplies from this store for years, and the quality is always excellent! Their customer service is friendly, and our furry friends love their products.",
     author: "Happy Tails Pet Supplies",
   },
   {
-    text: "We’ve been getting all our pet essentials from Pawfect Pet Store for years. The quality of their products is excellent, and our customers love them. Their seamless service makes our business run smoothly!",
+    text: "The variety of pet food and accessories available here is fantastic. I always find everything I need, and the staff is super knowledgeable about pet care!",
     author: "Furry Friends Pet Shop",
   },
   {
-    text: "Pawfect Pet Store is our go-to supplier for premium pet food and accessories. Our customers always appreciate the fresh stock and variety. Reliable service and great prices—highly recommended!",
+    text: "I love shopping here for my cats! Their toys and treats are of great quality, and the prices are very reasonable. Highly recommended!",
     author: "Whiskers & Paws Pet Mart",
   },
   // {
-  //   text: "Amazing experience with Pawfect Pet Store! They offer the best selection of pet toys and grooming products. Our customers always find something new and exciting for their pets.",
+  //   text: "The best pet shop in town! They always have fresh food, and their grooming services are top-notch. My dog comes back happy and looking great!",
   //   author: "Pet Paradise Store",
   // },
   // {
-  //   text: "Pawfect Pet Store has made sourcing pet products so much easier. From nutritious food to fun toys, they have everything we need. The fast delivery and great customer support keep us coming back!",
+  //   text: "The customer service is exceptional. They helped me choose the right products for my new puppy, and their recommendations were spot on!",
   //   author: "Furry Haven Pet Supplies",
   // },
   // {
-  //   text: "As a pet grooming business, we rely on high-quality products, and Pawfect Pet Store never disappoints! Their shampoos, brushes, and accessories are top-notch, and our clients love them.",
+  //   text: "The grooming services here are amazing! My dog always gets the best care, and their products keep his coat shiny and healthy.",
   //   author: "Fluffy Paws Grooming Studio",
   // },
 ];
