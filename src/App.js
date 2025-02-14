@@ -1,6 +1,6 @@
-import Login from "./login.js";
-import Register from "./register.js";
-import React, { useState } from "react";import "./App.css";
+import React from "react";
+import "./App.css";
+
 const Header = () => {
   return (
     <header className="header">
@@ -13,10 +13,10 @@ const Header = () => {
         <img className="logo" src="image/Utopianew.png" alt="Logo" />
         <p className="contact">Contact Us</p>
         <div class="social">
-                {/* <a><img src="image/searchicon.svg" alt="search"/></a> */}
-                <a href="login.js"><img src="image/contacticon.svg" alt="contact"/></a>
-                <a><img src="image/carticon.svg" alt="cart"/></a>
-            </div>
+          {/* <a><img src="image/searchicon.svg" alt="search"/></a> */}
+          <a href="login.js"><img src="image/contacticon.svg" alt="contact" /></a>
+          <a><img src="image/carticon.svg" alt="cart" /></a>
+        </div>
       </div>
     </header>
   );
@@ -190,7 +190,7 @@ const AboutUs = () => {
     <div className="aboutus">
       <div className="aboutusdetails">
         <h1>About Us</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eros tortor, semper nec sodales at, ullamcorper ut mi. In accumsan arcu ut semper porttitor. Etiam ac purus velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eros tortor, semper nec sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eros tortor, semper nec sodales at, ullamcorper ut mi. In accumsan arcu ut semper porttitor. Etiam ac purus velit.
+        <p>At Utopia Pet Shop, we are passionate about providing the best products for your pets. Whether you have dogs, cats, fish, or small animals, our goal is to offer top-quality food, toys, accessories, and health care items. With years of experience in the pet industry, we prioritize customer satisfaction and pet well-being.
         </p>
         <div className="aboutusimg">
           <img src="image/aboutimg1.png" className="aboutimg1" alt="img1" />
@@ -213,27 +213,56 @@ const Customer = () => {
         <p>Let’s Hear What Our Customers Have To Say</p>
       </div>
       <div className="customerframe">
-        <div className="customerdetails">
-          <div className="review1">
-            <img src="image\customermainstar2.svg"></img>
-            <h1>Customer1</h1>
-            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dapibus massa id nisl finibus”</p>
-          </div>
-          <div className="review2">
-            <img src="image\customermainstar2.svg"></img>
-            <h1>Customer2</h1>
-            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dapibus massa id nisl finibus”</p>
-          </div>
-          <div className="review3">
-            <img src="image\customermainstar2.svg"></img>
-            <h1>Customer3</h1>
-            <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dapibus massa id nisl finibus”</p>
-          </div>
+      <div className="reviews-container">
+          {reviewsData.map((review, index) => (
+            <div className="slide" key={index}>
+              <p>{review.text}</p>
+              <div className="user">
+                <h3>{review.author}</h3>
+              </div>
+              <div className="stars">
+                {[...Array(1)].map((_, i) => (
+                  <img key={i} src="image/customermainstar2.svg" alt="star" className="star-img" />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
+
+const reviewsData = [
+  {
+    text: "Pawfect Pet Store has been a lifesaver for us! Their wide range of pet supplies and high-quality food keep our furry friends happy and healthy. The customer service is outstanding, and deliveries are always on time!",
+    author: "Happy Tails Pet Supplies",
+  },
+  {
+    text: "We’ve been getting all our pet essentials from Pawfect Pet Store for years. The quality of their products is excellent, and our customers love them. Their seamless service makes our business run smoothly!",
+    author: "Furry Friends Pet Shop",
+  },
+  {
+    text: "Pawfect Pet Store is our go-to supplier for premium pet food and accessories. Our customers always appreciate the fresh stock and variety. Reliable service and great prices—highly recommended!",
+    author: "Whiskers & Paws Pet Mart",
+  },
+  // {
+  //   text: "Amazing experience with Pawfect Pet Store! They offer the best selection of pet toys and grooming products. Our customers always find something new and exciting for their pets.",
+  //   author: "Pet Paradise Store",
+  // },
+  // {
+  //   text: "Pawfect Pet Store has made sourcing pet products so much easier. From nutritious food to fun toys, they have everything we need. The fast delivery and great customer support keep us coming back!",
+  //   author: "Furry Haven Pet Supplies",
+  // },
+  // {
+  //   text: "As a pet grooming business, we rely on high-quality products, and Pawfect Pet Store never disappoints! Their shampoos, brushes, and accessories are top-notch, and our clients love them.",
+  //   author: "Fluffy Paws Grooming Studio",
+  // },
+];
+
+
+
+
 const App = () => {
   return (
     <>
