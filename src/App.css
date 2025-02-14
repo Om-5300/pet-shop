@@ -616,7 +616,7 @@ body {
   background-color: #ebebeb;
   width: 90%;
   max-width: 1326px;
-  height: 594px;
+  height: 500px;
   margin-top: 33px;
   display: flex;
   justify-content: center;
@@ -671,7 +671,6 @@ body {
 }
 
 .user {
-  text-align: center;
   margin-top: 1rem;
 }
 
