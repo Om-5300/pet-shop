@@ -1,54 +1,78 @@
+/* General Styles */
 .dogfoodbrands {
-    width: 1024px;
-    height: 130px;
-    top: 832px;
-    left: 448px;
-    gap: 0px;
-    opacity: 0px;
-  }
+  width: 100%;
+  max-width: 1200px; /* Limit maximum width */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Add padding for better spacing */
+  text-align: center; /* Center align text */
+}
+
+.dogfoodbrands h1 {
+  font-family: "Geologica", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.6px;
+  color: #121212;
+  margin-bottom: 20px; /* Add space below the heading */
+}
+
+.dogfoodbrandslogo {
+  display: flex;
+  flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+  justify-content: center; /* Center logos horizontally */
+  gap: 20px; /* Reduce gap for smaller screens */
+}
+
+.dogfoodbrandslogo .brand {
+  max-width: 100%; /* Ensure logos don't overflow */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+  /* Mobile View */
   .dogfoodbrands h1 {
-    width: 236px;
-    height: 22px;
-    margin: 24px 0px 0px 851px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: "Geologica";
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 21.6px;
-    text-align: left;
-    text-underline-position: "from-font";
-    text-decoration-skip-ink: none;
+    font-size: 16px; /* Smaller font size for mobile */
+    margin-bottom: 15px;
   }
-  .dogfoodbrands .dogfoodbrandslogo {
-    display: flex;
-    gap: 136px;
+
+  .dogfoodbrandslogo {
+    gap: 10px; /* Reduce gap further for mobile */
   }
-  .dogfoodbrands .dogfoodbrandslogo .brand1 {
-    width: 179px;
-    height: 39px;
-    gap: 0px;
-    opacity: 0px;
-    margin: 40px 0px 0px 448px;
+
+  .dogfoodbrandslogo .brand {
+    width: 100px; /* Smaller logo size for mobile */
   }
-  .dogfoodbrands .dogfoodbrandslogo .brand2 {
-    width: 122px;
-    height: 97px;
-    margin-top: 11px;
-    gap: 0px;
-    opacity: 0px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet View */
+  .dogfoodbrands h1 {
+    font-size: 18px; /* Restore original font size */
+    margin-bottom: 20px;
   }
-  .dogfoodbrands .dogfoodbrandslogo .brand3 {
-    width: 167px;
-    height: 75px;
-    margin-top: 22px;
-    gap: 0px;
-    opacity: 0px;
+
+  .dogfoodbrandslogo {
+    gap: 40px; /* Increase gap for tablets */
   }
-  .dogfoodbrands .dogfoodbrandslogo .brand4 {
-    width: 148px;
-    height: 47px;
-    margin-top: 36px;
-    gap: 0px;
-    opacity: 0px;
+
+  .dogfoodbrandslogo .brand {
+    width: 120px; /* Slightly larger logo size for tablets */
   }
+}
+
+@media screen and (min-width: 1024px) {
+  /* Laptop View */
+  .dogfoodbrands h1 {
+    font-size: 20px; /* Larger font size for laptops */
+    margin-bottom: 30px;
+  }
+
+  .dogfoodbrandslogo {
+    gap: 60px; /* Increase gap for laptops */
+  }
+
+  .dogfoodbrandslogo .brand {
+    width: 150px; /* Larger logo size for laptops */
+  }
+}

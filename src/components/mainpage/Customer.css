@@ -1,124 +1,174 @@
+/* Customer Section */
 .customer {
-    width: 100%;
-    height: auto;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; /* Center content vertically */
-    text-align: center;
-  }
-  
-  .customer .customermain {
-    text-align: center;
-  }
-  
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* Main Section */
+.customer .customermain img {
+  margin-top: 20px;
+}
+
+.customer .customermain h1 {
+  font-family: "Geologica";
+  font-size: 42px;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.customer .customermain p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Review Container */
+.customerframe {
+  background-color: #ebebeb;
+  width: 90%;
+  max-width: 1326px;
+  height: auto;
+  margin-top: 33px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Review Slides */
+.reviews-container {
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  width: 100%;
+}
+
+.review-slide {
+  flex: 1;
+  min-width: 30%;
+  padding: 0 15px;
+}
+
+.slide {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* User Info */
+.user {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.user h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Stars */
+.stars {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.star-img {
+  width: 15px;
+  height: 15px;
+}
+
+/* Slider Buttons */
+.prev, .next {
+  background: #147099;
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+  background: #0e5a7a;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
   .customer .customermain h1 {
-    font-family: "Geologica";
-    font-weight: 500;
-    font-size: 42px;
-    line-height: 60px;
-    letter-spacing: 0%;
-    text-align: center;
-    margin: 20px 0;
+    font-size: 36px;
   }
-  
-  .customer .customermain img {
-    margin: 151px auto 0 auto; 
-    display: block;
-  }
-  
+
   .customer .customermain p {
-    margin-top: 8px;
-    margin-left: 10px;
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 16px;
   }
-  
-  .customer .customerframe {
-    background-color: #ebebeb;
-    width: 90%;
-    max-width: 1326px;
-    height: auto;
-    margin-top: 33px;
-    margin-bottom: 232px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  .review-slide {
+    min-width: 45%;
   }
-  .reviews {
-    padding: 3rem 0;
-    text-align: center;
+
+  .prev, .next {
+    font-size: 20px;
+    padding: 8px 12px;
   }
-  
-  .reviews .heading {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .customer .customermain h1 {
+    font-size: 32px;
   }
-  
-  .reviews-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+
+  .customer .customermain p {
+    font-size: 14px;
   }
-  
-  .slide {
-    background: white;
-    padding: 1.5rem;
-    margin-top: 50px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    position: relative;
+
+  .review-slide {
+    min-width: 90%;
   }
-  
-  .slide::after {
-    content: "";
-    position: absolute;
-    bottom: -12px;
-    left: 20px;
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 15px solid #ffffff; 
+
+  .prev, .next {
+    font-size: 18px;
+    padding: 6px 10px;
   }
-  
-  .slide p {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.6;
+}
+
+@media screen and (max-width: 480px) {
+  .customer .customermain h1 {
+    font-size: 28px;
   }
-  
-  .user {
-    margin-top: 1rem;
-    text-align: left;
+
+  .customer .customermain p {
+    font-size: 13px;
   }
-  
-  .user h3 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #000;
-    margin: 0%;
+
+  .review-slide {
+    min-width: 100%;
   }
-  
-  .stars {
-    display: flex;
-    gap: 0.3rem;
-    margin-top: 10px;
-    justify-content: flex-start;
+
+  .prev, .next {
+    font-size: 16px;
+    padding: 5px 8px;
   }
-  
-  .star-img {
-    width: 15px;
-    height: 15px;
-    margin-bottom: 20px;
-  }
-  
-  
+}

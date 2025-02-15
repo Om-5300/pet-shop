@@ -1,112 +1,124 @@
+/* General Styles */
 .information {
-    margin-top: 22px;
-    width: auto;
-    height: 859px;
-    gap: 0px;
-    opacity: 0px;
-    background-color: #ebebeb;
-    display: flex;
-  }
-  .information .left {
-    flex: 1;
-    background-color: #ebebeb;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .information .rightinformation {
-    flex: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 104px;
-  }
-  
-  .box {
-    background-color: #ebebeb;
-    padding: 20px;
-    text-align: center;
-    border: 1px solid #ccc;
-  }
-  
+  margin-top: 22px;
+  width: 100%;
+  background-color: #ebebeb;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Stack content vertically on smaller screens */
+  align-items: center; /* Center content horizontally */
+}
+
+.leftinformation {
+  text-align: center;
+  margin-bottom: 40px; /* Add space between left and right sections */
+}
+
+.leftinformation h1 {
+  font-family: "Geologica", sans-serif;
+  font-size: 32px; /* Adjusted for mobile */
+  font-weight: 400;
+  line-height: 1.3;
+  color: #121212;
+  margin-bottom: 20px;
+}
+
+.leftinformation p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #121212;
+  max-width: 600px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the paragraph */
+}
+
+.rightinformation {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between grid items */
+  width: 100%;
+  max-width: 1200px; /* Limit maximum width */
+  margin: 0 auto; /* Center the grid */
+}
+
+.rightinformation .right1,
+.rightinformation .right2,
+.rightinformation .right3,
+.rightinformation .right4 {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.rightinformation img {
+  width: 60px; /* Adjusted for smaller screens */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 15px;
+}
+
+.rightinformation h3 {
+  font-family: "Geologica", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #121212;
+  margin-bottom: 10px;
+}
+
+.rightinformation p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #121212;
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+  /* Mobile View */
   .leftinformation h1 {
-    width: 471px;
-    height: auto;
-    margin: 306px 0px 0px 286px;
-    font-family: "Geologica";
-    font-size: 40px;
-    font-weight: 400;
-    line-height: 53px;
-    text-align: center;
-    text-underline-position: "from-font";
-    text-decoration-skip-ink: none;
+    font-size: 28px; /* Smaller font size for mobile */
   }
+
   .leftinformation p {
-    width: 387px;
-    height: 247px;
-    margin: 23px 0px 0px 314px;
-    font-family: "DM Sans";
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 31px;
-    text-align: center;
-    text-underline-position: "from-font";
-    text-decoration-skip-ink: none;
-    text-align: justify;
+    font-size: 14px; /* Smaller font size for mobile */
   }
-  .rightinformation .right1 {
-    margin: 207px 0px 0px 169px;
-    padding: 0%;
+
+  .rightinformation {
+    grid-template-columns: 1fr; /* Single column for mobile */
   }
-  .rightinformation .right1 img {
-    width: 60.74px;
-    height: 55.47px;
-    margin-bottom: 10.53px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet View */
+  .leftinformation h1 {
+    font-size: 36px; /* Slightly larger font size for tablets */
   }
-  .rightinformation .right2 {
-    margin: 180px 0px 0px 0px;
+
+  .leftinformation p {
+    font-size: 16px; /* Restore original font size */
   }
-  .rightinformation .right2 img {
-    width: 57px;
-    height: 76px;
-    margin-bottom: 7px;
+
+  .rightinformation {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
   }
-  .rightinformation .right3 {
-    margin: 0px 0px 0px 169px;
+}
+
+@media screen and (min-width: 1024px) {
+  /* Laptop View */
+  .leftinformation h1 {
+    font-size: 40px; /* Larger font size for laptops */
   }
-  .rightinformation .right3 img {
-    width: 49.11px;
-    height: 52.92px;
-    margin-bottom: 10.08px;
+
+  .leftinformation p {
+    font-size: 18px; /* Larger font size for laptops */
   }
-  .rightinformation .right4 img {
-    width: 64.18px;
-    height: 42px;
-    margin-bottom: 10px;
+
+  .rightinformation {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for laptops */
+    gap: 40px; /* Increase gap for laptops */
   }
-  .rightinformation h3 {
-    margin: 0px;
-    width: auto;
-    height: auto;
-    font-family: "Geologica";
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 32.86px;
-    text-align: left;
-    text-underline-position: "from-font";
-    text-decoration-skip-ink: none;
-  }
-  .rightinformation p {
-    margin: 4px 0px 0px 0px;
-    width: 275px;
-    height: 84px;
-    font-family: "DM Sans";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 28px;
-    text-align: left;
-    text-underline-position: "from-font";
-    text-decoration-skip-ink: none;
-  }
-  .rightinformation .right3 p {
-    margin-bottom: 182px;
-  }
+}

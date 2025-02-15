@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Customer.css';
 
 const reviewsData = [
@@ -14,21 +14,32 @@ const reviewsData = [
     text: "I love shopping here for my cats! Their toys and treats are of great quality, and the prices are very reasonable. Highly recommended!",
     author: "Whiskers & Paws Pet Mart",
   },
-  // {
-  //   text: "The best pet shop in town! They always have fresh food, and their grooming services are top-notch. My dog comes back happy and looking great!",
-  //   author: "Pet Paradise Store",
-  // },
-  // {
-  //   text: "The customer service is exceptional. They helped me choose the right products for my new puppy, and their recommendations were spot on!",
-  //   author: "Furry Haven Pet Supplies",
-  // },
-  // {
-  //   text: "The grooming services here are amazing! My dog always gets the best care, and their products keep his coat shiny and healthy.",
-  //   author: "Fluffy Paws Grooming Studio",
-  // },
+  {
+    text: "The best pet shop in town! They always have fresh food, and their grooming services are top-notch. My dog comes back happy and looking great!",
+    author: "Pet Paradise Store",
+  },
+  {
+    text: "The customer service is exceptional. They helped me choose the right products for my new puppy, and their recommendations were spot on!",
+    author: "Furry Haven Pet Supplies",
+  },
+  {
+    text: "The grooming services here are amazing! My dog always gets the best care, and their products keep his coat shiny and healthy.",
+    author: "Fluffy Paws Grooming Studio",
+  },
 ];
 
 const Customer = () => {
+  const [index, setIndex] = useState(0);
+  const reviewsPerSlide = window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3;
+
+  const nextSlide = () => {
+    setIndex((prevIndex) => (prevIndex + reviewsPerSlide < reviewsData.length ? prevIndex + reviewsPerSlide : 0));
+  };
+
+  const prevSlide = () => {
+    setIndex((prevIndex) => (prevIndex - reviewsPerSlide >= 0 ? prevIndex - reviewsPerSlide : reviewsData.length - reviewsPerSlide));
+  };
+
   return (
     <div className="customer">
       <div className="customermain">
@@ -37,9 +48,10 @@ const Customer = () => {
         <p>Let’s Hear What Our Customers Have To Say</p>
       </div>
       <div className="customerframe">
+        <button className="prev" onClick={prevSlide}>&#10094;</button>
         <div className="reviews-container">
-          {reviewsData.map((review, index) => (
-            <div key={index}>
+          {reviewsData.slice(index, index + reviewsPerSlide).map((review, i) => (
+            <div key={i} className="review-slide">
               <div className="slide">
                 <p>{review.text}</p>
               </div>
@@ -54,6 +66,7 @@ const Customer = () => {
             </div>
           ))}
         </div>
+        <button className="next" onClick={nextSlide}>&#10095;</button>
       </div>
     </div>
   );
