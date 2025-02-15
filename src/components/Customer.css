@@ -39,7 +39,7 @@
     background-color: #ebebeb;
     width: 90%;
     max-width: 1326px;
-    height: 400px;
+    height: auto;
     margin-top: 33px;
     margin-bottom: 232px;
     display: flex;
@@ -61,7 +61,7 @@
   
   .reviews-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 reviews per row */
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -70,6 +70,8 @@
   .slide {
     background: white;
     padding: 1.5rem;
+    margin-top: 50px;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
@@ -116,6 +118,7 @@
   .star-img {
     width: 15px;
     height: 15px;
+    margin-bottom: 20px;
   }
   
   

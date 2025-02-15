@@ -7,6 +7,8 @@ import Seller from './components/bestseller.js';
 import AboutUs from './components/AboutUs.js';
 import Customer from './components/Customer.js';
 import MainProduct from './components/mainproduct.js';
+import ExploreProduct from './components/Exploreproduct.js';
+import Footer from './components/footer.js';
 import './App.css'
 
 const App = () => {
@@ -20,6 +22,8 @@ const App = () => {
       <AboutUs />
       <Customer />
       <MainProduct/>
+      <ExploreProduct/>
+      <Footer/>
     </>
   );
 };

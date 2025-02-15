@@ -1,0 +1,165 @@
+.footer {
+  margin-top: 207px;
+  background-color: #147099;
+  color: white;
+}
+
+.footer-container {
+  padding: 77px 0px 80px 232px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.subscribe-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.subscribe-section h2 {
+  margin: 0%;
+  font-family: "Geologica";
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 35.2px;
+  letter-spacing: 0%;
+}
+
+.subscribe-section p {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0%;
+  margin: 16px 0px 35px 0px;
+}
+
+.email-input {
+  display: flex;
+  justify-content: left;
+  margin: 10px 0px 0px 0px;
+  gap: 16px;
+}
+
+.email-input input {
+  width: 70%;
+  padding: 12px 27px 12px 32px;
+  border-radius: 100px;
+  border-color: #ffff;
+  border-width: 2px;
+  background-color: transparent;
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+.email-input input::placeholder {
+  color: #cccccc;
+  border-color: white;
+  
+}
+
+.email-input button {
+  background: white;
+  color: #1e6788;
+  border: none;
+  padding: 19.5px 48px 19.5px 48px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.83px;
+  letter-spacing: 1%;
+  text-align: center;
+}
+.social-icons {
+  display: flex;
+  gap: 35px;
+}
+
+.social-icons img {
+  width: 18px;
+  height: 18px;
+  margin: 0%;
+}
+
+.social-icons span {
+  font-family: "HvDTrial Pluto";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0%;
+}
+
+.links-section {
+  display: flex;
+  flex: 1;
+  gap: 256px;
+  justify-content: space-around;
+  min-width: 300px;
+  margin-left: 212px;
+}
+
+.links-section ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 29px;
+}
+
+.links-section li {
+  margin: 16px 0;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  padding-top: 10px;
+  width: 1427px;
+  margin-left: 233px;
+  border-top: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-family: "DM Sans";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0%;
+  margin-left: 297px;
+}
+
+.logo-section img {
+  width: 100px;
+  margin-right: 480px;
+}
+
+.payment-icons img {
+  width: 40px;
+  margin: 0 6px 0px 0px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .links-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
