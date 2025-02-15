@@ -30,8 +30,8 @@
   
   .leftinformation h1 {
     width: 471px;
-    height: 106px;
-    margin: 206px 0px 0px 286px;
+    height: auto;
+    margin: 306px 0px 0px 286px;
     font-family: "Geologica";
     font-size: 40px;
     font-weight: 400;
@@ -51,30 +51,7 @@
     text-align: center;
     text-underline-position: "from-font";
     text-decoration-skip-ink: none;
-  }
-  .leftinformation h2 {
-    margin: 20px 0px 0px 371px;
-    padding: 22.5px 82.5px 22.5px 82.5px;
-    font-family: "DM Sans";
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 20.83px;
-    letter-spacing: 0.01em;
-    text-align: center;
-    text-underline-position: "from-font";
-    text-decoration-skip-ink: none;
-    color: #ffffff;
-    border-radius: 100px;
-    width: 109px;
-    gap: 0px;
-    opacity: 0px;
-    background-color: #147099;
-  }
-  .leftinformation .leftbutton {
-    opacity: 0px;
-    border-radius: 100%;
-    height: 56px;
-    width: 274px;
+    text-align: justify;
   }
   .rightinformation .right1 {
     margin: 207px 0px 0px 169px;
@@ -108,8 +85,8 @@
   }
   .rightinformation h3 {
     margin: 0px;
-    width: 126px;
-    height: 33px;
+    width: auto;
+    height: auto;
     font-family: "Geologica";
     font-size: 20px;
     font-weight: 400;

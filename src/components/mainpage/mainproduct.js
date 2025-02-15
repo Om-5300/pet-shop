@@ -12,7 +12,7 @@ const MainProduct = () => {
                     <p>
                         Product: Super Cat bed warm sleeping cat nest soft long pluh best pet dog bed for dogs basket cushion cat bed cat mat animals sleeping
                     </p>
-                    <h2>LOREM IPSUM</h2>
+                    <h2>VIEW DETAILS</h2>
                 </div>
                 <div className='product1image'>
                     <img src="image/mainproduct1.svg" id='dogbag'></img>
@@ -30,7 +30,7 @@ const MainProduct = () => {
                     <p>
                         Colourful Cat Collar Necklass, Paw Printing, Adjustable Collar Tone Footprints, Pet Collar Pendant With Bells
                     </p>
-                    <h2>LOREM IPSUM</h2>
+                    <h2>VIEW DETAILS</h2>
                 </div>
             </div>
             <div className='product3'>
@@ -42,8 +42,8 @@ const MainProduct = () => {
                         Breathable Harness Vest</h1>
                     <p>
                         Breathable Harness Vest Suitable for Dogs And Cats, Reflective Pet Harness, Collar Adjustable, Cat, Kitten, Small Dogs, Chest Strap                    </p>
-                    <h2>LOREM IPSUM</h2>
-                </div>
+                        <h2>VIEW DETAILS</h2>
+                        </div>
                 <div className='product3image'>
                     <img src="image/mainproduct3.svg" id='vest'></img>
                 </div>

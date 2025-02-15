@@ -1,14 +1,14 @@
 import React from 'react';
-import Header from './components/Header.js';
-import MainImage from './components/Mainimage.js';
-import DogFoodBrands from './components/DogFoodBrands.js';
-import Information from './components/information.js';
-import Seller from './components/bestseller.js';
-import AboutUs from './components/AboutUs.js';
-import Customer from './components/Customer.js';
-import MainProduct from './components/mainproduct.js';
-import ExploreProduct from './components/Exploreproduct.js';
-import Footer from './components/footer.js';
+import Header from './components/mainpage/Header.js';
+import MainImage from './components/mainpage/Mainimage.js';
+import DogFoodBrands from './components/mainpage/DogFoodBrands.js';
+import Information from './components/mainpage/information.js';
+import Seller from './components/mainpage/bestseller.js';
+import AboutUs from './components/mainpage/AboutUs.js';
+import Customer from './components/mainpage/Customer.js';
+import MainProduct from './components/mainpage/mainproduct.js';
+import ExploreProduct from './components/mainpage/Exploreproduct.js';
+import Footer from './components/mainpage/footer.js';
 import './App.css'
 
 const App = () => {
