@@ -16,25 +16,15 @@ const Footer = () => {
                         <img src="image/Facebookicon.svg" alt="Facebook" />
                         <img src="image/Instagramicon.svg" alt="Instagram" />
                         <img src="image/Youtubeicon.svg" alt="YouTube" />
-                        <span>@yorkshirepetshop</span>
+                        <span>@utopiapetshop</span>
                     </div>
                 </div>
 
                 <div className="links-section">
-                    <ul>
-                        <li><b>Foods</b></li>
-                        <li><b>Dogs</b></li>
-                        <li><b>Cats</b></li>
-                        <li><b>Fish</b></li>
-                        <li><b>Contact Us</b></li>
-                    </ul>
-                    <ul>
-                        <li><b>Policies</b></li>
-                        <li>About Us</li>
-                        <li>Privacy Policy</li>
-                        <li>Terms of Service</li>
-                        <li>Refund & Returns</li>
-                    </ul>
+                    <div className="mission">
+                    <h2>Our Mission</h2>
+                    <p>Your satisfaction is our priority. Our friendly customer service team is always ready to assist you with any questions or concerns you may have. We aim to make your shopping experience convenient, informative, and enjoyable.</p>
+                    </div>
                 </div>
             </div>
 
@@ -48,7 +38,7 @@ const Footer = () => {
                     <img src="image/mastercardicon.svg" alt="MasterCard" />
                     <img src="image/visaicon.svg" alt="Visa" />
                 </div>
-                <p>© 2024, Yorkshire Pet Shop Powered by Shopify</p>
+                <p>© 2024, Utopia Pet Shop</p>
             </div>
         </footer>
     );
