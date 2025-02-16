@@ -1,39 +1,37 @@
 .seller .sellerheading {
-    display: flex;
-    gap: 943px;
+  display: flex;
+  justify-content: space-between;
+  margin: 211px 231px 0 228px;
   }
   .seller .sellerheading h1 {
-    width: 365px;
-    height: 35px;
     font-family: "Geologica";
     font-weight: 400;
     font-size: 50px;
-    line-height: 55px;
-    letter-spacing: 0%;
-    margin-left: 228px;
-    margin-top: 211px;
-    padding: 0%;
+    margin: auto 0;
   }
-  .seller .sellerheading a {
+
+  .seller .sellerheading .shop{
+    display: flex;
+    background-color: #147099;
+    border-radius: 100px;
+    padding: 14.5px 24px;
+    gap: 16px;
+  }
+
+  .seller .sellerheading p {
     font-family: "DM Sans";
     font-weight: 700;
     font-size: 16px;
     line-height: 20.83px;
     text-align: center;
-    margin: 226.5px 0px 0px 0px;
-    background-color: #147099;
     color: #ffffff;
-    gap: 16px;
-    padding: 14.5px 0px 14.5px 24px;
-    border-radius: 100px;
-    display: block;
+    display: flex;
+    margin: auto 0;
   }
-  .seller .sellerheading a img {
+  .seller .sellerheading img {
     width: 12px;
     height: 12px;
-    padding-right: 24px;
-    padding-left: 14px;
-    padding-top: 6px;
+    margin: auto;
   }
   .fordog h1 {
     width: 169px;
@@ -193,4 +191,20 @@
   }
   .forfish .fishitem .fishitem1 {
     margin-left: 231px;
+  }
+
+  @media screen and (max-width:768px) {
+    .seller .sellerheading{
+      margin: 52px 24px 0;
+    }
+
+    .seller .sellerheading h1 {
+      font-size: 18px;
+    }
+    .seller .sellerheading .shop{
+      padding: 10px 11.5px;
+    }
+    .seller .sellerheading p{
+      font-size: 12px;
+    }
   }

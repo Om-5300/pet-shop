@@ -9,7 +9,7 @@ const productData = [
   { id: 5, image: "image/dogitem5.svg", title: "Product Title 5", price: "£59.99 GBP" },
   { id: 6, image: "image/dogitem5.svg", title: "Product Title 5", price: "£59.99 GBP" },
 ];
-
+  
 const ExploreProduct = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 

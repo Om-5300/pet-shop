@@ -6,7 +6,10 @@ const Seller = () => {
     <div className="seller">
       <div className="sellerheading">
         <h1>Our Bestsellers</h1>
-        <a>SHOP ALL <img src="image/rightarrownew.svg" alt="arrow" /></a>
+        <div className='shop'>
+          <p>SHOP ALL</p>
+          <img src="image/rightarrownew.svg" alt="arrow" />
+        </div>
       </div>
       <div className="fordog">
         <h1>For Dogs</h1>

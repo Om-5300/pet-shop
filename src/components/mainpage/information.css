@@ -1,9 +1,8 @@
 /* General Styles */
 .information {
-  margin-top: 22px;
   width: 100%;
   background-color: #ebebeb;
-  padding: 20px;
+  /* padding: 20px;  */
   display: flex;
   flex-direction: column; /* Stack content vertically on smaller screens */
   align-items: center; /* Center content horizontally */
