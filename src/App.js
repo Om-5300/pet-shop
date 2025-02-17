@@ -1,18 +1,22 @@
-import React from 'react';
-import Header from './components/mainpage/Header.js';
-import MainImage from './components/mainpage/Mainimage.js';
-import DogFoodBrands from './components/mainpage/DogFoodBrands.js';
-import Information from './components/mainpage/information.js';
-import Seller from './components/mainpage/bestseller.js';
-import AboutUs from './components/mainpage/AboutUs.js';
-import Customer from './components/mainpage/Customer.js';
-import MainProduct from './components/mainpage/mainproduct.js';
-import ExploreProduct from './components/mainpage/Exploreproduct.js';
-import Footer from './components/mainpage/footer.js';
-import './App.css'
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import React from "react";
+import Header from "./components/mainpage/Header.jsx";
+import MainImage from "./components/mainpage/Mainimage.jsx";
+import DogFoodBrands from "./components/mainpage/DogFoodBrands.jsx";
+import Information from "./components/mainpage/information.jsx";
+import Seller from "./components/mainpage/bestseller.jsx";
+import AboutUs from "./components/mainpage/AboutUs.jsx";
+import Customer from "./components/mainpage/Customer.jsx";
+import MainProduct from "./components/mainpage/mainproduct.jsx";
+import ExploreProduct from "./components/mainpage/Exploreproduct.jsx";
+import Footer from "./components/mainpage/footer.jsx";
+import Login from "./components/login.jsx";
+import Register from "./components/register.jsx";
+import "./App.css";
 
-const App = () => {
-  return (
+const Home = () => {
+  const isAuthenticated = localStorage.getItem("isAuthenticated");
+  return isAuthenticated ? (
     <>
       <Header />
       <MainImage />
@@ -21,11 +25,24 @@ const App = () => {
       <Seller />
       <AboutUs />
       <Customer />
-      <MainProduct/>
-      <ExploreProduct/>
-      <Footer/>
+      <MainProduct />
+      <ExploreProduct />
+      <Footer />
     </>
-    
+  ) : (
+    <Navigate to="/login" replace />
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </Router>
   );
 };
 
