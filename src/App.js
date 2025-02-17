@@ -247,6 +247,7 @@ const App = () => {
       {/* <Register/>
       <Login/> */}
     </>
+    
   );
 };
 
