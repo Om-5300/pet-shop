@@ -1,11 +1,8 @@
-.seller{
-  padding-bottom: 92px;
-  padding-top: 52px;
-}
+
 .seller .sellerheading {
   display: flex;
   justify-content: space-between;
-  margin: 211px 231px 0 228px;
+  margin: 100px 231px 0 228px;
   }
   .seller .sellerheading h1 {
     font-family: "Geologica";
