@@ -1,0 +1,173 @@
+.information {
+  width: auto;
+  min-height: 859px;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.information .leftinformation {
+  flex: 1;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin-left: 286px;
+}
+
+.leftinformation h1 {
+  font-family: "Geologica";
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 53px;
+  text-align: center;
+  margin: 20px 0;
+}
+.leftinformation h2 {
+  margin: 0%;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.83px;
+  letter-spacing: 1%;
+  text-align: center;
+}
+
+.leftinformation p {
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 31px;
+  text-align: center;
+  margin: 10px auto;
+  max-width: 90%;
+}
+
+.leftinformation .leftbutton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 40px;
+  background-color: #147099;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.rightinformation {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-right: 250px;
+}
+
+.rightinformation .right1,
+.rightinformation .right2,
+.rightinformation .right3,
+.rightinformation .right4 {
+  text-align: center;
+}
+
+.rightinformation img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.rightinformation h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.rightinformation p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .information {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .information .leftinformation{
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+  .information .leftinformation .leftbutton{
+    margin-bottom: 30px;
+  }
+  .leftinformation h1 {
+    font-size: 24px;
+    line-height: 42px;
+  }
+  .leftinformation h2 {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .information .rightinformation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .rightinformation .right1,
+  .rightinformation .right2,
+  .rightinformation .right3,
+  .rightinformation .right4 {
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .information {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .information .leftinformation {
+    margin-left: 0;
+  }
+  .leftinformation h1 {
+    font-size: 18px;
+    line-height: 42px;
+  }
+  .information .leftinformation .leftbutton{
+    margin-bottom: 30px;
+  }
+  .leftinformation p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .information .rightinformation {
+    gap: 20px;
+    margin-right: 0;
+  }
+
+  .rightinformation img {
+    width: 50px;
+  }
+
+  .rightinformation h3 {
+    font-size: 18px;
+  }
+
+  .rightinformation p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

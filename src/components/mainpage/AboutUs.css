@@ -1,0 +1,157 @@
+/* Global Styles */
+.aboutus {
+  background-color: #ebebeb;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 51px;
+}
+
+/* About Us Details */
+.aboutus .aboutusdetails {
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Heading */
+.aboutus .aboutusdetails h1 {
+  font-family: "Geologica";
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 72px;
+  letter-spacing: 1.1px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Paragraph */
+.aboutus .aboutusdetails p {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 31px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+}
+
+/* Button */
+.aboutus .aboutusdetails button {
+  padding: 20px 60px;
+  background-color: #147099;
+  border-radius: 50px;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 30px auto;
+  transition: 0.3s ease;
+}
+
+.aboutus .aboutusdetails button:hover {
+  background-color: #0e5a7a;
+}
+
+/* Images */
+.aboutus .aboutusimg {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.aboutus .aboutusimg img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .aboutus .aboutusdetails h1 {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .aboutus .aboutusdetails p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .aboutus .aboutusdetails button {
+    font-size: 16px;
+    padding: 18px 50px;
+  }
+
+  .aboutus .aboutusimg img {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .aboutus {
+    padding: 60px auto;
+  }
+
+  .aboutus .aboutusdetails h1 {
+    font-size: 35px;
+    line-height: 50px;
+  }
+
+  .aboutus .aboutusdetails p {
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+  .aboutus .aboutusdetails button {
+    font-size: 14px;
+    padding: 15px 40px;
+  }
+
+  .aboutus .aboutusimg {
+    gap: 15px;
+  }
+
+  .aboutus .aboutusimg img {
+    width: 160px;
+  }
+}
+
+/* Mobile View: Show Only 3 Images */
+@media screen and (max-width: 480px) {
+  .aboutus {
+    padding: 60px 10px;
+  }
+
+  .aboutus .aboutusdetails h1 {
+    font-size: 30px;
+    line-height: 45px;
+  }
+
+  .aboutus .aboutusdetails p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .aboutus .aboutusdetails button {
+    font-size: 12px;
+    padding: 12px 30px;
+  }
+
+  .aboutus .aboutusimg img {
+    width: 140px;
+  }
+
+  /* Hide extra images on mobile */
+  .hide-mobile {
+    display: none;
+  }
+}

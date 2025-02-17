@@ -1,0 +1,134 @@
+.exploreproduct .exploreproductheading {
+  display: flex;
+  justify-content: space-between;
+  margin: 211px 231px 0 231px;
+}
+.exploreproduct .exploreproductheading h1 {
+  font-family: "Geologica";
+  font-weight: 400;
+  font-size: 50px;
+  margin: auto 0;
+}
+.exploreproduct .exploreproductheading p {
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20.83px;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  margin: auto 0;
+}
+.exploreproduct .exploreproductheading .shop{
+  display: flex;
+  background-color: #147099;
+  border-radius: 100px;
+  padding: 14.5px 24px;
+  gap: 16px;
+}
+.exploreproduct .exploreproductheading img {
+  width: 12px;
+  height: 12px;
+  margin: auto;
+}
+
+.product {
+  display: flex;
+  gap: 24.9px;
+  margin-top: 74px;
+  overflow-x: auto;
+  height: 500px;
+  margin-left: 231px;
+}
+.product a {
+  width: 94px;
+  height: auto;
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18.23px;
+  letter-spacing: 0%;
+  text-align: center;
+  padding: 14.02px 98.16px 14.02px 98.16px;
+  background-color: #147099;
+  border-radius: 100px;
+  color: #ffffff;
+}
+.product h2 {
+  width: 279px;
+  height: 26px;
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0%;
+  margin-top: 23.04px;
+}
+.product p {
+  width: 99px;
+  height: auto;
+  font-family: "DM Sans";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23.44px;
+  letter-spacing: 0%;
+  margin: 11px 0px 30px 0px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .exploreproduct .exploreproductheading {
+    margin: 52px 28px 0;
+  }
+
+  .exploreproduct .exploreproductheading h1 {
+    font-size: 24px;
+  }
+  .exploreproduct .exploreproductheading .shop {
+    padding: 10px 11.5px;
+  }
+  .exploreproduct .exploreproductheading p {
+    font-size: 14px;
+  }
+  .product {
+    margin-left: 28px;
+    margin-top: 24px;
+  }
+  .product h1 {
+    font-size: 20px;
+    margin-top: 24px;
+    font-weight: 400;
+  }
+  .product .dogitem {
+    gap: 24.9px;
+    margin-top: 24px;
+    height: 500px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .exploreproduct .exploreproductheading {
+    margin: 52px 24px 0;
+  }
+
+  .exploreproduct .exploreproductheading h1 {
+    font-size: 22px;
+  }
+  .exploreproduct .exploreproductheading .shop {
+    padding: 10px 11.5px;
+  }
+  .exploreproduct .exploreproductheading p {
+    font-size: 18px;
+  }
+  .product{
+    margin-left: 24px;
+  }
+  .product h1{
+    font-size: 18px;
+    margin-top: 24px;
+  }
+  .product .dogitem{
+    gap: 24.9px;
+    margin-top: 24px;
+    height: 500px;
+  }
+}

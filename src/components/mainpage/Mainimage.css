@@ -1,0 +1,73 @@
+/* General Styles */
+.mainimage {
+  background-image: url(/public/image/mainimage.png);
+  background-size: cover;
+  background-position: center;
+  height: 675px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.mainimage h1 {
+  font-family: "Geologica", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.mainimage p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  max-width: 90%; /* Ensure text doesn't overflow */
+}
+
+@media screen and (max-width: 768px){
+  .mainimage{
+    height: 497px;
+  }
+  .mainimage h1{
+    font-size: 27px;
+    line-height: 29.68px;
+  }
+  .mainimage p{
+    font-size: 12px;
+    Line-height:16.8px;
+  }
+}
+/* Responsive Styles */
+@media screen and (min-width: 768px) {
+  /* Tablet View */
+  .mainimage h1 {
+    font-size: 42px; /* Slightly larger for tablets */
+    max-width: 80%;
+  }
+
+  .mainimage p {
+    font-size: 18px;
+    max-width: 80%;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  /* Laptop View */
+  .mainimage h1 {
+    font-size: 50px; /* Larger for laptops */
+    max-width: 762px; /* Match original design */
+  }
+
+  .mainimage p {
+    font-size: 20px;
+    max-width: 669px; /* Match original design */
+  }
+
+}
