@@ -53,8 +53,11 @@ nav a img {
 .social {
   display: flex;
   gap: 15px;
+  align-items: center;
 }
-
+.social a{
+  align-items: center;
+}
 .social img {
   width: 24px;
   height: 24px;
@@ -98,7 +101,21 @@ nav a img {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 }
+.Logout {
+  background-color: #007bff;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.Logout:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   nav {
     display: flex;
@@ -111,6 +128,10 @@ nav a img {
 
   .contact {
     margin-left: auto;
-  }
-}
 
+  }
+  .Logout {
+    padding: 8px 16px; /* Slightly smaller button on mobile */
+    font-size: 12px;
+}
+}

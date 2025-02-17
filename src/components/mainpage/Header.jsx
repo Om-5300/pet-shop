@@ -37,7 +37,7 @@ const Header = () => {
           </a>
 
           {isAuthenticated ? (
-            <button onClick={handleLogout} className="logout-btn">
+            <button onClick={handleLogout} className="Logout">
               Logout
             </button>
           ) : (
