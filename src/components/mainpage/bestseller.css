@@ -1,3 +1,7 @@
+.seller{
+  padding-bottom: 92px;
+  padding-top: 52px;
+}
 .seller .sellerheading {
   display: flex;
   justify-content: space-between;
@@ -33,128 +37,34 @@
     height: 12px;
     margin: auto;
   }
-  .fordog h1 {
-    width: 169px;
-    height: 28px;
-    font-family: "Geologica";
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 44px;
-    letter-spacing: 0%;
-    margin-left: 231px;
-    margin-top: 109px;
-  }
-  .fordog .dogitem {
-    display: flex;
-    gap: 24.9px;
-    margin-top: 74px;
-  }
-  .fordog .dogitem a {
-    width: 94;
-    height: 10;
-    font-family: "DM Sans";
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 18.23px;
-    letter-spacing: 0%;
-    text-align: center;
-    padding: 14.02px 98.16px 14.02px 98.16px;
-    background-color: #147099;
-    border-radius: 100px;
-    color: #ffffff;
-  }
-  .fordog .dogitem h2 {
-    width: 279px;
-    height: 26px;
-    font-family: "DM Sans";
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
-    letter-spacing: 0%;
-    margin-top: 23.04px;
-  }
-  .fordog .dogitem p {
-    width: 99px;
-    height: 18px;
-    font-family: "DM Sans";
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 23.44px;
-    letter-spacing: 0%;
-    margin: 41px 0px 40px 0px;
-  }
-  .fordog .dogitem .dogitem1 {
+  .fordog,
+  .forcat,
+  .forfish{
     margin-left: 231px;
   }
-  .forcat h1 {
-    width: 169px;
-    height: 28px;
-    font-family: "Geologica";
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 44px;
-    letter-spacing: 0%;
-    margin-left: 231px;
-    margin-top: 109px;
-  }
-  .forcat .catitem {
-    display: flex;
-    gap: 24.9px;
-    margin-top: 74px;
-  }
-  .forcat .catitem a {
-    width: 94;
-    height: 10;
-    font-family: "DM Sans";
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 18.23px;
-    letter-spacing: 0%;
-    text-align: center;
-    padding: 14.02px 98.16px 14.02px 98.16px;
-    background-color: #147099;
-    border-radius: 100px;
-    color: #ffffff;
-  }
-  .forcat .catitem h2 {
-    width: 279px;
-    height: 26px;
-    font-family: "DM Sans";
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
-    letter-spacing: 0%;
-    margin-top: 23.04px;
-  }
-  .forcat .catitem p {
-    width: 99px;
-    height: 18px;
-    font-family: "DM Sans";
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 23.44px;
-    letter-spacing: 0%;
-    margin: 41px 0px 40px 0px;
-  }
-  .forcat .catitem .catitem1 {
-    margin-left: 231px;
-  }
+  .fordog h1,
+  .forcat h1,
   .forfish h1 {
-    width: 169px;
-    height: 28px;
+    max-width: 169px;
+    height: auto;
     font-family: "Geologica";
     font-weight: 400;
     font-size: 40px;
     line-height: 44px;
     letter-spacing: 0%;
-    margin-left: 231px;
     margin-top: 109px;
   }
+  .fordog .dogitem,
+  .forcat .catitem,
   .forfish .fishitem {
     display: flex;
     gap: 24.9px;
     margin-top: 74px;
+    overflow-x: auto;
+    height: 600px;
   }
+  .fordog .dogitem a,
+  .forcat .catitem a,
   .forfish .fishitem a {
     width: 94;
     height: 10;
@@ -169,9 +79,11 @@
     border-radius: 100px;
     color: #ffffff;
   }
+  .fordog .dogitem h2,
+  .forcat .catitem h2,
   .forfish .fishitem h2 {
-    width: 279px;
-    height: 26px;
+    max-width: 279px;
+    height: auto;
     font-family: "DM Sans";
     font-weight: 400;
     font-size: 18px;
@@ -179,32 +91,83 @@
     letter-spacing: 0%;
     margin-top: 23.04px;
   }
+  .fordog .dogitem p,
+  .forcat .catitem p,
   .forfish .fishitem p {
     width: 99px;
-    height: 18px;
+    height: auto;
     font-family: "DM Sans";
     font-weight: 500;
     font-size: 18px;
     line-height: 23.44px;
     letter-spacing: 0%;
-    margin: 41px 0px 40px 0px;
-  }
-  .forfish .fishitem .fishitem1 {
-    margin-left: 231px;
+    margin: 11px 0px 3  0px 0px;
   }
 
   @media screen and (max-width:768px) {
     .seller .sellerheading{
-      margin: 52px 24px 0;
+      margin: 52px 28px 0;
     }
 
     .seller .sellerheading h1 {
-      font-size: 18px;
+      font-size: 24px;
     }
     .seller .sellerheading .shop{
       padding: 10px 11.5px;
     }
     .seller .sellerheading p{
-      font-size: 12px;
+      font-size: 14px;
+    }
+    .fordog,
+    .forcat,
+    .forfish{
+      margin-left: 28px;
+    }
+    .fordog h1,
+    .forcat h1,
+    .forfish h1{
+      font-size: 20px;
+      margin-top: 24px;
+      font-weight: 400;
+    }
+    .fordog .dogitem,
+    .forcat .catitem,
+    .forfish .fishitem {
+      gap: 24.9px;
+      margin-top: 24px;
+      height: 500px;
+    }
+  }
+  @media screen and (min-width: 769px) and (max-width: 1024px)  {
+    .seller .sellerheading{
+      margin: 52px 24px 0;
+    }
+
+    .seller .sellerheading h1 {
+      font-size: 22px;
+    }
+    .seller .sellerheading .shop{
+      padding: 10px 11.5px;
+    }
+    .seller .sellerheading p{
+      font-size: 18px;
+    }
+    .fordog,
+    .forcat,
+    .forfish{
+      margin-left: 24px;
+    }
+    .fordog h1,
+    .forcat h1,
+    .forfish h1{
+      font-size: 18px;
+      margin-top: 24px;
+    }
+    .fordog .dogitem,
+    .forcat .catitem,
+    .forfish .fishitem {
+      gap: 24.9px;
+      margin-top: 24px;
+      height: 500px;
     }
   }
