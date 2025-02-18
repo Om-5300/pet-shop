@@ -12,7 +12,7 @@ app.use(cors({
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false }));
 
-connectMongodb( "mongodb://127.0.0.1:27017/user").then(() => {
+connectMongodb( "mongodb+srv://utopiapetshop111:Utopiapetshop%40111@cluster0.vvc09.mongodb.net/user").then(() => {
     console.log("Mongo Connected");
   })
   .catch((err) => console.log("Mongo error", err));
