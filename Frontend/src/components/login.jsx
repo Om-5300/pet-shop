@@ -23,7 +23,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-box">
-        <h2>Yorkshire Pet Shop</h2>
+        <h2>Utopia Pet Shop</h2>
         <h3>Log in</h3>
         <p>Enter your email and password to continue</p>
         <div className="input-container">

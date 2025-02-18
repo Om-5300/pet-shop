@@ -47,7 +47,7 @@ const Register = () => {
   return (
     <div className="register-container">
       <div className="register-box">
-        <h2>Yorkshire Pet Shop</h2>
+        <h2>Utopia Pet Shop</h2>
         <h3>Register</h3>
         <p>Create an account to continue</p>
         <div className="input-container">
