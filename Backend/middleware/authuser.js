@@ -12,10 +12,12 @@ const authenticateUser = async (req, res, next) => {
             return res.status(400).json({ success: false, msg: "Email not registered. Please register first." });
         }
 
-        const isMatch = await bcrypt.compare(password, user.password);
+        
 
-        if (!isMatch) {
+        if (password != user.password) {
             return res.status(400).json({ success: false, msg: "Invalid password." });
+        }else{
+            return res.status(200).json({ success: true, msg: "Login successful." });
         }
 
         // Attach user data to request object for next middleware or route
@@ -27,4 +29,4 @@ const authenticateUser = async (req, res, next) => {
     }
 };
 
-module.exports = authenticateUser;
+module.exports = { authenticateUser };

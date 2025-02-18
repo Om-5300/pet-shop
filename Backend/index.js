@@ -1,23 +1,25 @@
-const express = require('express')
-const app = express()
-const cors=require("cors")
-const {connectMongodb} = require('./config/connection')
-const userRouter = require('./routes/register')
-const loginRouter = require('./routes/login')
+const express = require("express");
+const app = express();
+const cors = require("cors");
+const { connectMongodb } = require("./config/connection");
+const userRouter = require("./routes/register");
+const loginRouter = require("./routes/login");
 
 app.use(cors({
-  origin: 'http://localhost:3000', // Frontend origin (React app)
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type']
+  origin: "http://localhost:3000", // Frontend origin (React app)
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
 }));
-app.use(express.json()); 
+
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-connectMongodb( "mongodb+srv://utopiapetshop111:Utopiapetshop%40111@cluster0.vvc09.mongodb.net/user").then(() => {
-    console.log("Mongo Connected");
-  })
+connectMongodb("mongodb+srv://utopiapetshop111:Utopiapetshop%40111@cluster0.vvc09.mongodb.net/user")
+  .then(() => console.log("Mongo Connected"))
   .catch((err) => console.log("Mongo error", err));
-app.use(("/register"),userRouter)
-app.use(("./login"),loginRouter)
-const PORT=process.env.PORT || 5000
-app.listen(PORT,()=>{console.log(`server at http://localpost:${PORT}`)})
+
+app.use("/register", userRouter);  // ✅ Fixed path
+app.use("/login", loginRouter);    // ✅ Fixed path
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));  // ✅ Fixed log

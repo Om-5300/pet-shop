@@ -16,7 +16,7 @@ const Login = () => {
         headers: { "Content-Type": "application/json" }
       });
 
-      if (response.data.success) {
+      if (response.status==200) {
         localStorage.setItem("isAuthenticated", "true");
         localStorage.setItem("user", JSON.stringify(response.data.user)); // Store user details
         alert("Login successful!");
