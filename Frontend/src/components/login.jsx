@@ -7,9 +7,19 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = () => {
+  const handleLogin = async (e) => {
+    e.preventDefault()
     const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-    
+    try{
+      const details = { email, password };
+
+      const response = await axios.get("http://localhost:5000/register", details, {
+        headers: { "Content-Type": "application/json" }
+    }); 
+    }
+    catch(error){
+      alert("Invalid email or password");
+    }
     const user = existingUsers.find(user => user.email === email && user.password === password);
     if (user) {
       localStorage.setItem("isAuthenticated", "true");
