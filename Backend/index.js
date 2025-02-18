@@ -3,6 +3,7 @@ const app = express()
 const cors=require("cors")
 const {connectMongodb} = require('./config/connection')
 const userRouter = require('./routes/register')
+const loginRouter = require('./routes/login')
 
 app.use(cors({
   origin: 'http://localhost:3000', // Frontend origin (React app)
@@ -17,5 +18,6 @@ connectMongodb( "mongodb+srv://utopiapetshop111:Utopiapetshop%40111@cluster0.vvc
   })
   .catch((err) => console.log("Mongo error", err));
 app.use(("/register"),userRouter)
+app.use(("./login"),loginRouter)
 const PORT=process.env.PORT || 5000
 app.listen(PORT,()=>{console.log(`server at http://localpost:${PORT}`)})

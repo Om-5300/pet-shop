@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./login.css";
 
 const Login = () => {
@@ -8,25 +9,24 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault()
-    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-    try{
-      const details = { email, password };
+    e.preventDefault();
 
-      const response = await axios.get("http://localhost:5000/register", details, {
+    try {
+      const response = await axios.post("http://localhost:5000/login", { email, password }, {
         headers: { "Content-Type": "application/json" }
-    }); 
-    }
-    catch(error){
-      alert("Invalid email or password");
-    }
-    const user = existingUsers.find(user => user.email === email && user.password === password);
-    if (user) {
-      localStorage.setItem("isAuthenticated", "true");
-      alert("Login successful!");
-      navigate("/");
-    } else {
-      alert("Invalid email or password. Please register if you don’t have an account.");
+      });
+
+      if (response.data.success) {
+        localStorage.setItem("isAuthenticated", "true");
+        localStorage.setItem("user", JSON.stringify(response.data.user)); // Store user details
+        alert("Login successful!");
+        navigate("/");
+      } else {
+        alert("Invalid email or password. Please register if you don’t have an account.");
+      }
+
+    } catch (error) {
+      alert(error.response?.data?.msg || "Something went wrong. Please try again.");
     }
   };
 
