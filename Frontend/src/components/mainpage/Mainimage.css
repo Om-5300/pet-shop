@@ -14,7 +14,7 @@
 
 .mainimage h1 {
   font-family: "Geologica", sans-serif;
-  font-size: 36px;
+  font-size: 50px;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -28,6 +28,8 @@
   line-height: 1.5;
   margin-bottom: 30px;
   max-width: 90%; /* Ensure text doesn't overflow */
+  color: white;
+  text-align: center;
 }
 
 @media screen and (max-width: 768px){

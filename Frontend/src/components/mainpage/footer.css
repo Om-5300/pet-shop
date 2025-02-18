@@ -13,8 +13,11 @@
 }
 
 .subscribe-section {
+  display: flex;
   flex: 1;
   min-width: 300px;
+  align-items: left;
+  flex-direction:column;
 }
 
 .subscribe-section h2 {

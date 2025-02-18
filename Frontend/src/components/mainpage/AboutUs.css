@@ -41,20 +41,16 @@
 
 /* Button */
 .aboutus .aboutusdetails button {
-  padding: 20px 60px;
+  display: inline-block;
+  padding: 15px 40px;
   background-color: #147099;
-  border-radius: 50px;
-  font-family: "DM Sans";
-  font-weight: 700;
-  font-size: 18px;
   color: white;
-  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 50px;
   cursor: pointer;
-  display: block;
-  margin: 30px auto;
-  transition: 0.3s ease;
+  max-width: 200px;
 }
-
 .aboutus .aboutusdetails button:hover {
   background-color: #0e5a7a;
 }

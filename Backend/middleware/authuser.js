@@ -20,7 +20,6 @@ const authenticateUser = async (req, res, next) => {
             return res.status(200).json({ success: true, msg: "Login successful." });
         }
 
-        // Attach user data to request object for next middleware or route
         req.user = { name: user.name, email: user.email };
         next(); // Pass to the next middleware or route handler
 
