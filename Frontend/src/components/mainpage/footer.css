@@ -1,32 +1,35 @@
 .footer {
-  margin-top: 207px;
+  margin-top: 50px; /* Reduced for better spacing on smaller screens */
   background-color: #147099;
   color: white;
 }
 
 .footer-container {
-  padding: 77px 0px 80px 232px;
+  padding: 40px 20px; /* Adjusted padding for smaller screens */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   max-width: 1200px;
+  margin: 0 auto; /* Center the container */
 }
 
 .subscribe-section {
   display: flex;
   flex: 1;
-  min-width: 300px;
-  align-items: left;
-  flex-direction:column;
+  min-width: 100%; /* Full width on smaller screens */
+  align-items: center; /* Center align for smaller screens */
+  flex-direction: column;
+  text-align: center; /* Center text for smaller screens */
+  margin-bottom: 40px; /* Added margin for spacing */
 }
 
 .subscribe-section h2 {
-  margin: 0%;
+  margin: 0;
   font-family: "Geologica";
   font-weight: 500;
-  font-size: 32px;
+  font-size: 28px; /* Reduced font size for smaller screens */
   line-height: 35.2px;
-  letter-spacing: 0%;
+  margin-bottom: 10px;
 }
 
 .subscribe-section p {
@@ -34,57 +37,63 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  letter-spacing: 0%;
-  margin: 16px 0px 35px 0px;
+  margin: 16px 0 20px 0;
+  color:white; /* Adjusted margin */
 }
 
 .email-input {
   display: flex;
-  justify-content: left;
-  margin: 10px 0px 0px 0px;
+  flex-direction: column; /* Stack input and button vertically on smaller screens */
+  align-items: center;
   gap: 16px;
+  width: 100%; /* Full width */
 }
 
 .email-input input {
-  padding: 12px 230px 12px 32px;
+  padding: 12px 20px;
+  padding-right: 120px;
   border-radius: 100px;
-  border-color: #ffff;
-  border-width: 2px;
+  border: 2px solid white;
   background-color: transparent;
   font-family: "DM Sans";
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 0%;
+  width: 100%; /* Full width */
+  max-width: 400px;
+  margin: 0%; /* Limit width on larger screens */
+  display: flex;
+  justify-content: flex-start;
 }
+
 .email-input input::placeholder {
   color: #cccccc;
-  border-color: white;
 }
 
 .email-input button {
   background: white;
   color: #1e6788;
   border: none;
-  padding: 19.5px 48px 19.5px 48px;
+  padding: 12px 24px; /* Adjusted padding */
   border-radius: 100px;
   cursor: pointer;
   font-family: "DM Sans";
   font-weight: 700;
   font-size: 16px;
   line-height: 20.83px;
-  letter-spacing: 1%;
-  text-align: center;
+  width: 100%; /* Full width */
+  max-width: 200px; /* Limit width on larger screens */
 }
+
 .social-icons {
   display: flex;
-  gap: 35px;
+  gap: 20px; /* Reduced gap for smaller screens */
+  justify-content: center; /* Center align for smaller screens */
 }
 
 .social-icons img {
   width: 18px;
   height: 18px;
-  margin: 0%;
 }
 
 .social-icons span {
@@ -92,85 +101,149 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 18px;
-  letter-spacing: 0%;
 }
 
 .links-section {
   display: flex;
   flex: 1;
   justify-content: space-around;
-  min-width: 300px;
-  margin-left: 312px;
+  min-width: 100%; /* Full width on smaller screens */
+  margin-left: 0; /* Reset margin */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 20px; /* Added gap for spacing */
+}
+
+.links-section .mission {
+  max-width: 100%; /* Full width on smaller screens */
+  text-align: justify; /* Center text for smaller screens */
 }
 
 .links-section .mission p {
-  width: 400px;
+  width: 100%; /* Full width */
   font-family: "Geologica";
-  font-size: 15px;
-  line-height: 35.2px;
-  letter-spacing: 0%;
+  font-size: 14px; /* Reduced font size for smaller screens */
+  line-height: 24px; /* Adjusted line height */
   font-weight: 100;
-  text-align: justify;
+  text-align: center;
+  color: white; /* Center text for smaller screens */
 }
+
 .links-section .mission h2 {
   font-family: "Geologica";
   font-weight: 500;
-  font-size: 22px;
-  line-height: 35.2px;
-  letter-spacing: 0%;
-  text-align: justify;
+  font-size: 20px; /* Reduced font size for smaller screens */
+  line-height: 28px; /* Adjusted line height */
+  text-align: center; /* Center text for smaller screens */
 }
 
 .links-section li {
-  margin: 16px 0;
+  margin: 12px 0; /* Adjusted margin */
   font-family: "DM Sans";
   font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0%;
+  font-size: 14px; /* Reduced font size for smaller screens */
+  line-height: 20px; /* Adjusted line height */
+  text-align: center; /* Center text for smaller screens */
 }
 
 .footer-bottom {
   margin-top: 20px;
-  padding-top: 10px;
-  width: 1427px;
-  margin-left: 233px;
+  width: 100%; /* Full width */
+  margin-left: 0; /* Reset margin */
   border-top: 1px solid white;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+  padding: 0%;
 }
 
 .footer-bottom p {
   font-family: "DM Sans";
   font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: 0%;
+  font-size: 12px; /* Reduced font size for smaller screens */
+  line-height: 18px; /* Adjusted line height */
+  text-align: center; /* Center text for smaller screens */
+  width: 100%; /* Full width */
+  margin-right: 320px;
+  color: white;
 }
 
 .logo-section img {
-  width: 100px;
+  width: 80px;
+  margin-left: 320px; /* Reduced size for smaller screens */
 }
 
 .payment-icons img {
-  width: 40px;
-  margin: 0 6px 0px 0px;
+  width: 30px; /* Reduced size for smaller screens */
+  margin: 0 6px 0 0;
 }
 
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
+@media (min-width: 768px) {
+  .subscribe-section {
+    min-width: 300px; /* Reset min-width for larger screens */
+    align-items: flex-start; /* Align left for larger screens */
+    text-align: left; /* Align text left for larger screens */
+  }
+
+  .email-input {
+    flex-direction: row; /* Align input and button horizontally for larger screens */
+  }
+
+  .email-input input {
+    width: auto; /* Reset width for larger screens */
+    padding-right: 50px;
+  }
+
+  .email-input button {
+    width: auto; /* Reset width for larger screens */
   }
 
   .links-section {
-    flex-direction: column;
-    align-items: center;
+    min-width: auto; /* Reset min-width for larger screens */
+    margin-left: 40px; /* Added margin for larger screens */
+    justify-content: space-between; /* Space between links for larger screens */
   }
 
-  .footer-bottom {
+  .links-section .mission {
+    text-align: left; /* Align text left for larger screens */
+  }
+
+  .links-section li {
+    text-align: left; /* Align text left for larger screens */
+  }
+
+
+  .footer-bottom p {
+    width: auto; /* Reset width for larger screens */
+    text-align: left;
+    margin-right: 40px; /* Align text left for larger screens */
+  }
+  .logo-section img {
+    width: 80px;
+    margin-left: 40px; /* Reduced size for smaller screens */
+  }
+}
+@media (max-width: 767px) {
+  .email-input input {
+    width: auto; /* Reset width for larger screens */
+    padding-right: 100px;
+  }
+  .footer-bottom p {
+    width: auto; /* Reset width for larger screens */
+    text-align: left;
+    margin-right: 0;
+  }
+  .footer-bottom{
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .logo-section img {
+    width: 80px;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px; /* Reduced size for smaller screens */
   }
 }
