@@ -16,7 +16,6 @@ const MainProduct = () => {
                 </div>
                 <div className='product1image'>
                     <img src="image/mainproduct1.svg" id='dogbag'></img>
-                    <img src="image/pawvector.svg" id='pawvector1'></img>
                 </div>
             </div>
             <div className='product2'>
@@ -34,9 +33,6 @@ const MainProduct = () => {
                 </div>
             </div>
             <div className='product3'>
-                <div className='product3paw'>
-                    <img src="image/pawvector2.svg" id='pawvector2'></img>
-                </div>
                 <div className='product3details'>
                     <h1>
                         Breathable Harness Vest</h1>

@@ -1,135 +1,200 @@
 .mainproduct {
   background-color: #ebebeb;
+  padding: 20px;
 }
+
 .mainproduct .product1,
 .mainproduct .product2,
 .mainproduct .product3 {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.mainproduct .product1details,
+.mainproduct .product3details {
+  margin-top: 50px;
+  margin-left: 200px;
+}
+.mainproduct .product2details {
+  margin-top: 50px;
+  margin-left: 0;
 }
 .mainproduct .product1 .product1image {
   display: flex;
+  justify-content: left;
+  width: 100%;
 }
-.mainproduct .product1 h1 {
-  width: 538px;
-  height: auto;
-  margin: 376px 0px 0px 277px;
-  font-family: "Geologica";
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 55px;
-  letter-spacing: 0%;
+.mainproduct .product2image,
+.mainproduct .product3image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
-.mainproduct .product1 p {
-  width: 452px;
-  height: auto;
-  margin: 36px 0px 0px 277px;
-  font-family: "DM Sans";
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
-  letter-spacing: 0%;
-}
-.mainproduct .product1 h2 {
-  width: 109px;
-  height: auto;
-  font-family: "DM Sans";
-  margin: 28px 0px 0px 277px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20.83px;
-  letter-spacing: 1%;
-  text-align: center;
-  padding: 18px 62px 18px 62px;
-  border-radius: 100px;
-  background-color: #147099;
-  color: white;
 
-}
-.mainproduct .product1image #dogbag {
-  margin: 290px 0px 0px 136px;
-}
-.mainproduct .product2 h1 {
-  width: 534px;
-  height: auto;
-  margin: 198px 0px 0px 263px;
-  font-family: "Geologica";
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 55px;
-  letter-spacing: 0%;
-  
-}
-.mainproduct .product2 p {
-  width: 452px;
-  height: auto;
-  margin: 36px 0px 0px 263px;
-  font-family: "DM Sans";
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
-  letter-spacing: 0%;
-}
-.mainproduct .product2image #catbelt {
-  margin: 111px 0px 0px 220px;
-  width: 598px;
-  height: 598px;
-}
-.mainproduct .product2 h2 {
-  width: 109px;
-  height: auto;
-  font-family: "DM Sans";
-  margin: 28px 0px 0px 263px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20.83px;
-  letter-spacing: 1%;
-  text-align: center;
-  padding: 18px 62px 18px 62px;
-  border-radius: 100px;
-  background-color: #147099;
-  color: white;
-
-}
-.mainproduct .product3 .product3paw img{
-  width: 337.43px;
-  height: auto;
-  margin: 58px 0px 101px 0px;
-}
+.mainproduct .product1 h1,
+.mainproduct .product2 h1,
 .mainproduct .product3 h1 {
-  width: 538px;
-  height: auto;
-  margin: 174px 0px 0px -52px;
-  font-family: "Geologica";
+  font-family: "Geologica", sans-serif;
   font-weight: 400;
-  font-size: 50px;
-  line-height: 55px;
-  letter-spacing: 0%;
+  font-size: 2rem;
+  line-height: 1.1;
+  margin: 20px 0;
 }
+
+.mainproduct .product1 p,
+.mainproduct .product2 p,
 .mainproduct .product3 p {
-  width: 452px;
-  height: auto;
-  margin: 36px 0px 0px -52px;
-  font-family: "DM Sans";
+  font-family: "DM Sans", sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
-  letter-spacing: 0%;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 20px 0;
+  max-width: 90%;
 }
-.mainproduct .product3image #vest {
-  margin: 119px auto auto 180px;
-}
+
+.mainproduct .product1 h2,
+.mainproduct .product2 h2,
 .mainproduct .product3 h2 {
-  width: 109px;
-  height: auto;
-  font-family: "DM Sans";
-  margin: 28px 0px 0px -52px;
+  font-family: "DM Sans", sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 20.83px;
-  letter-spacing: 1%;
-  text-align: center;
-  padding: 18px 62px 18px 62px;
+  font-size: 1rem;
+  line-height: 1.2;
+  max-width: 30%;
+  padding: 12px 40px;
   border-radius: 100px;
   background-color: #147099;
   color: white;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mainproduct .product1 h2:hover,
+.mainproduct .product2 h2:hover,
+.mainproduct .product3 h2:hover {
+  background-color: #115a7a;
+}
+
+.mainproduct .product1image #dogbag,
+.mainproduct .product2image #catbelt,
+.mainproduct .product3image #vest {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.mainproduct .product3 .product3paw img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+@media (min-width: 1024px) {
+  .mainproduct .product1 h1,
+  .mainproduct .product2 h1,
+  .mainproduct .product3 h1 {
+    font-size: 3.5rem;
+  }
+
+  .mainproduct .product1 p,
+  .mainproduct .product2 p,
+  .mainproduct .product3 p {
+    font-size: 1.25rem;
+    max-width: 60%;
+  }
+
+  .mainproduct .product1image #dogbag,
+  .mainproduct .product2image #catbelt,
+  .mainproduct .product3image #vest {
+    max-width: 40%;
+  }
+
+  .mainproduct .product3 .product3paw img {
+    max-width: 40%;
+  }
+}
+
+@media (min-width: 768px) {
+  .mainproduct .product1,
+  .mainproduct .product2,
+  .mainproduct .product3 {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .mainproduct .product1 h1,
+  .mainproduct .product2 h1,
+  .mainproduct .product3 h1 {
+    font-size: 2rem;
+  }
+
+  .mainproduct .product1 p,
+  .mainproduct .product2 p,
+  .mainproduct .product3 p {
+    font-size: 1.125rem;
+    max-width: 80%;
+  }
+
+  .mainproduct .product1image #dogbag {
+    max-width: 80%;
+    margin-top: 80px;
+  }
+  .mainproduct .product2image #catbelt,
+  .mainproduct .product3image #vest {
+    max-width: 60%;
+    margin-top: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .mainproduct .product1 h1,
+  .mainproduct .product2 h1,
+  .mainproduct .product3 h1 {
+    font-size: 2rem;
+    text-align: center;
+    max-width: 70%;
+  }
+
+  .mainproduct .product1 p,
+  .mainproduct .product2 p,
+  .mainproduct .product3 p {
+    font-size: 0.875rem;
+    max-width: 70%;
+    text-align: center;
+  }
+
+  .mainproduct .product2 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .mainproduct .product1 h2,
+  .mainproduct .product2 h2,
+  .mainproduct .product3 h2 {
+    font-size: 0.875rem;
+    padding: 10px 30px;
+    margin-left: 70px;
+    
+  }
+  .mainproduct .product2details {
+    margin-top: 0;
+    margin-left: 150px;
+  }
+  .mainproduct .product1details,
+  .mainproduct .product3details {
+    margin-top: 0;
+    margin-left: 150px;
+  }
+  .mainproduct .product1image #dogbag {
+    max-width: 50%;
+    margin-top: 50px;
+    margin-left: 150px;
+  }
+  .mainproduct .product2image #catbelt,
+  .mainproduct .product3image #vest {
+    max-width: 50%;
+    margin-top: 50px;
+  }
 }
