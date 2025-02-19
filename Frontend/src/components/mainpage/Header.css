@@ -71,6 +71,7 @@ nav a img {
   cursor: pointer;
   transition: background-color 0.3s ease;
   background-color: transparent;
+  background: transparent;
 }
 
 /* Mobile View */
@@ -126,7 +127,6 @@ nav a img {
     margin-left: auto;
   }
   .social button {
-    padding: 8px 16px; /* Slightly smaller button on mobile */
     font-size: 12px;
   }
 }
