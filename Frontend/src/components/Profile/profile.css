@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header {
+    background-color: #147099;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #115a7a;
+    padding: 10px;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+  }
+  
+  .navbar a:hover {
+    text-decoration: underline;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .orders-section,
+  .policies-section,
+  .contact-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orders-section h2,
+  .policies-section h2,
+  .contact-section h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #147099;
+  }
+  
+  .policies-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .policies-section ul li {
+    margin: 10px 0;
+  }
+  
+  .policies-section ul li a {
+    color: #147099;
+    text-decoration: none;
+  }
+  
+  .policies-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .contact-section p {
+    margin: 10px 0;
+  }
+  
+  .footer {
+    background-color: #115a7a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar a {
+      margin: 5px 0;
+    }
+  
+    .main-content {
+      padding: 10px;
+    }
+  
+    .orders-section,
+    .policies-section,
+    .contact-section {
+      padding: 15px;
+    }
+  
+    .orders-section h2,
+    .policies-section h2,
+    .contact-section h2 {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header h1 {
+      font-size: 1.25rem;
+    }
+  
+    .navbar a {
+      font-size: 0.875rem;
+    }
+  
+    .orders-section h2,
+    .policies-section h2,
+    .contact-section h2 {
+      font-size: 1rem;
+    }
+  
+    .contact-section p {
+      font-size: 0.875rem;
+    }
+  }
