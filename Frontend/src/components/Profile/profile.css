@@ -1,151 +1,183 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  .container {
+/* Header */
+.profileheader {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .header {
-    background-color: #147099;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .header h1 {
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.profileheader h1 {
+    font-size: 24px;
+    font-weight: 700;
     margin: 0;
-    font-size: 2rem;
-  }
-  
-  .navbar {
+    color: #333;
+}
+
+/* Navbar */
+.profilenavbar {
     display: flex;
     justify-content: center;
-    background-color: #115a7a;
-    padding: 10px;
-  }
-  
-  .navbar a {
-    color: white;
+    padding: 15px 0;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.profilenavbar a {
+    margin: 0 20px;
     text-decoration: none;
-    margin: 0 15px;
-    font-size: 1rem;
-  }
-  
-  .navbar a:hover {
-    text-decoration: underline;
-  }
-  
-  .main-content {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .orders-section,
-  .policies-section,
-  .contact-section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .orders-section h2,
-  .policies-section h2,
-  .contact-section h2 {
-    margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+}
+
+.profilenavbar a:hover {
     color: #147099;
-  }
-  
-  .policies-section ul {
+    text-decoration: underline;
+}
+
+/* Profile Dropdown */
+.profile-user-dropdown {
+    position: relative;
+}
+
+.profile-user-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 10px;
+    color: #333;
+}
+
+.profile-user-button:hover {
+    opacity: 0.8;
+}
+
+.profile-dropdown-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.profile-dropdown-item {
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+}
+
+.profile-dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Orders Section */
+.profile-main-content {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.profile-orders-section {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.profile-orders-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.profile-orders-section p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Policies Section */
+.profile-policies-section {
+    margin-bottom: 20px;
+}
+
+.profile-policies-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.profile-policies-section ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  .policies-section ul li {
-    margin: 10px 0;
-  }
-  
-  .policies-section ul li a {
-    color: #147099;
+}
+
+.profile-policies-section li {
+    margin-bottom: 10px;
+}
+
+.profile-policies-section a {
     text-decoration: none;
-  }
-  
-  .policies-section ul li a:hover {
+    color: #147099;
+    font-size: 14px;
+}
+
+.profile-policies-section a:hover {
     text-decoration: underline;
-  }
-  
-  .contact-section p {
-    margin: 10px 0;
-  }
-  
-  .footer {
-    background-color: #115a7a;
-    color: white;
+}
+
+/* Contact Section */
+.profile-contact-section {
+    margin-bottom: 20px;
+}
+
+.profile-contact-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.profile-contact-section p {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0;
+}
+
+/* Footer */
+.profile-footer {
     text-align: center;
-    padding: 10px;
-    margin-top: auto;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .header h1 {
-      font-size: 1.5rem;
-    }
-  
-    .navbar {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .navbar a {
-      margin: 5px 0;
-    }
-  
-    .main-content {
-      padding: 10px;
-    }
-  
-    .orders-section,
-    .policies-section,
-    .contact-section {
-      padding: 15px;
-    }
-  
-    .orders-section h2,
-    .policies-section h2,
-    .contact-section h2 {
-      font-size: 1.25rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .header h1 {
-      font-size: 1.25rem;
-    }
-  
-    .navbar a {
-      font-size: 0.875rem;
-    }
-  
-    .orders-section h2,
-    .policies-section h2,
-    .contact-section h2 {
-      font-size: 1rem;
-    }
-  
-    .contact-section p {
-      font-size: 0.875rem;
-    }
-  }
+    padding: 15px;
+    font-size: 14px;
+    color: #777;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
+}
+
+.profile-footer a {
+    color: #555;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.profile-footer a:hover {
+    text-decoration: underline;
+}

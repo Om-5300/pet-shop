@@ -13,7 +13,7 @@ import Footer from "./components/mainpage/footer.jsx";
 import Login from "./components/login.jsx";
 import Register from "./components/register.jsx";
 import "./App.css";
-
+import Profile from "./components/Profile/profile.jsx";
 const Home = () => {
   const isAuthenticated = localStorage.getItem("isAuthenticated");
   return isAuthenticated ? (
@@ -33,11 +33,11 @@ const Home = () => {
     <Navigate to="/login" replace />
   );
 };
-
 const App = () => {
   return (
     <Router>
       <Routes>
+      <Route path="/profile" element={<Profile />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
