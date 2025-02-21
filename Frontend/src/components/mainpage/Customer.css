@@ -127,7 +127,7 @@
 
 .swiper-button-prev::after {
   content: "";
-  background-image: url(/public/image/leftarrowproduct.svg);
+  background-image: url(/public/image/leftarrowproductnew.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 20px;
