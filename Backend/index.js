@@ -4,6 +4,7 @@ const cors = require("cors");
 const { connectMongodb } = require("./config/connection");
 const userRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
+const bestsellerRouter = require("./routes/bestsellerRoutes"); // ✅ Import bestseller routes
 
 app.use(cors({
   origin: "http://localhost:3000", // Frontend origin (React app)
@@ -14,12 +15,15 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Connect to MongoDB
 connectMongodb("mongodb+srv://utopiapetshop111:Utopiapetshop%40111@cluster0.vvc09.mongodb.net/user")
-  .then(() => console.log("Mongo Connected"))
-  .catch((err) => console.log("Mongo error", err));
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch((err) => console.log("❌ MongoDB Error:", err));
 
-app.use("/register", userRouter);  // ✅ Fixed path
-app.use("/login", loginRouter);    // ✅ Fixed path
+// Routes
+app.use("/register", userRouter);
+app.use("/login", loginRouter);
+app.use("/bestsellers", bestsellerRouter); // ✅ Add bestseller API
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));  // ✅ Fixed log
+app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
