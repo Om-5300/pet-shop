@@ -49,10 +49,6 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.product-item:hover {
-  transform: translateY(-5px);
-}
-
 .product-item img {
   width: 100%;
   max-width: 200px;
