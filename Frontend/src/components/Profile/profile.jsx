@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./profile.css";
 
@@ -58,11 +58,11 @@ const Profile = () => {
     <div className="profile-container">
       <header className="profile-header">
         <div className="headerdetails">
-        <h1>Utopia Pet Shop</h1>
-        <nav className="profile-navbar">
-          <a href="#shop">Shop</a>
-          <a href="#orders">Orders</a>
-        </nav>
+          <h1>Utopia Pet Shop</h1>
+          <nav className="profile-navbar">
+            <a href="#shop">Shop</a>
+            <a href="#orders">Orders</a>
+          </nav>
         </div>
         <div className="profile-user-dropdown" ref={dropdownRef}>
           <button className="profile-user-button" onClick={toggleDropdown}>
@@ -71,10 +71,10 @@ const Profile = () => {
           {isDropdownOpen && (
             <div className="profile-dropdown-menu">
               <button
+                onClick={() => navigate("/profiledetail")}
                 className="profile-dropdown-item"
-                onClick={() => setIsProfileOpen(!isProfileOpen)}
               >
-                Profile
+                Profile{" "}
               </button>
               <button className="profile-dropdown-item" onClick={handleLogout}>
                 Log out
@@ -85,18 +85,12 @@ const Profile = () => {
       </header>
 
       <main className="profile-main-content">
-        {isProfileOpen && (
-          <section className="profile-contact-section">
-            <h2>Contact Information</h2>
-            <p>Email: info@utopiapet.com</p>
-            <p>Phone: +123 456 7890</p>
-          </section>
-        )}
-
         <section className="profile-orders-section">
-          <h2>Orders</h2>
-          <p>No orders yet</p>
-          <p>Go to store to place an order.</p>
+          <h1>Order</h1>
+          <div className="orderdetails">
+            <h2>No orders yet</h2>
+            <p>Go to store to place an order.</p>
+          </div>
         </section>
       </main>
 

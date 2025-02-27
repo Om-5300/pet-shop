@@ -14,6 +14,7 @@ import Login from "./components/login.jsx";
 import Register from "./components/register.jsx";
 import "./App.css";
 import Profile from "./components/Profile/profile.jsx";
+import ProfileDetail from "./components/Profile/profiledetail.jsx";
 const Home = () => {
   const isAuthenticated = localStorage.getItem("isAuthenticated");
   return isAuthenticated ? (
@@ -38,6 +39,7 @@ const App = () => {
     <Router>
       <Routes>
       <Route path="/profile" element={<Profile />} />
+      <Route path="/profiledetail" element={<ProfileDetail />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

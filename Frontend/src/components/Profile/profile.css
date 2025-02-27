@@ -55,7 +55,7 @@
 }
 
 .profile-user-button {
-  background-color: #d1d1d1;
+  background: gray;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -118,14 +118,18 @@
 
 .profile-contact-section h2,
 .profile-orders-section h2 {
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 10px;
+  font-weight: 200;
 }
 
 .profile-contact-section p,
 .profile-orders-section p {
+  display: flex;
   font-size: 14px;
   color: #555;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Footer */
