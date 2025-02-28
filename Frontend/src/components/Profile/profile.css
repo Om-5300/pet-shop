@@ -55,7 +55,7 @@
 }
 
 .profile-user-button {
-  background: gray;
+  background: rgb(208, 208, 208);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -67,7 +67,7 @@
 }
 
 .profile-user-button:hover {
-  background-color: #0056b3;
+  background-color: #5e5e5e;
 }
 
 /* Dropdown Menu */
