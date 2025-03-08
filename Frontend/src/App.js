@@ -12,9 +12,12 @@ import ExploreProduct from "./components/mainpage/Exploreproduct.jsx";
 import Footer from "./components/mainpage/footer.jsx";
 import Login from "./components/login.jsx";
 import Register from "./components/register.jsx";
-import "./App.css";
 import Profile from "./components/Profile/profile.jsx";
 import ProfileDetail from "./components/Profile/profiledetail.jsx";
+import AboutUsDetails from "./components/aboutusdetails/aboutusdetail.jsx";
+import "./App.css";
+
+// Home Page Component
 const Home = () => {
   const isAuthenticated = localStorage.getItem("isAuthenticated");
   return isAuthenticated ? (
@@ -34,15 +37,26 @@ const Home = () => {
     <Navigate to="/login" replace />
   );
 };
+const AboutUsDetailsPage = () => {
+  return (
+    <>
+      <Header />
+      <AboutUsDetails />
+      <Footer />
+    </>
+  );
+};
+
 const App = () => {
   return (
     <Router>
       <Routes>
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/profiledetail" element={<ProfileDetail />} />
         <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/profiledetail" element={<ProfileDetail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/about-details" element={<AboutUsDetailsPage  />} /> 
       </Routes>
     </Router>
   );

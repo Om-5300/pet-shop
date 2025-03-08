@@ -81,10 +81,14 @@ nav a img {
 
   #menubar {
     display: block;
+    width: 16px;
+    height: 16px;
   }
 
   .logo {
     margin: 0%;
+    max-width: 70px;
+    padding-left: 30px;
   }
 
   .contact {
@@ -94,7 +98,10 @@ nav a img {
   .social {
     gap: 10px;
   }
-
+  .social img {
+    width: 18px;
+    height: 18px;
+  }
   nav.active {
     display: flex;
     flex-direction: column;
