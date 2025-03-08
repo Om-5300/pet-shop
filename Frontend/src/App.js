@@ -3,23 +3,25 @@ import React from "react";
 import Header from "./components/mainpage/Header.jsx";
 import MainImage from "./components/mainpage/Mainimage.jsx";
 import DogFoodBrands from "./components/mainpage/DogFoodBrands.jsx";
-import Information from "./components/mainpage/information.jsx";
-import Seller from "./components/mainpage/bestseller.jsx";
+import Information from "./components/mainpage/information.jsx"; // Ensure correct case
+import Seller from "./components/mainpage/bestseller.jsx"; // Ensure correct case
 import AboutUs from "./components/mainpage/AboutUs.jsx";
 import Customer from "./components/mainpage/Customer.jsx";
 import MainProduct from "./components/mainpage/mainproduct.jsx";
 import ExploreProduct from "./components/mainpage/Exploreproduct.jsx";
-import Footer from "./components/mainpage/footer.jsx";
+import Footer from "./components/mainpage/footer.jsx"; // Ensure correct case
 import Login from "./components/login.jsx";
 import Register from "./components/register.jsx";
 import Profile from "./components/Profile/profile.jsx";
 import ProfileDetail from "./components/Profile/profiledetail.jsx";
-import AboutUsDetails from "./components/aboutusdetails/aboutusdetail.jsx";
+import AboutUsDetails from "./components/page/aboutusdetail.jsx";
+import ProductDetails from "./components/page/productdetailspage.jsx";
 import "./App.css";
 
-// Home Page Component
+// ✅ Home Component with Correct Authentication Check
 const Home = () => {
-  const isAuthenticated = localStorage.getItem("isAuthenticated");
+  const isAuthenticated = JSON.parse(localStorage.getItem("isAuthenticated")) || false;
+
   return isAuthenticated ? (
     <>
       <Header />
@@ -37,15 +39,27 @@ const Home = () => {
     <Navigate to="/login" replace />
   );
 };
-const AboutUsDetailsPage = () => {
-  return (
-    <>
-      <Header />
-      <AboutUsDetails />
-      <Footer />
-    </>
-  );
-};
+
+// ✅ About Us Page
+const AboutUsDetailsPage = () => (
+  <>
+    <Header />
+    <AboutUsDetails />
+    <Footer />
+  </>
+);
+
+// ✅ Product Details Page with Dynamic Routing
+const ProductDetailsPage = () => (
+  <>
+    <Header />
+    <ProductDetails />
+    <DogFoodBrands />
+    <AboutUs />
+    <Customer />
+    <Footer />
+  </>
+);
 
 const App = () => {
   return (
@@ -53,10 +67,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/profiledetail" element={<ProfileDetail />} />
+        <Route path="/profile-detail" element={<ProfileDetail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/about-details" element={<AboutUsDetailsPage  />} /> 
+        <Route path="/about-us-details" element={<AboutUsDetailsPage />} />
+        <Route path="/products" element={<Seller />} />
+        <Route path="/product/:id" element={<ProductDetailsPage />} /> {/* Dynamic Route for Products */}
       </Routes>
     </Router>
   );
