@@ -1,14 +1,11 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-
-const cors = require("cors");
 const { connectMongodb } = require("./config/connection");
 const userRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
 const bestsellerRouter = require("./routes/bestsellerRoutes"); 
 const productRoutes = require("./routes/productroutes");
-dotenv.config();
 
 app.use(cors({
   origin: "http://localhost:3000", // Frontend origin (React app)
