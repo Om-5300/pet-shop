@@ -18,7 +18,6 @@ const Seller = () => {
       })
       .catch((err) => console.error("Error fetching products:", err));
   }, []);
-  
 
   return (
     <div className="seller">
@@ -49,9 +48,9 @@ const Seller = () => {
         {products.map((item) => (
           <SwiperSlide key={item._id}>
             <div className="product-item">
-              <img src={item.image} alt={item.title} />
-              <h2>{item.title}</h2>
-              <p>£{item.price.discounted}</p>
+            <img src={item.images[0]} alt={item.title} />
+            <h2>{item.title}</h2>
+              <p>₹{item.price.discounted}</p>
               <Link to={`/product/${item._id}`} className="view-details">
                 View Details
               </Link>

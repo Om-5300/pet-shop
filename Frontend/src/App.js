@@ -15,7 +15,6 @@ import Register from "./components/register.jsx";
 import Profile from "./components/Profile/profile.jsx";
 import ProfileDetail from "./components/Profile/profiledetail.jsx";
 import AboutUsDetails from "./components/page/aboutusdetail.jsx";
-import ProductDetails from "./components/page/productdetailspage.jsx";
 import "./App.css";
 
 // ✅ Home Component with Correct Authentication Check
@@ -49,18 +48,6 @@ const AboutUsDetailsPage = () => (
   </>
 );
 
-// ✅ Product Details Page with Dynamic Routing
-const ProductDetailsPage = () => (
-  <>
-    <Header />
-    <ProductDetails />
-    <DogFoodBrands />
-    <AboutUs />
-    <Customer />
-    <Footer />
-  </>
-);
-
 const App = () => {
   return (
     <Router>
@@ -71,8 +58,6 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/about-us-details" element={<AboutUsDetailsPage />} />
-        <Route path="/products" element={<Seller />} />
-        <Route path="/product/:id" element={<ProductDetailsPage />} /> {/* Dynamic Route for Products */}
       </Routes>
     </Router>
   );
