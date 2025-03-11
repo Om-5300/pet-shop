@@ -15,7 +15,6 @@
   align-items: center;
   width: 100%;
   background-color: white;
-  padding: 10px 20px;
   flex-wrap: wrap;
 }
 
@@ -134,9 +133,8 @@
 
 /* Footer */
 .profile-footer {
-  margin-top: auto;
+  padding: 0;
   text-align: center;
-  padding: 20px;
   font-size: 14px;
   color: #666;
   display: flex;
@@ -184,7 +182,6 @@
   .profile-header {
     flex-direction: column;
     text-align: center;
-    padding: 15px;
   }
 
   .profile-header .headerdetails {
