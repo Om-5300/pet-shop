@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast"; // ✅ Import toast
 import "./register.css";
-import axios from 'axios'
+import axios from "axios";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -17,9 +18,10 @@ const Register = () => {
     confirmPassword.trim() !== "";
 
   const handleRegister = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
     if (password !== confirmPassword) {
-      alert("Passwords do not match!");
+      toast.error("Passwords do not match!"); // ✅ Show toast error
       return;
     }
 
@@ -27,21 +29,19 @@ const Register = () => {
       const details = { name, email, password };
 
       const response = await axios.post("http://localhost:5000/register", details, {
-          headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
       });
 
-      // ✅ Access response message from backend
-      alert(response.data.msg);  // Shows "Success" from backend
-      navigate("/login");
+      toast.success(response.data.msg || "Registration successful!"); // ✅ Success toast
+      setTimeout(() => navigate("/login"), 1000); // ✅ Delay navigation to allow toast to be seen
 
-  } catch (error) {
-      // ✅ If error occurs, check response message
+    } catch (error) {
       if (error.response && error.response.data) {
-          alert(error.response.data.msg);  // Example: "Email already registered"
+        toast.error(error.response.data.msg || "Something went wrong."); // ✅ Error toast
       } else {
-          alert("Something went wrong. Please try again.");
+        toast.error("Something went wrong. Please try again.");
       }
-  }
+    }
   };
 
   return (

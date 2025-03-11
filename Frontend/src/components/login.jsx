@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useState } from "react";
+import toast from "react-hot-toast"; // ✅ Import toast
+import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
@@ -16,17 +17,18 @@ const Login = () => {
         headers: { "Content-Type": "application/json" }
       });
 
-      if (response.status==200) {
+      if (response.status === 200) {
         localStorage.setItem("isAuthenticated", "true");
         localStorage.setItem("user", JSON.stringify(response.data.user)); // Store user details
-        alert("Login successful!");
-        navigate("/");
-      } else {
-        alert("Invalid email or password. Please register if you don’t have an account.");
-      }
 
+        toast.success("Login successful!", { duration: 3000 }); // ✅ Toast message
+
+        setTimeout(() => navigate("/"), 1000); // ✅ Delay navigation to ensure toast is visible
+      } else {
+        toast.error("Invalid email or password.");
+      }
     } catch (error) {
-      alert(error.response?.data?.msg || "Something went wrong. Please try again.");
+      toast.error(error.response?.data?.msg || "Something went wrong. Please try again.");
     }
   };
 

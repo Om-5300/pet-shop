@@ -14,7 +14,9 @@ const Seller = () => {
     fetch("http://localhost:5000/product") // Fetch all products
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data); // Set all products
+        // Flatten category items into a single product array
+        const allProducts = data.flatMap((category) => category.items);
+        setProducts(allProducts);
       })
       .catch((err) => console.error("Error fetching products:", err));
   }, []);
@@ -45,18 +47,28 @@ const Seller = () => {
           1280: { slidesPerView: 5, spaceBetween: 30 },
         }}
       >
-        {products.map((item) => (
-          <SwiperSlide key={item._id}>
-            <div className="product-item">
-            <img src={item.images[0]} alt={item.title} />
-            <h2>{item.title}</h2>
-              <p>₹{item.price.discounted}</p>
-              <Link to={`/product/${item._id}`} className="view-details">
-                View Details
-              </Link>
-            </div>
-          </SwiperSlide>
-        ))}
+        {products.length > 0 ? (
+          products.map((item, index) => {
+            console.log("Product ID:", index + 1); // Using index as ID
+            return (
+              <SwiperSlide key={index}>
+                <div className="product-item">
+                  <img
+                    src={item.images?.[0] || "/default-image.jpg"}
+                    alt={item.title || "Product"}
+                  />
+                  <h2>{item.title || "No Title"}</h2>
+                  <p>{item.price?.discounted ?? "N/A"}</p>
+                  <Link to={`/product/${index + 1}`} className="view-details">
+                    View Details
+                  </Link>
+                </div>
+              </SwiperSlide>
+            );
+          })
+        ) : (
+          <p>Loading products...</p>
+        )}
       </Swiper>
     </div>
   );

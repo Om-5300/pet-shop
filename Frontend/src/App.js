@@ -15,7 +15,11 @@ import Register from "./components/register.jsx";
 import Profile from "./components/Profile/profile.jsx";
 import ProfileDetail from "./components/Profile/profiledetail.jsx";
 import AboutUsDetails from "./components/page/aboutusdetail.jsx";
+import ProductDetail from "./components/page/productdetails.jsx"; // Import Product Details Page
+
 import "./App.css";
+import { Toaster } from "react-hot-toast"; // ✅ Import Toaster
+
 
 // ✅ Home Component with Correct Authentication Check
 const Home = () => {
@@ -23,6 +27,7 @@ const Home = () => {
 
   return isAuthenticated ? (
     <>
+
       <Header />
       <MainImage />
       <DogFoodBrands />
@@ -45,21 +50,26 @@ const AboutUsDetailsPage = () => (
     <Header />
     <AboutUsDetails />
     <Footer />
+
   </>
 );
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/profile-detail" element={<ProfileDetail />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/about-us-details" element={<AboutUsDetailsPage />} />
-      </Routes>
-    </Router>
+    <>
+      <Toaster position="top-right" reverseOrder={false} /> {/* ✅ Add Toaster here */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile-detail" element={<ProfileDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/about-us-details" element={<AboutUsDetailsPage />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+        </Routes>
+      </Router>
+    </>
   );
 };
 
