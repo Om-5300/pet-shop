@@ -14,8 +14,6 @@ const AboutUsDetails = () => {
   }, [location.pathname]);
   return (
     <div className="about-us">
-      {/* Back Button */}
-      {/* Main Image Under Header */}
       <div className="main-image-container">
         <img
           src="/image/aboutusdetailsmain.webp"

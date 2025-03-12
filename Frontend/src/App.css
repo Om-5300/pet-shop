@@ -1,4 +1,4 @@
-/* Ensure full height for root elements */
+Ensure full height for root elements
 html, body, #root {
     height: 100%;
     margin: 0;

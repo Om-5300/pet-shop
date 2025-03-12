@@ -27,7 +27,7 @@ const Header = () => {
           onClick={toggleMenu}
         />
 
-        <img className="logo" src="/image/Utopianew.png" alt="Logo" />
+        <img className="logo" src="/image/Utopianew.png" alt="Logo" onClick={() => navigate("/")} />
 
         <nav className={isMenuOpen ? "active" : ""}>
           {["Foods", "Dogs", "Cats", "Fish", "Other Pets"].map((item) => (
