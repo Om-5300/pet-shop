@@ -25,7 +25,7 @@ const Seller = () => {
     <div className="seller">
       <div className="sellerheading">
         <h1>Explore Our Products</h1>
-        <Link to="/products" className="shop">
+        <Link to="/showallproducts" className="shop">
           <p>SHOP ALL</p>
           <img src="/image/rightarrownew.svg" alt="Arrow Right" />
         </Link>

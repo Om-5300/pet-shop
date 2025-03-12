@@ -1,35 +1,28 @@
 import React, { useState, useEffect } from "react";
-import "./bestseller.css";
+import "./showallproducts.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 
-const Seller = () => {
+const ShowAllProducts = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/products") // Corrected API endpoint
+    fetch("http://localhost:5000/products")
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
-  
 
   return (
-    <div className="seller">
-      <div className="sellerheading">
-        <h1>Our Bestsellers</h1>
-        <div className="shop">
-          <p>SHOP ALL</p>
-          <img src="image/rightarrownew.svg" alt="arrow" />
-        </div>
-      </div>
+    <div className="show-all-products">
+      <h1 className="main-heading">All Products</h1>
 
       {categories.map((category, index) => (
-        <div key={index} className={category.className}>
-          <h1>{category.title}</h1>
+        <div key={index} className="category-section">
+          <h2 className="category-title">{category.title}</h2>
           <Swiper
             cssMode={true}
             navigation
@@ -50,11 +43,15 @@ const Seller = () => {
           >
             {category.items.map((item, i) => (
               <SwiperSlide key={i}>
-                <div className="product-item">
-                  <img src={item.image} alt={item.title} />
-                  <h2>{item.title}</h2>
-                  <p>{item.price}</p>
-                  <a href="#">View Details</a>
+                <div className="product-card">
+                  <img src={item.images[0]} alt={item.title} className="product-image" />
+                  <h3 className="product-title">{item.title}</h3>
+                  <p className="product-price">
+                    <span className="discounted-price">{item.price.discounted}</span>{" "}
+                    <span className="base-price">{item.price.base}</span>
+                    <span className="save-price">Save {item.price.save}</span>
+                  </p>
+                  <button className="view-details">View Details</button>
                 </div>
               </SwiperSlide>
             ))}
@@ -65,4 +62,4 @@ const Seller = () => {
   );
 };
 
-export default Seller;
+export default ShowAllProducts;

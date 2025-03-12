@@ -16,6 +16,7 @@ import Profile from "./components/Profile/profile.jsx";
 import ProfileDetail from "./components/Profile/profiledetail.jsx";
 import AboutUsDetails from "./components/page/aboutusdetail.jsx";
 import ProductDetail from "./components/page/productdetails.jsx"; // Import Product Details Page
+import ShowAllProducts from "./components/page/showallproducts.jsx";
 
 import "./App.css";
 import { Toaster } from "react-hot-toast"; // ✅ Import Toaster
@@ -67,6 +68,8 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/about-us-details" element={<AboutUsDetailsPage />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/showallproducts" element={<ShowAllProducts />} />
+
         </Routes>
       </Router>
     </>
