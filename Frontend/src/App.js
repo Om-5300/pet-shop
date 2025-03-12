@@ -51,10 +51,18 @@ const AboutUsDetailsPage = () => (
     <Header />
     <AboutUsDetails />
     <Footer />
-
   </>
 );
 
+const ProductDetailsPage = () => (
+  <>
+  <Header/>
+  <ProductDetail/>
+  <DogFoodBrands/>
+  <AboutUs/>
+  <Footer/>
+  </>
+)
 const App = () => {
   return (
     <>
@@ -67,7 +75,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/about-us-details" element={<AboutUsDetailsPage />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/product/:id" element={<ProductDetailsPage />} />
           <Route path="/showallproducts" element={<ShowAllProducts />} />
 
         </Routes>

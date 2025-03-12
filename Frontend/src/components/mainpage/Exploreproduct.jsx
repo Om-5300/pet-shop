@@ -59,7 +59,7 @@ const Seller = () => {
                   />
                   <h2>{item.title || "No Title"}</h2>
                   <p>{item.price?.discounted ?? "N/A"}</p>
-                  <Link to={`/product/${index + 1}`} className="view-details">
+                  <Link to={`/product/${item.id}`} className="view-details">
                     View Details
                   </Link>
                 </div>

@@ -17,7 +17,7 @@ const AboutUs = () => {
         </p>
         <button
           className="aboutusexplore"
-          onClick={() => navigate("/about-details")} // Ensure path matches App.js
+          onClick={() => navigate("/about-us-details")} // Ensure path matches App.js
         >
           Explore Now
         </button>
