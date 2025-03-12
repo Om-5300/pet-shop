@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import "./cart.css";
-
+import { FaTrash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
-
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCart);
   }, []);
 
   const handleRemoveItem = (index) => {
-    const updatedCart = [...cartItems];
-    updatedCart.splice(index, 1);
+    const updatedCart = cartItems.filter((_, i) => i !== index);
     setCartItems(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
@@ -27,10 +25,8 @@ const Cart = () => {
     }
   };
 
-  // Function to clean price and convert to a number
-  const parsePrice = (price) => {
-    return parseFloat(price.toString().replace(/[^0-9.]/g, "")) || 0;
-  };
+  const parsePrice = (price) =>
+    parseFloat(price.toString().replace(/[^0-9.]/g, "")) || 0;
 
   const calculateTotal = () => {
     return cartItems
@@ -40,59 +36,72 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-      <h1>Your Cart</h1>
+      <div className="cart-header">
+        <h1>Your Cart</h1>
+        <button className="continue-shopping" onClick={() => navigate("/")}>
+          Continue Shopping
+        </button>
+      </div>
       {cartItems.length === 0 ? (
-        <h2>Your cart is empty</h2>
+        <h2 className="empty-cart">Your cart is empty</h2>
       ) : (
-        <table className="cart-table">
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Quantity</th>
-              <th>Total</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cartItems.map((item, index) => (
-              <tr key={index}>
-                <td className="product-info">
-                  <img src={item.image} alt={item.title} className="cart-image" />
-                  <div>
-                    <h2>{item.title}</h2>
-                    <p>₹{parsePrice(item.price)}</p>
-                  </div>
-                </td>
-                <td>
-                  <button onClick={() => handleQuantityChange(index, -1)}>-</button>
-                  <span className="quantity">{item.quantity}</span>
-                  <button onClick={() => handleQuantityChange(index, 1)}>+</button>
-                </td>
-                <td>₹{(parsePrice(item.price) * item.quantity).toFixed(2)}</td>
-                <td>
-                  <button className="remove-btn" onClick={() => handleRemoveItem(index)}>
-                    🗑
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-      
-      {cartItems.length > 0 && (
-        <div className="cart-footer">
-          <p className="total-price">Estimated Total: ₹{calculateTotal()}</p>
-          <button className="checkout-btn" onClick={() => navigate("/checkout")}>
-            Check out
-          </button>
+        <div className="cart">
+          <div className="cart-header-details">
+            <div className="product-header">PRODUCT</div>
+            <div className="quantity-header">QUANTITY</div>
+            <div className="total-header">TOTAL</div>
+          </div>
+          {cartItems.map((item, index) => (
+            <div key={index} className="cart-item">
+              <div className="product">
+                <img src={item.image} alt={item.title} className="item-image" />
+                <div className="product-details">
+                  <p>{item.title}</p>
+                  <p className="price">₹{parsePrice(item.price)}</p>
+                </div>
+              </div>
+              <div className="quantity">
+                <button onClick={() => handleQuantityChange(index, -1)}>
+                  -
+                </button>
+                <input type="text" value={item.quantity} readOnly />
+                <button onClick={() => handleQuantityChange(index, 1)}>
+                  +
+                </button>
+                <button
+                  className="delete"
+                  onClick={() => handleRemoveItem(index)}
+                >
+                  <FaTrash />
+                </button>
+              </div>
+              <div className="total">
+                ₹{(parsePrice(item.price) * item.quantity).toFixed(2)}
+              </div>
+            </div>
+          ))}
         </div>
       )}
-
-      {/* Continue Shopping Button */}
-      <button className="continue-shopping-btn" onClick={() => navigate("/")}>
-        Continue Shopping
-      </button>
+      {cartItems.length > 0 && (
+        <div className="checkout">
+          <p className="estimated-total">
+            Estimated Total: <span>₹{calculateTotal()}</span>
+          </p>
+          <p className="tax-info">
+            Tax included. <a href="#">Shipping</a> and discounts calculated at
+            checkout.
+          </p>
+          <button className="checkout-button">Check Out</button>
+          <div className="payment-buttons">
+            <button className="shop-pay">
+              shop<span>Pay</span>
+            </button>
+            <button className="g-pay">
+              G<span>Pay</span>
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
