@@ -92,14 +92,7 @@ const Cart = () => {
             checkout.
           </p>
           <button className="checkout-button">Check Out</button>
-          <div className="payment-buttons">
-            <button className="shop-pay">
-              shop<span>Pay</span>
-            </button>
-            <button className="g-pay">
-              G<span>Pay</span>
-            </button>
-          </div>
+         
         </div>
       )}
     </div>
