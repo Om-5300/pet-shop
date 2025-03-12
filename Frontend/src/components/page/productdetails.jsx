@@ -16,15 +16,17 @@ const ProductDetails = () => {
         const response = await fetch("http://localhost:5000/product");
         if (!response.ok) throw new Error("Failed to fetch data");
         const data = await response.json();
-  
+        window.scrollTo(0, 0);
         // Flatten all products into a single list
-        const allProducts = data.flatMap(category => category.items);
-  
+        const allProducts = data.flatMap((category) => category.items);
+
         // Find the product by ID
-        const selectedProduct = allProducts.find(prod => prod.id === parseInt(id));
-  
+        const selectedProduct = allProducts.find(
+          (prod) => prod.id === parseInt(id)
+        );
+
         if (!selectedProduct) throw new Error("Product not found");
-  
+
         setProduct(selectedProduct);
         setSelectedImage(selectedProduct.images[0]);
       } catch (error) {
@@ -33,10 +35,10 @@ const ProductDetails = () => {
         setLoading(false);
       }
     };
-  
+
     fetchProduct();
   }, [id]);
-  
+
   if (loading) return <h2>Loading...</h2>;
   if (!product) return <h2>Product not found</h2>;
 

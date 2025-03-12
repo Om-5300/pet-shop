@@ -21,39 +21,39 @@ const Header = () => {
     <header className="header">
       <div className="mainheader">
         <img
-          src="image/menuicon.svg"
+          src="/image/menuicon.svg"
           id="menubar"
           alt="menu"
           onClick={toggleMenu}
         />
 
-        <img className="logo" src="image/Utopianew.png" alt="Logo" />
+        <img className="logo" src="/image/Utopianew.png" alt="Logo" />
 
         <nav className={isMenuOpen ? "active" : ""}>
           {["Foods", "Dogs", "Cats", "Fish", "Other Pets"].map((item) => (
             <a key={item} href="#">
-              {item} <img src="image/downarrow.jpg" alt="arrow" />
+              {item} <img src="/image/downarrow.jpg" alt="arrow" />
             </a>
           ))}
         </nav>
 
         <div className="social">
           <a href="#">
-            <img src="image/contacticon.png" alt="contact" />
+            <img src="/image/contacticon.png" alt="contact" />
           </a>
 
           {isAuthenticated ? (
             <button onClick={() => navigate("/profile")} className="profile-btn">
-            <img src="image/profileicon.svg" alt="Profile" />
+            <img src="/image/profileicon.svg" alt="Profile" />
             </button>
           ) : (
             <Link to="/login">
-              <img src="image/loginicon.svg" alt="Login" />
+              <img src="/image/loginicon.svg" alt="Login" />
             </Link>
           )}
 
           <a href="#">
-            <img src="image/carticon.svg" alt="cart" />
+            <img src="/image/carticon.svg" alt="cart" />
           </a>
         </div>
       </div>

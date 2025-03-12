@@ -1,10 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import "./aboutusdetail.css";
 
 const AboutUsDetails = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to top when navigating
+  }, [location.pathname]);
   return (
     <div className="about-us">
       {/* Back Button */}
@@ -53,8 +60,6 @@ const AboutUsDetails = () => {
           <img src="/image/aboutusdetails4.webp" alt="Our Mission" />
         </div>
       </section>
-
-
 
       {/* OUR APPROACH */}
       <section className="section approach">
