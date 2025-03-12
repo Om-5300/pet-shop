@@ -1,0 +1,27 @@
+/* Ensure full height for root elements */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout should take full height */
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Main content should expand */
+.main-content {
+    flex-grow: 1; /* Allows it to take available space */
+}
+
+/* Footer should be at the bottom */
+.footer {
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}

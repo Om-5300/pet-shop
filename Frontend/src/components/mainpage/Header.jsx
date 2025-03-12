@@ -43,8 +43,11 @@ const Header = () => {
           </a>
 
           {isAuthenticated ? (
-            <button onClick={() => navigate("/profile")} className="profile-btn">
-            <img src="/image/profileicon.svg" alt="Profile" />
+            <button
+              onClick={() => navigate("/profile")}
+              className="profile-btn"
+            >
+              <img src="/image/profileicon.svg" alt="Profile" />
             </button>
           ) : (
             <Link to="/login">
@@ -52,9 +55,9 @@ const Header = () => {
             </Link>
           )}
 
-          <a href="#">
+          <button onClick={() => navigate("/cart")} className="cart-btn">
             <img src="/image/carticon.svg" alt="cart" />
-          </a>
+          </button>
         </div>
       </div>
     </header>

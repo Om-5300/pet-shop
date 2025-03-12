@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom"; // ✅ Import useNavigate
 import "./productdetails.css";
 
 const ProductDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate(); // ✅ Initialize navigation
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState("");
@@ -17,10 +18,8 @@ const ProductDetails = () => {
         if (!response.ok) throw new Error("Failed to fetch data");
         const data = await response.json();
         window.scrollTo(0, 0);
-        // Flatten all products into a single list
-        const allProducts = data.flatMap((category) => category.items);
 
-        // Find the product by ID
+        const allProducts = data.flatMap((category) => category.items);
         const selectedProduct = allProducts.find(
           (prod) => prod.id === parseInt(id)
         );
@@ -42,9 +41,28 @@ const ProductDetails = () => {
   if (loading) return <h2>Loading...</h2>;
   if (!product) return <h2>Product not found</h2>;
 
+  // ✅ Handle Add to Bag
+  const handleAddToBag = () => {
+    const cartItem = {
+      id: product.id,
+      title: product.title,
+      price: product.price.discounted,
+      image: selectedImage,
+      quantity,
+      size,
+    };
+
+    // Store cart in localStorage
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+    existingCart.push(cartItem);
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    // Navigate to Cart Page
+    navigate("/cart");
+  };
+
   return (
     <div className="product-container">
-      {/* Product Images */}
       <div className="product-images">
         <img src={selectedImage} alt={product.title} className="main-image" />
         <div className="thumbnail-container">
@@ -60,7 +78,6 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      {/* Product Details */}
       <div className="product-info">
         <h1>{product.title}</h1>
         <p className="product-price">
@@ -68,17 +85,6 @@ const ProductDetails = () => {
           <del>£{product.price.base}</del> ({product.price.save} off)
         </p>
 
-        {/* Subscription Options */}
-        <div className="subscription">
-          <label>
-            <input type="radio" name="subscription" /> One-time purchase
-          </label>
-          <label>
-            <input type="radio" name="subscription" /> Subscribe & Save 10%
-          </label>
-        </div>
-
-        {/* Size Selection */}
         <div className="size-options">
           <p>Size:</p>
           {["1 kg", "2 kg", "5 kg"].map((option) => (
@@ -92,7 +98,6 @@ const ProductDetails = () => {
           ))}
         </div>
 
-        {/* Quantity Selection */}
         <div className="quantity-container">
           <label>Quantity:</label>
           <input
@@ -103,10 +108,11 @@ const ProductDetails = () => {
           />
         </div>
 
-        {/* Add to Bag Button */}
-        <button className="add-to-cart">Add to Bag</button>
+        {/* ✅ Add to Bag Button */}
+        <button className="add-to-cart" onClick={handleAddToBag}>
+          Add to Bag
+        </button>
 
-        {/* Product Details */}
         <div className="product-description">
           <h3>Product Details</h3>
           <p>{product.description}</p>

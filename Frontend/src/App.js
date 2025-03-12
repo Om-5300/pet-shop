@@ -17,6 +17,7 @@ import ProfileDetail from "./components/Profile/profiledetail";
 import AboutUsDetails from "./components/page/aboutusdetail";
 import ProductDetail from "./components/page/productdetails";
 import ShowAllProducts from "./components/page/showallproducts";
+import Cart from "./components/page/cart";
 import "./App.css";
 import { Toaster } from "react-hot-toast";
 
@@ -69,6 +70,7 @@ const App = () => {
             <Route path="/about-us-details" element={<AboutUsDetailsPage />} />
             <Route path="/product/:id" element={<ProductDetailsPage />} />
             <Route path="/showallproducts" element={<ShowAllProducts />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </Layout>
       </Router>
