@@ -49,7 +49,6 @@ const ProductDetailsPage = () => (
   </>
 );
 
-
 // ✅ About Us Page
 const AboutUsDetailsPage = () => <AboutUsDetails />;
 
@@ -59,8 +58,8 @@ const App = () => {
     <>
       <Toaster position="top-right" reverseOrder={false} />
       <Router>
-      <ScrollToTop /> 
-        <Layout> {/* Header and Footer are now always included */}
+        <ScrollToTop />
+        <Layout> 
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />

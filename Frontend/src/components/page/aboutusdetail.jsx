@@ -1,17 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-
 import "./aboutusdetail.css";
 
 const AboutUsDetails = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0); // Scrolls to top when navigating
-  }, [location.pathname]);
   return (
     <div className="about-us">
       <div className="main-image-container">

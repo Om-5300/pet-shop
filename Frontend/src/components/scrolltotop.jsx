@@ -5,8 +5,10 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    console.log("Navigated to:", pathname); // Debugging log
     window.scrollTo(0, 0);
-  }, [pathname]); 
+  }, [pathname]);
+
   return null;
 };
 

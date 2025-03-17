@@ -17,7 +17,6 @@ const ProductDetails = () => {
         const response = await fetch("http://localhost:5000/product");
         if (!response.ok) throw new Error("Failed to fetch data");
         const data = await response.json();
-        window.scrollTo(0, 0);
 
         const allProducts = data.flatMap((category) => category.items);
         const selectedProduct = allProducts.find(
@@ -37,6 +36,8 @@ const ProductDetails = () => {
 
     fetchProduct();
   }, [id]);
+
+  // ✅ Ensure the page scrolls to the top on navigation
 
   if (loading) return <h2>Loading...</h2>;
   if (!product) return <h2>Product not found</h2>;
