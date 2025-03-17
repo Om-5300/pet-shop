@@ -23,6 +23,7 @@
   padding: 12px 20px;
   gap: 10px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .shop p {
@@ -62,6 +63,8 @@
   height: auto;
   margin-bottom: 10px;
   background-color: transparent;
+  border-radius: 20px;
+
 }
 
 /* Product Title */

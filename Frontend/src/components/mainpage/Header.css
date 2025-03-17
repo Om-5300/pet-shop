@@ -27,7 +27,8 @@ nav {
   gap: 20px;
 }
 
-nav a {
+nav button {
+  border: none;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -36,6 +37,7 @@ nav a {
   font-weight: 600;
   color: #121212;
   text-decoration: none;
+  background-color: transparent;
 }
 
 nav a img {

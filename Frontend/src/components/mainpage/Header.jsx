@@ -17,6 +17,10 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleNavigation = (path) => {
+    navigate(path);
+    setIsMenuOpen(false); // Close menu after clicking
+  };
   return (
     <header className="header">
       <div className="mainheader">
@@ -30,11 +34,18 @@ const Header = () => {
         <img className="logo" src="/image/Utopianew.png" alt="Logo" onClick={() => navigate("/")} />
 
         <nav className={isMenuOpen ? "active" : ""}>
-          {["Foods", "Dogs", "Cats", "Fish", "Other Pets"].map((item) => (
-            <a key={item} href="#">
-              {item} <img src="/image/downarrow.jpg" alt="arrow" />
-            </a>
-          ))}
+          <button onClick={() => handleNavigation("/showallproducts")}>
+            Dogs <img src="/image/downarrow.jpg" alt="arrow" />
+          </button>
+          <button onClick={() => handleNavigation("/showallproducts")}>
+            Cats <img src="/image/downarrow.jpg" alt="arrow" />
+          </button>
+          <button onClick={() => handleNavigation("/showallproducts")}>
+            Fish <img src="/image/downarrow.jpg" alt="arrow" />
+          </button>
+          <button onClick={() => handleNavigation("/showallproducts")}>
+            Other Pets <img src="/image/downarrow.jpg" alt="arrow" />
+          </button>
         </nav>
 
         <div className="social">
