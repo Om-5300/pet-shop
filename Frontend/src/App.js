@@ -30,11 +30,11 @@ const Home = () => {
       <MainImage />
       <DogFoodBrands />
       <Information />
-      <Seller />
+      <ExploreProduct />
+      {/* <Seller /> */}
       <AboutUs />
       <Customer />
       <MainProduct />
-      <ExploreProduct />
     </>
   ) : (
     <Navigate to="/login" replace />

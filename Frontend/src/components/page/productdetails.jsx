@@ -42,7 +42,6 @@ const ProductDetails = () => {
   if (loading) return <h2>Loading...</h2>;
   if (!product) return <h2>Product not found</h2>;
 
-  // ✅ Handle Add to Bag
   const handleAddToBag = () => {
     const cartItem = {
       id: product.id,
@@ -52,15 +51,30 @@ const ProductDetails = () => {
       quantity,
       size,
     };
-
-    // Store cart in localStorage
+  
+    // Get existing cart from localStorage
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-    existingCart.push(cartItem);
+  
+    // Check if the product already exists in the cart
+    const existingProductIndex = existingCart.findIndex(
+      (item) => item.id === cartItem.id && item.size === cartItem.size
+    );
+  
+    if (existingProductIndex !== -1) {
+      // Update quantity if the product already exists
+      existingCart[existingProductIndex].quantity += quantity;
+    } else {
+      // Add new item if it doesn't exist
+      existingCart.push(cartItem);
+    }
+  
+    // Store the updated cart back in localStorage
     localStorage.setItem("cart", JSON.stringify(existingCart));
-
+  
     // Navigate to Cart Page
     navigate("/cart");
   };
+  
 
   return (
     <div className="product-container">
