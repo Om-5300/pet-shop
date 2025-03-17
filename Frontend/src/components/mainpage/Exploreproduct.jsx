@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
-import "./bestseller.css";
+import "./Exploreproduct.css";
 
 const Seller = () => {
   const [products, setProducts] = useState([]);

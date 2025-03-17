@@ -1,83 +1,157 @@
 .show-all-products {
-    width: 90%;
-    margin: auto;
-    padding: 20px;
-  }
+  padding: 50px 5%;
+}
+
+.main-heading {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.category-section {
+  margin-bottom: 50px;
+}
+
+.category-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  text-align: left;
+}
+
+/* Product Card Styling */
+.product-card {
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px; /* Ensures uniform height for all product cards */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Product Image */
+.product-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+/* Product Title */
+.product-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  min-height: 50px; /* Ensures uniform title height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Product Price/Description */
+.product-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+  min-height: 40px; /* Ensures uniform description height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Discounted Price */
+.discounted-price {
+  color: #e63946;
+  font-weight: bold;
+}
+
+/* Base Price */
+.base-price {
+  text-decoration: line-through;
+  margin-left: 8px;
+  color: #999;
+}
+
+/* Save Price */
+.save-price {
+  color: #2a9d8f;
+  font-size: 0.9rem;
+  margin-left: 8px;
+}
+
+/* View Details Button */
+.view-details {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #147099;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: auto; /* Pushes button to bottom */
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+}
+
+.view-details:hover {
+  background-color: #e63946;
+}
+
+/* Swiper Customization */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
   
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
   .main-heading {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 28px;
   }
-  
-  .category-section {
-    margin-bottom: 40px;
-  }
-  
   .category-title {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 24px;
   }
-  
+}
+
+@media screen and (max-width: 768px) {
+  .main-heading {
+    font-size: 24px;
+  }
+  .category-title {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .show-all-products {
+    padding: 30px 3%;
+  }
+  .main-heading {
+    font-size: 20px;
+  }
+  .category-title {
+    font-size: 18px;
+  }
   .product-card {
-    background: #fff;
     padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
-  
   .product-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+    max-width: 120px;
   }
-  
-  .product-title {
-    font-size: 1.2rem;
-    margin: 10px 0;
-  }
-  
-  .product-description {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .product-price {
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  
-  .discounted-price {
-    color: #e63946;
-    font-weight: bold;
-  }
-  
-  .base-price {
-    text-decoration: line-through;
-    margin-left: 8px;
-    color: #999;
-  }
-  
-  .save-price {
-    color: #2a9d8f;
-    font-size: 0.9rem;
-    margin-left: 8px;
-  }
-  
-  .view-details {
-    background-color: #f77f00;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .view-details:hover {
-    background-color: #e63946;
-  }
-  
+}

@@ -5,7 +5,6 @@ import ScrollToTop from "./components/scrolltotop";
 import MainImage from "./components/mainpage/Mainimage";
 import DogFoodBrands from "./components/mainpage/DogFoodBrands";
 import Information from "./components/mainpage/information";
-import Seller from "./components/mainpage/bestseller";
 import AboutUs from "./components/mainpage/AboutUs";
 import Customer from "./components/mainpage/Customer";
 import MainProduct from "./components/mainpage/mainproduct";
@@ -31,7 +30,6 @@ const Home = () => {
       <DogFoodBrands />
       <Information />
       <ExploreProduct />
-      {/* <Seller /> */}
       <AboutUs />
       <Customer />
       <MainProduct />
