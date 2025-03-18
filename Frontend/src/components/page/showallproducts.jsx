@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./showallproducts.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -30,20 +31,18 @@ const ShowAllProducts = () => {
             mousewheel={true}
             keyboard={true}
             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-            slidesPerView="auto"
             spaceBetween={20}
             breakpoints={{
-              480: { slidesPerView: 2, spaceBetween: 20 },
-              640: { slidesPerView: 2, spaceBetween: 20 },
-              768: { slidesPerView: 2, spaceBetween: 20 },
-              820: { slidesPerView: 3, spaceBetween: 20 },
-              1024: { slidesPerView: 3, spaceBetween: 20 },
-              1280: { slidesPerView: 4, spaceBetween: 20 },
+              320: { slidesPerView: 1, spaceBetween: 10 },
+              480: { slidesPerView: 2, spaceBetween: 15 },
+              768: { slidesPerView: 3, spaceBetween: 20 },
+              1024: { slidesPerView: 4, spaceBetween: 25 },
+              1280: { slidesPerView: 5, spaceBetween: 30 },
             }}
           >
             {category.items.map((item, i) => (
               <SwiperSlide key={i}>
-                <div className="product-card">
+                <div className="product-item">
                   <img src={item.images[0]} alt={item.title} className="product-image" />
                   <h3 className="product-title">{item.title}</h3>
                   <p className="product-price">
@@ -51,7 +50,9 @@ const ShowAllProducts = () => {
                     <span className="base-price">{item.price.base}</span>
                     <span className="save-price">Save {item.price.save}</span>
                   </p>
-                  <button className="view-details">View Details</button>
+                  <Link to={`/product/${item.id}`} className="view-details">
+                    View Details
+                  </Link>
                 </div>
               </SwiperSlide>
             ))}

@@ -1,11 +1,12 @@
+/* General Styling */
 .show-all-products {
   padding: 50px 5%;
 }
 
 .main-heading {
-  text-align: center;
   font-size: 40px;
   font-weight: 400;
+  text-align: center;
   margin-bottom: 40px;
 }
 
@@ -14,10 +15,8 @@
 }
 
 .category-title {
-  font-size: 30px;
+  font-size: 28px;
   margin-bottom: 20px;
-  margin-left: 30px;
-  text-align: left;
 }
 
 /* Product Card Styling */
@@ -31,12 +30,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 350px; /* Ensures uniform height for all product cards */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 350px;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
 /* Product Image */
@@ -45,54 +43,49 @@
   max-width: 200px;
   height: auto;
   margin-bottom: 10px;
-  border-radius: 8px;
-  background-color: transparent;
+  border-radius: 20px;
 }
 
 /* Product Title */
 .product-title {
   font-size: 18px;
   margin-bottom: 5px;
-  min-height: 50px; /* Ensures uniform title height */
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Product Price/Description */
+/* Product Price */
 .product-price {
   font-size: 16px;
   font-weight: bold;
   color: #333;
   margin-bottom: 10px;
   text-align: center;
-  min-height: 40px; /* Ensures uniform description height */
+  min-height: 40px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-/* Discounted Price */
 .discounted-price {
-  color: #e63946;
+  color: #147099;
   font-weight: bold;
 }
 
-/* Base Price */
 .base-price {
   text-decoration: line-through;
-  margin-left: 8px;
   color: #999;
+  margin-left: 5px;
 }
 
-/* Save Price */
 .save-price {
-  color: #2a9d8f;
-  font-size: 0.9rem;
-  margin-left: 8px;
+  color: green;
+  font-size: 14px;
 }
 
-/* View Details Button */
+/* Button Styling */
 .view-details {
   display: inline-block;
   padding: 10px 20px;
@@ -102,21 +95,11 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: 700;
-  margin-top: auto; /* Pushes button to bottom */
-  cursor: pointer;
-  transition: 0.3s;
-  border: none;
+  margin-top: auto;
 }
 
 .view-details:hover {
-  background-color: #e63946;
-}
-
-/* Swiper Customization */
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  
+  background-color: #0d5a75;
 }
 
 /* Responsive Design */
