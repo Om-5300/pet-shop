@@ -11,12 +11,13 @@ const Seller = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/product") // Fetch all products
+    fetch("http://localhost:5000/product")
       .then((res) => res.json())
       .then((data) => {
-        // Flatten category items into a single product array
-        const allProducts = data.flatMap((category) => category.items);
-        setProducts(allProducts);
+        const limitedProducts = data.flatMap((category) =>
+          category.items.slice(0, 3) // Get only first 3 products from each category
+        );
+        setProducts(limitedProducts);
       })
       .catch((err) => console.error("Error fetching products:", err));
   }, []);
@@ -48,24 +49,21 @@ const Seller = () => {
         }}
       >
         {products.length > 0 ? (
-          products.map((item, index) => {
-            console.log("Product ID:", index + 1); // Using index as ID
-            return (
-              <SwiperSlide key={index}>
-                <div className="product-item">
-                  <img
-                    src={item.images?.[0] || "/default-image.jpg"}
-                    alt={item.title || "Product"}
-                  />
-                  <h2>{item.title || "No Title"}</h2>
-                  <p>{item.price?.discounted ?? "N/A"}</p>
-                  <Link to={`/product/${item.id}`} className="view-details">
-                    View Details
-                  </Link>
-                </div>
-              </SwiperSlide>
-            );
-          })
+          products.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="product-item">
+                <img
+                  src={item.images?.[0] || "/default-image.jpg"}
+                  alt={item.title || "Product"}
+                />
+                <h2>{item.title || "No Title"}</h2>
+                <p>{item.price?.discounted ?? "N/A"}</p>
+                <Link to={`/product/${item.id}`} className="view-details">
+                  View Details
+                </Link>
+              </div>
+            </SwiperSlide>
+          ))
         ) : (
           <p>Loading products...</p>
         )}
