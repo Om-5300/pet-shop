@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./productdetails.css";
 
 const ProductDetails = () => {
@@ -10,6 +11,8 @@ const ProductDetails = () => {
   const [selectedImage, setSelectedImage] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("1 kg");
+  const [addingToCart, setAddingToCart] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -29,6 +32,7 @@ const ProductDetails = () => {
         setSelectedImage(selectedProduct.images[0]);
       } catch (error) {
         console.error("Error fetching product:", error);
+        setErrorMessage("Failed to load product. Please try again later.");
       } finally {
         setLoading(false);
       }
@@ -37,33 +41,79 @@ const ProductDetails = () => {
     fetchProduct();
   }, [id]);
 
-  if (loading) return <h2>Loading...</h2>;
-  if (!product) return <h2>Product not found</h2>;
-
-  const handleAddToBag = () => {
-    const cartItem = {
-      id: product.id,
-      title: product.title,
-      price: product.price.discounted,
-      image: selectedImage,
-      quantity,
-      size,
-    };
-
-    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProductIndex = existingCart.findIndex(
-      (item) => item.id === cartItem.id && item.size === cartItem.size
-    );
-
-    if (existingProductIndex !== -1) {
-      existingCart[existingProductIndex].quantity += quantity;
-    } else {
-      existingCart.push(cartItem);
+  const handleAddToBag = async () => {
+    try {
+      setAddingToCart(true);
+      setErrorMessage("");
+      
+      // Get token from localStorage or your auth state
+      const token = localStorage.getItem("token");
+      const isAuthenticated=localStorage.getItem("isAuthenticated")
+      if (!isAuthenticated) {
+        // Redirect to login if not authenticated
+        navigate("/login", { state: { from: `/product/${id}` } });
+        return;
+      }
+      const storedUser=localStorage.getItem("users")
+      const parsedUser = JSON.parse(storedUser)
+      
+      const cartItem = {
+        email:parsedUser[0].email,
+        productId: product.id,
+        title: product.title,
+        price: product.price.discounted,
+        image: selectedImage,
+        quantity,
+        size,
+      };
+      
+      // const config = {
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //     'x-auth-token': token
+      //   }
+      // };
+      
+      // Make API request to add item to cart
+      const response = await axios.post(
+        "http://localhost:5000/api/cart/add", 
+        cartItem
+      );
+      
+      // Show success feedback
+      // You could use a toast notification library here
+      console.log("Added to cart successfully", response.data);
+      
+      // Navigate to cart page
+      navigate("/cart");
+      
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+      
+      if (error.response && error.response.status === 401) {
+        navigate("/login", { state: { from: `/product/${id}` } });
+      } else {
+        setErrorMessage("Failed to add item to cart. Please try again.");
+      }
+    } finally {
+      setAddingToCart(false);
     }
-
-    localStorage.setItem("cart", JSON.stringify(existingCart));
-    navigate("/cart");
   };
+
+  // Fallback UI for loading state
+  if (loading) return (
+    <div className="loading-container">
+      <h2>Loading product details...</h2>
+    </div>
+  );
+  
+  // Fallback UI for error state
+  if (!product) return (
+    <div className="error-container">
+      <h2>Product not found</h2>
+      <button onClick={() => navigate('/')}>Return to Home</button>
+    </div>
+  );
 
   return (
     <div className="product-container">
@@ -85,7 +135,7 @@ const ProductDetails = () => {
       <div className="product-info">
         <h1>{product.title}</h1>
         <p className="product-price">
-          <strong>{product.price.discounted}</strong> <del>{product.price.base}</del> ({product.price.save} off)
+          <strong>₹{product.price.discounted}</strong> <del>₹{product.price.base}</del> ({product.price.save} off)
         </p>
 
         <div className="size-options">
@@ -107,12 +157,18 @@ const ProductDetails = () => {
             type="number"
             min="1"
             value={quantity}
-            onChange={(e) => setQuantity(parseInt(e.target.value))}
+            onChange={(e) => setQuantity(parseInt(e.target.value) || 1)}
           />
         </div>
 
-        <button className="add-to-cart" onClick={handleAddToBag}>
-          Add to Bag
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+        <button 
+          className="add-to-cart" 
+          onClick={handleAddToBag}
+          disabled={addingToCart}
+        >
+          {addingToCart ? "Adding..." : "Add to Bag"}
         </button>
 
         <div className="product-description">

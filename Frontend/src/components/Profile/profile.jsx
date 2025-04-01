@@ -11,15 +11,17 @@ const Profile = () => {
 
   useEffect(() => {
     const isAuthenticated = localStorage.getItem("isAuthenticated");
-
+    console.log("true")
     if (!isAuthenticated) {
       navigate("/login", { replace: true });
     } else {
-      const storedUser = localStorage.getItem("user");
+      const storedUser = localStorage.getItem("users");
+    
       if (storedUser) {
         try {
+          
           const parsedUser = JSON.parse(storedUser);
-          setUserEmail(parsedUser?.email || "Guest");
+          setUserEmail(parsedUser[0].name);
         } catch (error) {
           console.error("Error parsing user data:", error);
           setUserEmail("Guest");

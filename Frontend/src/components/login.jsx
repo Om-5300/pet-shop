@@ -18,7 +18,7 @@ const Login = () => {
       });
 
       if (response.status === 200) {
-        localStorage.setItem("isAuthenticated", "true");
+        localStorage.setItem("isAuthenticated", true);
         localStorage.setItem("user", JSON.stringify(response.data.user)); // Store user details
 
         toast.success("Login successful!", { duration: 3000 }); // ✅ Toast message

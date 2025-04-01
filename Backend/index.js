@@ -6,11 +6,11 @@ const userRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
 const bestsellerRouter = require("./routes/bestsellerRoutes"); 
 const productRoutes = require("./routes/productroutes");
-
+const cartRoutes= require("./routes/cartRoute")
 app.use(cors({
   origin: "http://localhost:3000", // Frontend origin (React app)
   methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"],
+  allowedHeaders: ["Content-Type","email"],
 }));
 
 app.use(express.json());
@@ -27,6 +27,6 @@ app.use("/register", userRouter);
 app.use("/login", loginRouter);
 app.use("/bestsellers", bestsellerRouter); // ✅ Add bestseller API
 app.use("/product", productRoutes); // ✅ Add product routes
-
+app.use('/api/cart', cartRoutes);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));

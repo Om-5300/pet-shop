@@ -4,13 +4,13 @@ import "./Header.css";
 
 const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    localStorage.getItem("isAuthenticated") === "true"
+    localStorage.getItem("isAuthenticated") === true
   );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setIsAuthenticated(localStorage.getItem("isAuthenticated") === "true");
+    setIsAuthenticated(localStorage.getItem("isAuthenticated") === true);
   }, []);
 
   const toggleMenu = () => {

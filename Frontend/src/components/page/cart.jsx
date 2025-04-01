@@ -1,100 +1,118 @@
-import React, { useState, useEffect } from "react";
-import "./cart.css";
-import { FaTrash } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "./cart.css";
+
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
+  const [cartItems, setCartItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [totalPrice, setTotalPrice] = useState(0);
+
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(storedCart);
+    fetchCart();
   }, []);
 
-  const handleRemoveItem = (index) => {
-    const updatedCart = cartItems.filter((_, i) => i !== index);
-    setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
+  useEffect(() => {
+    setTotalPrice(cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0));
+  }, [cartItems]);
 
-  const handleQuantityChange = (index, change) => {
-    const updatedCart = [...cartItems];
-    if (updatedCart[index].quantity + change > 0) {
-      updatedCart[index].quantity += change;
-      setCartItems(updatedCart);
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
+  const fetchCart = async () => {
+    try {
+      setLoading(true);
+      setError("");
+      
+      const isAuthenticated = localStorage.getItem("isAuthenticated");
+      if (!isAuthenticated) {
+        navigate("/login", { state: { from: "/cart" } });
+        return;
+      }
+      
+      const storedUser = localStorage.getItem("users");
+      if (!storedUser) throw new Error("User data not found");
+      
+      const parsedUser = JSON.parse(storedUser);
+      const email = parsedUser[0].email;
+      if (!email) throw new Error("Invalid user data");
+      
+      const response = await axios.get("http://localhost:5000/api/cart",{
+        headers: { email }
+      }); 
+      
+      setCartItems(response.data.items || []);
+    } catch (err) {
+      console.error("Error fetching cart:", err);
+      setError("Failed to load your cart. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
-  const parsePrice = (price) =>
-    parseFloat(price.toString().replace(/[^0-9.]/g, "")) || 0;
-
-  const calculateTotal = () => {
-    return cartItems
-      .reduce((acc, item) => acc + parsePrice(item.price) * item.quantity, 0)
-      .toFixed(2);
+  const updateQuantity = async (itemId, newQuantity) => {
+    if (newQuantity < 1) return;
+    
+    try {
+      await axios.put(`http://localhost:5000/api/cart/update/${itemId}`, { quantity: newQuantity });
+      
+      setCartItems(prevItems => prevItems.map(item =>
+        item._id === itemId ? { ...item, quantity: newQuantity } : item
+      ));
+    } catch (err) {
+      console.error("Error updating quantity:", err);
+      setError("Failed to update quantity. Please try again.");
+    }
   };
+
+  const removeItem = async (itemId) => {
+    try {
+      await axios.delete(`http://localhost:5000/api/cart/remove/${itemId}`);
+      
+      setCartItems(prevItems => prevItems.filter(item => item._id !== itemId));
+    } catch (err) {
+      console.error("Error removing item:", err);
+      setError("Failed to remove item. Please try again.");
+    }
+  };
+
+  const proceedToCheckout = () => navigate("/checkout");
+
+  if (loading) return <h2>Loading your cart...</h2>;
+  if (error) return <div className="error-container"><p>{error}</p><button onClick={fetchCart}>Try Again</button></div>;
+  if (cartItems.length === 0) return <div className="empty-cart"><h2>Your cart is empty</h2><button onClick={() => navigate("/")}>Continue Shopping</button></div>;
 
   return (
     <div className="cart-container">
-      <div className="cart-header">
-        <h1>Your Cart</h1>
-        <button className="continue-shopping" onClick={() => navigate("/")}>
-          Continue Shopping
-        </button>
-      </div>
-      {cartItems.length === 0 ? (
-        <h2 className="empty-cart">Your cart is empty</h2>
-      ) : (
-        <div className="cart">
-          <div className="cart-header-details">
-            <div className="product-header">PRODUCT</div>
-            <div className="quantity-header">QUANTITY</div>
-            <div className="total-header">TOTAL</div>
-          </div>
-          {cartItems.map((item, index) => (
-            <div key={index} className="cart-item">
-              <div className="product">
-                <img src={item.image} alt={item.title} className="item-image" />
-                <div className="product-details">
-                  <p>{item.title}</p>
-                  <p className="price">₹{parsePrice(item.price)}</p>
-                </div>
+      <h1>Shopping Cart</h1>
+      <div className="cart-items">
+        {cartItems.map((item) => (
+          <div key={item._id} className="cart-item">
+            <img src={item.image} alt={item.title} className="item-image" />
+            <div className="item-details">
+              <h3>{item.title}</h3>
+              <p>Size: {item.size}</p>
+              <p className="item-price">${item.price}</p>
+              <div className="quantity-controls">
+                <button onClick={() => updateQuantity(item._id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
+                <span>{item.quantity}</span>
+                <button onClick={() => updateQuantity(item._id, item.quantity + 1)}>+</button>
               </div>
-              <div className="quantity">
-                <button onClick={() => handleQuantityChange(index, -1)}>
-                  -
-                </button>
-                <input type="text" value={item.quantity} readOnly />
-                <button onClick={() => handleQuantityChange(index, 1)}>
-                  +
-                </button>
-                <button
-                  className="delete"
-                  onClick={() => handleRemoveItem(index)}
-                >
-                  <FaTrash />
-                </button>
-              </div>
-              <div className="total">
-                ₹{(parsePrice(item.price) * item.quantity).toFixed(2)}
-              </div>
+              <button className="remove-btn" onClick={() => removeItem(item._id)}>Remove</button>
             </div>
-          ))}
-        </div>
-      )}
-      {cartItems.length > 0 && (
-        <div className="checkout">
-          <p className="estimated-total">
-            Estimated Total: <span>₹{calculateTotal()}</span>
-          </p>
-          <p className="tax-info">
-            Tax included. <a href="#">Shipping</a> and discounts calculated at
-            checkout.
-          </p>
-          <button className="checkout-button">Check Out</button>
-         
-        </div>
-      )}
+            <div className="item-subtotal">
+              <p>${(item.price * item.quantity).toFixed(2)}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="cart-summary">
+        <h2>Order Summary</h2>
+        <div className="summary-row"><span>Subtotal</span><span>${totalPrice.toFixed(2)}</span></div>
+        <div className="summary-row"><span>Shipping</span><span>$5.99</span></div>
+        <div className="summary-row total"><span>Total</span><span>${(totalPrice + 5.99).toFixed(2)}</span></div>
+        <button className="checkout-btn" onClick={proceedToCheckout}>Proceed to Checkout</button>
+        <button className="continue-shopping" onClick={() => navigate("/")}>Continue Shopping</button>
+      </div>
     </div>
   );
 };
