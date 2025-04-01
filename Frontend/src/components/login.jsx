@@ -1,34 +1,40 @@
 import axios from "axios";
 import { useState } from "react";
-import toast from "react-hot-toast"; // ✅ Import toast
+import toast from "react-hot-toast"; // For notifications
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    setLoading(true);
 
     try {
       const response = await axios.post("http://localhost:5000/login", { email, password }, {
         headers: { "Content-Type": "application/json" }
       });
 
-      if (response.status === 200) {
-        localStorage.setItem("isAuthenticated", true);
-        localStorage.setItem("user", JSON.stringify(response.data.user)); // Store user details
+      if (response.data.success) {
+        // ✅ Save user details in localStorage
+        localStorage.setItem("isAuthenticated", "true");
+        localStorage.setItem("users", JSON.stringify({ name: response.data.username, email: response.data.email }));
 
-        toast.success("Login successful!", { duration: 3000 }); // ✅ Toast message
+        toast.success("Login successful!", { duration: 3000 });
 
-        setTimeout(() => navigate("/"), 1000); // ✅ Delay navigation to ensure toast is visible
+        setTimeout(() => navigate("/"), 1000); // Redirect after success
       } else {
-        toast.error("Invalid email or password.");
+        toast.error(response.data.msg);
       }
     } catch (error) {
       toast.error(error.response?.data?.msg || "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -41,7 +47,9 @@ const Login = () => {
         <div className="input-container">
           <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-          <button onClick={handleLogin} disabled={!email || !password}>Continue</button>
+          <button onClick={handleLogin} disabled={!email || !password || loading}>
+            {loading ? "Logging in..." : "Continue"}
+          </button>
         </div>
         <Link to="/register" className="Register">Register</Link>
       </div>

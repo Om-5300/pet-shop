@@ -58,7 +58,7 @@ const ProductDetails = () => {
       const parsedUser = JSON.parse(storedUser)
       
       const cartItem = {
-        email:parsedUser[0].email,
+        email:parsedUser.email,
         productId: product.id,
         title: product.title,
         price: product.price.discounted,

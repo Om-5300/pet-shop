@@ -4,13 +4,13 @@ import "./Header.css";
 
 const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    localStorage.getItem("isAuthenticated") === true
+    localStorage.getItem("isAuthenticated")
   );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setIsAuthenticated(localStorage.getItem("isAuthenticated") === true);
+    setIsAuthenticated(localStorage.getItem("isAuthenticated"));
   }, []);
 
   const toggleMenu = () => {
@@ -21,6 +21,7 @@ const Header = () => {
     navigate(path);
     setIsMenuOpen(false); // Close menu after clicking
   };
+
   return (
     <header className="header">
       <div className="mainheader">
@@ -54,10 +55,7 @@ const Header = () => {
           </a>
 
           {isAuthenticated ? (
-            <button
-              onClick={() => navigate("/profile")}
-              className="profile-btn"
-            >
+            <button onClick={() => navigate("/profile")} className="profile-btn">
               <img src="/image/profileicon.svg" alt="Profile" />
             </button>
           ) : (

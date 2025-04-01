@@ -33,7 +33,7 @@ const Cart = () => {
       if (!storedUser) throw new Error("User data not found");
       
       const parsedUser = JSON.parse(storedUser);
-      const email = parsedUser[0].email;
+      const email = parsedUser.email;
       if (!email) throw new Error("Invalid user data");
       
       const response = await axios.get("http://localhost:5000/api/cart",{

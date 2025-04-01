@@ -16,7 +16,7 @@ const Profile = () => {
       navigate("/login", { replace: true });
     } else {
       const storedUser = localStorage.getItem("users");
-    
+      
       if (storedUser) {
         try {
           
@@ -52,7 +52,7 @@ const Profile = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
-    localStorage.removeItem("user");
+    localStorage.removeItem("users");
     navigate("/login", { replace: true });
   };
 

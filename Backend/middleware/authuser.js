@@ -2,7 +2,7 @@ const User = require("../models/register");
 const bcrypt = require("bcryptjs");
 
 const authenticateUser = async (req, res, next) => {
-    console.log("Hello")
+    
     const { email, password } = req.body;
 
     try {
@@ -17,10 +17,11 @@ const authenticateUser = async (req, res, next) => {
         if (password != user.password) {
             return res.status(400).json({ success: false, msg: "Invalid password." });
         }else{
-            return res.status(200).json({ success: true, msg: "Login successful." });
+            console.log(user.username)
+            return res.status(200).json({ success: true, msg: "Login successful.", username: user.username, email: user.email });
         }
 
-        req.user = { name: user.name, email: user.email };
+        
         next(); // Pass to the next middleware or route handler
 
     } catch (error) {
