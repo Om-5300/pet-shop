@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import React from "react";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/scrolltotop";
@@ -20,7 +20,6 @@ import Cart from "./components/page/cart";
 import "./App.css";
 import { Toaster } from "react-hot-toast";
 
-// ✅ Home Component
 const Home = () => {
   const isAuthenticated = JSON.parse(localStorage.getItem("isAuthenticated")) || false;
 
@@ -39,7 +38,6 @@ const Home = () => {
   );
 };
 
-// ✅ Product Details Page
 const ProductDetailsPage = () => (
   <>
     <ProductDetail />
@@ -47,29 +45,45 @@ const ProductDetailsPage = () => (
   </>
 );
 
-// ✅ About Us Page
 const AboutUsDetailsPage = () => <AboutUsDetails />;
 
-// ✅ App Component
-const App = () => {
+// ✅ `AppContent` is now inside the `Router` so `useLocation()` works correctly.
+const AppContent = () => {
+  const location = useLocation();
+  const hideLayoutRoutes = ["/login", "/register"]; // Routes without Header/Footer
+
   return (
     <>
-      <Toaster position="top-right" reverseOrder={false} />
-      <Router>
-        <ScrollToTop />
-        <Layout> 
+      <ScrollToTop />
+      {hideLayoutRoutes.includes(location.pathname) ? (
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      ) : (
+        <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/profile-detail" element={<ProfileDetail />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
             <Route path="/about-us-details" element={<AboutUsDetailsPage />} />
             <Route path="/product/:id" element={<ProductDetailsPage />} />
             <Route path="/showallproducts" element={<ShowAllProducts />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </Layout>
+      )}
+    </>
+  );
+};
+
+// ✅ Now `App` correctly wraps `AppContent` inside the `Router`
+const App = () => {
+  return (
+    <>
+      <Toaster position="top-right" reverseOrder={false} />
+      <Router>
+        <AppContent />
       </Router>
     </>
   );
