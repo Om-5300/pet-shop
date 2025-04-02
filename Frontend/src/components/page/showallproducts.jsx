@@ -46,8 +46,8 @@ const ShowAllProducts = () => {
                   <img src={item.images[0]} alt={item.title} className="product-image" />
                   <h3 className="product-title">{item.title}</h3>
                   <p className="product-price">
-                    <span className="discounted-price">{item.price.discounted}</span>{" "}
-                    <span className="base-price">{item.price.base}</span>
+                    <span className="discounted-price">₹{item.price.discounted}</span>{" "}
+                    <span className="base-price">₹{item.price.base}</span>
                     <span className="save-price">Save {item.price.save}</span>
                   </p>
                   <Link to={`/product/${item.id}`} className="view-details">
