@@ -9,7 +9,7 @@ const productRoutes = require("./routes/productroutes");
 const cartRoutes= require("./routes/cartRoute")
 app.use(cors({
   origin: "http://localhost:3000", // Frontend origin (React app)
-  methods: ["GET", "POST"],
+  methods: ["GET", "POST","PUT","DELETE"],
   allowedHeaders: ["Content-Type","email"],
 }));
 

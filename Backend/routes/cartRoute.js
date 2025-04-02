@@ -5,7 +5,7 @@ const Cart = require('../models/Carts');
 router.get("/", async (req, res) => {
   try {
     const email = req.headers.email;
-    console.log(email)
+    
     if (!email) return res.status(400).json({ error: "Email is required" });
     
     const cart = await Cart.findOne({ userId: email });
@@ -62,13 +62,13 @@ router.post('/add',  async (req, res) => {
 // Update cart item quantity
 router.put('/update/:itemId',  async (req, res) => {
   try {
-    const { quantity } = req.body;
+    const { quantity, emailId } = req.body;
     
     if (!quantity || quantity < 1) {
       return res.status(400).json({ message: 'Invalid quantity' });
     }
     
-    const cart = await Cart.findOne({ userId: req.user.id });
+    const cart = await Cart.findOne({ userId: emailId });
     
     if (!cart) {
       return res.status(404).json({ message: 'Cart not found' });
@@ -93,8 +93,10 @@ router.put('/update/:itemId',  async (req, res) => {
 // Remove item from cart
 router.delete('/remove/:itemId',  async (req, res) => {
   try {
-    const cart = await Cart.findOne({ userId: req.user.id });
-    
+    const email = req.headers.email;
+    const cart = await Cart.findOne({ userId: email });
+    console.log(email)
+    console.log(cart)
     if (!cart) {
       return res.status(404).json({ message: 'Cart not found' });
     }
