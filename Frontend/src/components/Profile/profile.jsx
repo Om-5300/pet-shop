@@ -1,49 +1,40 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {jwtDecode} from "jwt-decode";
 import "./profile.css";
 
 const Profile = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [userEmail, setUserEmail] = useState("Loading...");
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
 
   useEffect(() => {
-    const isAuthenticated = localStorage.getItem("isAuthenticated");
-    console.log("true")
-    if (!isAuthenticated) {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
       navigate("/login", { replace: true });
     } else {
-      const storedUser = localStorage.getItem("users");
-      
-      if (storedUser) {
-        try {
-          
-          const parsedUser = JSON.parse(storedUser);
-          setUserEmail(parsedUser[0].name);
-        } catch (error) {
-          console.error("Error parsing user data:", error);
-          setUserEmail("Guest");
-        }
-      } else {
-        setUserEmail("Guest");
+      try {
+        const decoded = jwtDecode(token);
+        setUserEmail(decoded.email || "Guest"); // Fallback if email isn't in token
+      } catch (error) {
+        console.error("Invalid token:", error);
+        navigate("/login", { replace: true });
       }
     }
   }, [navigate]);
 
-  // Close dropdown when clicking outside
+  // Close dropdown on outside click
   useEffect(() => {
-    function handleClickOutside(event) {
+    const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsDropdownOpen(false);
       }
-    }
+    };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const toggleDropdown = () => {
@@ -51,8 +42,8 @@ const Profile = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated");
-    localStorage.removeItem("users");
+    localStorage.removeItem("token");
+    localStorage.removeItem("user")
     navigate("/login", { replace: true });
   };
 
@@ -76,7 +67,7 @@ const Profile = () => {
                 onClick={() => navigate("/profiledetail")}
                 className="profile-dropdown-item"
               >
-                Profile{" "}
+                Profile
               </button>
               <button className="profile-dropdown-item" onClick={handleLogout}>
                 Log out
@@ -98,21 +89,11 @@ const Profile = () => {
 
       <footer className="profile-footer">
         <ul className="profile-footer-policies">
-          <li>
-            <a href="#return-policy">Return policy</a>
-          </li>
-          <li>
-            <a href="#shipping-policy">Shipping policy</a>
-          </li>
-          <li>
-            <a href="#privacy-policy">Privacy policy</a>
-          </li>
-          <li>
-            <a href="#terms-of-service">Terms of service</a>
-          </li>
-          <li>
-            <a href="#cancellation-policy">Cancellation policy</a>
-          </li>
+          <li><a href="#return-policy">Return policy</a></li>
+          <li><a href="#shipping-policy">Shipping policy</a></li>
+          <li><a href="#privacy-policy">Privacy policy</a></li>
+          <li><a href="#terms-of-service">Terms of service</a></li>
+          <li><a href="#cancellation-policy">Cancellation policy</a></li>
         </ul>
         <p>&copy; 2023 Utopia Pet Shop. All rights reserved.</p>
       </footer>

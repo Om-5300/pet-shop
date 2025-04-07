@@ -26,21 +26,16 @@ const Cart = () => {
       setLoading(true);
       setError("");
 
-      const isAuthenticated = localStorage.getItem("isAuthenticated");
-      if (!isAuthenticated) {
+      const token = localStorage.getItem("token");
+      if (!token) {
         navigate("/login", { state: { from: "/cart" } });
         return;
       }
 
-      const storedUser = localStorage.getItem("users");
-      if (!storedUser) throw new Error("User data not found");
-
-      const parsedUser = JSON.parse(storedUser);
-      const email = parsedUser.email;
-      if (!email) throw new Error("Invalid user data");
-
       const response = await axios.get("http://localhost:5000/api/cart", {
-        headers: { email },
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
 
       setCartItems(response.data.items || []);
@@ -54,16 +49,20 @@ const Cart = () => {
 
   const updateQuantity = async (itemId, newQuantity) => {
     if (newQuantity < 1) return;
-    const storedUser = localStorage.getItem("users");
-    if (!storedUser) throw new Error("User data not found");
 
-    const parsedUser = JSON.parse(storedUser);
-    const email = parsedUser.email;
+    const token = localStorage.getItem("token");
+    if (!token) return;
+
     try {
-      await axios.put(`http://localhost:5000/api/cart/update/${itemId}`, {
-        quantity: newQuantity,
-        emailId: email,
-      });
+      await axios.put(
+        `http://localhost:5000/api/cart/update/${itemId}`,
+        { quantity: newQuantity },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       setCartItems((prevItems) =>
         prevItems.map((item) =>
@@ -77,15 +76,14 @@ const Cart = () => {
   };
 
   const removeItem = async (itemId) => {
-    try {
-      const storedUser = localStorage.getItem("users");
-      if (!storedUser) throw new Error("User data not found");
+    const token = localStorage.getItem("token");
+    if (!token) return;
 
-      const parsedUser = JSON.parse(storedUser);
-      const email = parsedUser.email;
-      console.log(email)
-      await axios.delete(`http://localhost:5000/api/cart/remove/${itemId}`,{
-        headers: { email },
+    try {
+      await axios.delete(`http://localhost:5000/api/cart/remove/${itemId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
 
       setCartItems((prevItems) =>
@@ -100,6 +98,7 @@ const Cart = () => {
   const proceedToCheckout = () => navigate("/checkout");
 
   if (loading) return <h2>Loading your cart...</h2>;
+
   if (error)
     return (
       <div className="error-container">
@@ -107,6 +106,7 @@ const Cart = () => {
         <button onClick={fetchCart}>Try Again</button>
       </div>
     );
+
   if (cartItems.length === 0)
     return (
       <div className="empty-cart">
@@ -123,12 +123,14 @@ const Cart = () => {
           Continue Shopping
         </button>
       </div>
+
       <div className="cart">
         <div className="cart-header-details">
           <div className="product-header">PRODUCT</div>
           <div className="quantity-header">QUANTITY</div>
           <div className="total-header">TOTAL</div>
         </div>
+
         {cartItems.map((item) => (
           <div key={item._id} className="cart-item">
             <div className="product">
@@ -138,6 +140,7 @@ const Cart = () => {
                 <p className="price">₹{item.price}</p>
               </div>
             </div>
+
             <div className="quantity">
               <button onClick={() => updateQuantity(item._id, item.quantity - 1)} disabled={item.quantity <= 1}>
                 -
@@ -150,10 +153,12 @@ const Cart = () => {
                 <FaTrash />
               </button>
             </div>
+
             <div className="total">₹{(item.price * item.quantity).toFixed(2)}</div>
           </div>
         ))}
       </div>
+
       <div className="checkout">
         <p className="estimated-total">
           Estimated Total: <span>₹{totalPrice.toFixed(2)}</span>

@@ -3,14 +3,17 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    localStorage.getItem("isAuthenticated")
-  );
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("token"));
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setIsAuthenticated(localStorage.getItem("isAuthenticated"));
+    const handleStorageChange = () => {
+      setIsAuthenticated(!!localStorage.getItem("token"));
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
   const toggleMenu = () => {
@@ -19,7 +22,7 @@ const Header = () => {
 
   const handleNavigation = (path) => {
     navigate(path);
-    setIsMenuOpen(false); // Close menu after clicking
+    setIsMenuOpen(false);
   };
 
   return (
@@ -32,7 +35,12 @@ const Header = () => {
           onClick={toggleMenu}
         />
 
-        <img className="logo" src="/image/Utopianew.png" alt="Logo" onClick={() => navigate("/")} />
+        <img
+          className="logo"
+          src="/image/Utopianew.png"
+          alt="Logo"
+          onClick={() => navigate("/")}
+        />
 
         <nav className={isMenuOpen ? "active" : ""}>
           <button onClick={() => handleNavigation("/showallproducts")}>

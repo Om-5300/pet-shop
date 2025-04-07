@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast"; // ✅ Import toast
+import toast from "react-hot-toast";
 import "./register.css";
 import axios from "axios";
 
@@ -21,26 +21,22 @@ const Register = () => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      toast.error("Passwords do not match!"); // ✅ Show toast error
+      toast.error("Passwords do not match!");
       return;
     }
 
     try {
-      const details = { name, email, password };
-
-      const response = await axios.post("http://localhost:5000/register", details, {
-        headers: { "Content-Type": "application/json" },
+      const response = await axios.post("http://localhost:5000/register", {
+        name,
+        email,
+        password,
       });
 
-      toast.success(response.data.msg || "Registration successful!"); // ✅ Success toast
-      setTimeout(() => navigate("/login"), 1000); // ✅ Delay navigation to allow toast to be seen
-
+      toast.success(response.data.msg || "Registration successful!");
+      setTimeout(() => navigate("/login"), 1000);
     } catch (error) {
-      if (error.response && error.response.data) {
-        toast.error(error.response.data.msg || "Something went wrong."); // ✅ Error toast
-      } else {
-        toast.error("Something went wrong. Please try again.");
-      }
+      const errMsg = error.response?.data?.msg || "Something went wrong.";
+      toast.error(errMsg);
     }
   };
 
@@ -53,14 +49,12 @@ const Register = () => {
         <div className="input-container">
           <input
             type="text"
-            id="username"
             placeholder="Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
             type="email"
-            id="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}

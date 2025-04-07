@@ -45,20 +45,14 @@ const ProductDetails = () => {
     try {
       setAddingToCart(true);
       setErrorMessage("");
-      
-      // Get token from localStorage or your auth state
+
       const token = localStorage.getItem("token");
-      const isAuthenticated=localStorage.getItem("isAuthenticated")
-      if (!isAuthenticated) {
-        // Redirect to login if not authenticated
+      if (!token) {
         navigate("/login", { state: { from: `/product/${id}` } });
         return;
       }
-      const storedUser=localStorage.getItem("users")
-      const parsedUser = JSON.parse(storedUser)
-      
+
       const cartItem = {
-        email:parsedUser.email,
         productId: product.id,
         title: product.title,
         price: product.price.discounted,
@@ -66,30 +60,21 @@ const ProductDetails = () => {
         quantity,
         size,
       };
-      
-      // const config = {
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //     'x-auth-token': token
-      //   }
-      // };
-      
-      // Make API request to add item to cart
+
       const response = await axios.post(
-        "http://localhost:5000/api/cart/add", 
-        cartItem
+        "http://localhost:5000/api/cart/add",
+        cartItem,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
-      
-      // Show success feedback
-      // You could use a toast notification library here
+
       console.log("Added to cart successfully", response.data);
-      
-      // Navigate to cart page
       navigate("/cart");
-      
     } catch (error) {
       console.error("Error adding to cart:", error);
-      
       if (error.response && error.response.status === 401) {
         navigate("/login", { state: { from: `/product/${id}` } });
       } else {
@@ -100,14 +85,12 @@ const ProductDetails = () => {
     }
   };
 
-  // Fallback UI for loading state
   if (loading) return (
     <div className="loading-container">
       <h2>Loading product details...</h2>
     </div>
   );
-  
-  // Fallback UI for error state
+
   if (!product) return (
     <div className="error-container">
       <h2>Product not found</h2>

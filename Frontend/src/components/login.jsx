@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import toast from "react-hot-toast"; // For notifications
+import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 
@@ -12,22 +12,30 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/login", { email, password }, {
-        headers: { "Content-Type": "application/json" }
-      });
+      const response = await axios.post(
+        "http://localhost:5000/login",
+        { email, password },
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
 
       if (response.data.success) {
-        // ✅ Save user details in localStorage
-        localStorage.setItem("isAuthenticated", "true");
-        localStorage.setItem("users", JSON.stringify({ name: response.data.username, email: response.data.email }));
+        // ✅ Save token and user info in localStorage
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            name: response.data.user.username,
+            email: response.data.user.email,
+          })
+        );
 
         toast.success("Login successful!", { duration: 3000 });
-
-        setTimeout(() => navigate("/"), 1000); // Redirect after success
+        setTimeout(() => navigate("/"), 1000);
       } else {
         toast.error(response.data.msg);
       }
@@ -45,8 +53,18 @@ const Login = () => {
         <h3>Log in</h3>
         <p>Enter your email and password to continue</p>
         <div className="input-container">
-          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <button onClick={handleLogin} disabled={!email || !password || loading}>
             {loading ? "Logging in..." : "Continue"}
           </button>

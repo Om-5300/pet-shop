@@ -20,10 +20,11 @@ import Cart from "./components/page/cart";
 import "./App.css";
 import { Toaster } from "react-hot-toast";
 
+// ✅ Home component checks for JWT token instead of isAuthenticated
 const Home = () => {
-  const isAuthenticated = JSON.parse(localStorage.getItem("isAuthenticated")) || false;
+  const token = localStorage.getItem("token");
 
-  return isAuthenticated ? (
+  return token ? (
     <>
       <MainImage />
       <DogFoodBrands />
@@ -47,10 +48,9 @@ const ProductDetailsPage = () => (
 
 const AboutUsDetailsPage = () => <AboutUsDetails />;
 
-// ✅ `AppContent` is now inside the `Router` so `useLocation()` works correctly.
 const AppContent = () => {
   const location = useLocation();
-  const hideLayoutRoutes = ["/login", "/register"]; // Routes without Header/Footer
+  const hideLayoutRoutes = ["/login", "/register"];
 
   return (
     <>
@@ -77,7 +77,6 @@ const AppContent = () => {
   );
 };
 
-// ✅ Now `App` correctly wraps `AppContent` inside the `Router`
 const App = () => {
   return (
     <>
