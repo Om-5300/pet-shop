@@ -51,7 +51,7 @@
   flex-direction: column;
 }
 
-.product-price {
+.product-info .product-price {
   display: flex;
   flex-direction: row;
   font-size: 20px;
