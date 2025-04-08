@@ -58,9 +58,11 @@ const Header = () => {
         </nav>
 
         <div className="social">
+          <button onClick={() => navigate("/doctors")} className="doctors-btn">
           <a href="#">
             <img src="/image/contacticon.png" alt="contact" />
           </a>
+          </button>
 
           {isAuthenticated ? (
             <button onClick={() => navigate("/profile")} className="profile-btn">

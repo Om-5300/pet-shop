@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaArrowLeft } from "react-icons/fa";
 import "./cart.css";
 
 const Cart = () => {
@@ -111,7 +111,9 @@ const Cart = () => {
     return (
       <div className="empty-cart">
         <h2>Your cart is empty</h2>
-        <button onClick={() => navigate("/")}>Continue Shopping</button>
+        <button className="continue-shopping" onClick={() => navigate("/")}>
+          <FaArrowLeft /> Continue Shopping
+        </button>
       </div>
     );
 
@@ -119,9 +121,6 @@ const Cart = () => {
     <div className="cart-container">
       <div className="cart-header">
         <h1>Your Cart</h1>
-        <button className="continue-shopping" onClick={() => navigate("/")}>
-          Continue Shopping
-        </button>
       </div>
 
       <div className="cart">
@@ -157,6 +156,12 @@ const Cart = () => {
             <div className="total">₹{(item.price * item.quantity).toFixed(2)}</div>
           </div>
         ))}
+      </div>
+
+      <div className="cart-actions">
+        <button className="continue-shopping" onClick={() => navigate("/")}>
+          <FaArrowLeft /> Continue Shopping
+        </button>
       </div>
 
       <div className="checkout">

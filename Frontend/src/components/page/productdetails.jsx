@@ -72,7 +72,7 @@ const ProductDetails = () => {
       );
 
       console.log("Added to cart successfully", response.data);
-      navigate("/cart");
+      
     } catch (error) {
       console.error("Error adding to cart:", error);
       if (error.response && error.response.status === 401) {

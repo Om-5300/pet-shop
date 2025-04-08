@@ -10,6 +10,7 @@ const productRoutes = require("./routes/productroutes");
 const cartRoutes = require("./routes/cartRoute");
 const paymentRoutes = require("./routes/paymentRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 // Load environment variables
 dotenv.config();
@@ -46,6 +47,13 @@ app.use("/product", productRoutes); // ✅ Add product routes
 app.use("/api/cart", cartRoutes);
 app.use("/api/payment", paymentRoutes);
 app.use("/api/orders", orderRoutes);
+app.use("/api/users", userRoutes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: "Something went wrong!" });
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>

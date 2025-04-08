@@ -1,0 +1,276 @@
+/* Main container */
+.vet-doctors-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  color: #333;
+  font-family: "Arial", sans-serif;
+}
+
+/* Header styling */
+.vet-header {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vet-header h1 {
+  margin: 0;
+  color: #147099;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.vet-header h1:hover {
+  color: #0d5a7c;
+}
+
+.vet-navbar {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.vet-navbar button {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.vet-navbar button:hover {
+  background-color: #f0f0f0;
+  color: #147099;
+}
+
+/* Main content */
+.vet-main-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* Intro section */
+.vet-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.vet-intro h1 {
+  color: #147099;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+
+.vet-intro p {
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Doctors grid */
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.doctor-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.doctor-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.doctor-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.doctor-card:hover .doctor-image img {
+  transform: scale(1.05);
+}
+
+.doctor-info {
+  padding: 1.5rem;
+}
+
+.doctor-info h2 {
+  margin-top: 0;
+  color: #147099;
+  font-size: 1.4rem;
+}
+
+.specialty {
+  color: #555;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.doctor-info p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.doctor-contact {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-button,
+.email-button {
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  flex: 1;
+  transition: all 0.3s;
+}
+
+.contact-button {
+  background-color: #147099;
+  color: white;
+}
+
+.contact-button:hover {
+  background-color: #0d5a7c;
+}
+
+.email-button {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.email-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Consultation info section */
+.consultation-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.consultation-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.consultation-card h2 {
+  color: #147099;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 1.4rem;
+}
+
+.consultation-card ol {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.consultation-card li,
+.consultation-card p {
+  margin-bottom: 0.75rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.note {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #666;
+  margin-top: 1rem;
+}
+
+/* Footer */
+.vet-footer {
+  background-color: #147099;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.vet-footer p {
+  margin: 0.5rem 0;
+}
+
+.vet-footer a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .vet-navbar {
+    justify-content: center;
+  }
+
+  .doctors-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .vet-main-content {
+    padding: 1.5rem;
+  }
+
+  .doctor-contact {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .vet-main-content {
+    padding: 1rem;
+  }
+
+  .vet-intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .doctors-grid {
+    grid-template-columns: 1fr;
+  }
+}

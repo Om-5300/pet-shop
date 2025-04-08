@@ -38,6 +38,12 @@ nav button {
   color: #121212;
   text-decoration: none;
   background-color: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+nav button:hover {
+  color: #147099;
 }
 
 nav a img {
@@ -50,6 +56,7 @@ nav a img {
   max-width: 100px;
   height: auto;
   margin: 0;
+  cursor: pointer;
 }
 
 /* Social Icons */
@@ -61,6 +68,7 @@ nav a img {
 }
 .social a {
   align-items: center;
+  cursor: pointer;
 }
 .social img {
   width: 24px;
@@ -69,6 +77,7 @@ nav a img {
 .social button {
   background: transparent;
   border-color: transparent;
+  cursor: pointer;
 }
 
 /* Mobile View */

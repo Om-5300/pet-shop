@@ -25,6 +25,7 @@ import ShowAllProducts from "./components/page/showallproducts";
 import Cart from "./components/page/cart";
 import Orders from "./components/page/Orders";
 import UPIPayment from "./components/page/payment"; // Import the payment component
+import VeterinaryDoctors from "./components/page/VeterinaryDoctors";
 import "./App.css";
 import { Toaster } from "react-hot-toast";
 
@@ -102,6 +103,14 @@ const AppContent = () => {
               element={
                 <ProtectedRoute>
                   <UPIPayment />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/doctors"
+              element={
+                <ProtectedRoute>
+                  <VeterinaryDoctors />
                 </ProtectedRoute>
               }
             />
