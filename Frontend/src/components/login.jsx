@@ -24,15 +24,19 @@ const Login = () => {
       );
 
       if (response.data.success) {
-        // ✅ Save token and user info in localStorage
-        localStorage.setItem("token", response.data.token);
+        // Store token and user info
+        const token = response.data.token;
+        localStorage.setItem("token", token);
         localStorage.setItem(
           "user",
           JSON.stringify({
-            name: response.data.user.username,
             email: response.data.user.email,
+            id: response.data.user._id
           })
         );
+
+        // Set default axios headers for future requests
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
         toast.success("Login successful!", { duration: 3000 });
         setTimeout(() => navigate("/"), 1000);
@@ -40,6 +44,7 @@ const Login = () => {
         toast.error(response.data.msg);
       }
     } catch (error) {
+      console.error("Login error:", error);
       toast.error(error.response?.data?.msg || "Something went wrong. Please try again.");
     } finally {
       setLoading(false);

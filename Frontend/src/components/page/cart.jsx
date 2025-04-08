@@ -95,7 +95,7 @@ const Cart = () => {
     }
   };
 
-  const proceedToCheckout = () => navigate("/checkout");
+  const proceedToCheckout = () => navigate("/payment");
 
   if (loading) return <h2>Loading your cart...</h2>;
 

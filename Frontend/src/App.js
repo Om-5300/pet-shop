@@ -1,4 +1,10 @@
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import React from "react";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/scrolltotop";
@@ -17,6 +23,8 @@ import AboutUsDetails from "./components/page/aboutusdetail";
 import ProductDetail from "./components/page/productdetails";
 import ShowAllProducts from "./components/page/showallproducts";
 import Cart from "./components/page/cart";
+import Orders from "./components/page/Orders";
+import UPIPayment from "./components/page/payment"; // Import the payment component
 import "./App.css";
 import { Toaster } from "react-hot-toast";
 
@@ -48,6 +56,17 @@ const ProductDetailsPage = () => (
 
 const AboutUsDetailsPage = () => <AboutUsDetails />;
 
+// Protected route component to ensure authentication
+const ProtectedRoute = ({ children }) => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+};
+
 const AppContent = () => {
   const location = useLocation();
   const hideLayoutRoutes = ["/login", "/register"];
@@ -70,6 +89,22 @@ const AppContent = () => {
             <Route path="/product/:id" element={<ProductDetailsPage />} />
             <Route path="/showallproducts" element={<ShowAllProducts />} />
             <Route path="/cart" element={<Cart />} />
+            <Route
+              path="/orders"
+              element={
+                <ProtectedRoute>
+                  <Orders />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/payment"
+              element={
+                <ProtectedRoute>
+                  <UPIPayment />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </Layout>
       )}
