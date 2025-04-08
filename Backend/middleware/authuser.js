@@ -2,9 +2,8 @@ const User = require("../models/register");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const JWT_SECRET = "your_jwt_secret_key"; // 🔒 Use environment variable in production
+const JWT_SECRET = "your_jwt_secret_key";
 
-// User Login Handler
 const authenticateUser = async (req, res) => {
   const { email, password } = req.body;
 
@@ -23,9 +22,8 @@ const authenticateUser = async (req, res) => {
       return res.status(400).json({ success: false, msg: "Invalid password." });
     }
 
-    // Generate JWT
     const token = jwt.sign(
-        { id: user._id, email: user.email }, // ✅ Add email here
+        { id: user._id, email: user.email },
         JWT_SECRET,
         { expiresIn: "1d" }
       );
