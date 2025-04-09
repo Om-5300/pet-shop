@@ -37,7 +37,6 @@ const UPIPayment = () => {
         if (response.data && response.data.items) {
           setCartItems(response.data.items);
           
-          // Calculate total amount
           let total = 0;
           if (response.data.items.length > 0) {
             total = response.data.items.reduce(
@@ -73,14 +72,12 @@ const UPIPayment = () => {
       return false;
     }
     
-    // Basic UPI ID validation (example format: username@upi)
     const upiRegex = /^[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z][a-zA-Z]{2,64}$/;
     if (!upiRegex.test(upiId)) {
       setError('Please enter a valid UPI ID (e.g., username@ybl)');
       return false;
     }
     
-    // Basic PIN validation (4-6 digits)
     const pinRegex = /^\d{4,6}$/;
     if (!pinRegex.test(pin)) {
       setError('PIN must be 4-6 digits');
@@ -136,7 +133,6 @@ const UPIPayment = () => {
           orderId: response.data.orderId,
           message: response.data.message || 'Payment successful'
         });
-        // Clear cart from localStorage if you're using it
         localStorage.removeItem('cart');
       } else {
         setError(response.data.message || 'Payment failed. Please try again.');

@@ -27,7 +27,7 @@
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: 30px;
-  max-width: 90%; /* Ensure text doesn't overflow */
+  max-width: 90%;
   color: white;
   text-align: center;
 }
@@ -45,11 +45,10 @@
     Line-height:16.8px;
   }
 }
-/* Responsive Styles */
+
 @media screen and (min-width: 768px) {
-  /* Tablet View */
   .mainimage h1 {
-    font-size: 42px; /* Slightly larger for tablets */
+    font-size: 42px; 
     max-width: 80%;
   }
 
@@ -61,15 +60,14 @@
 }
 
 @media screen and (min-width: 1024px) {
-  /* Laptop View */
   .mainimage h1 {
-    font-size: 50px; /* Larger for laptops */
-    max-width: 762px; /* Match original design */
+    font-size: 50px;
+    max-width: 762px;
   }
 
   .mainimage p {
     font-size: 20px;
-    max-width: 669px; /* Match original design */
+    max-width: 669px;
   }
 
 }

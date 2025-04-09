@@ -29,21 +29,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/images", express.static("public/images"));
 
-// Set JWT secret
-process.env.JWT_SECRET = "your_jwt_secret_key"; // In production, use a proper environment variable
+process.env.JWT_SECRET = "your_jwt_secret_key";
 
-// Connect to MongoDB
 connectMongodb(
   "mongodb+srv://utopiapetshop111:Utopiapetshop%40111@cluster0.vvc09.mongodb.net/user"
 )
-  .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.log("❌ MongoDB Error:", err));
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log("MongoDB Error:", err));
 
 // Routes
-app.use("/api/register", userRouter);
-app.use("/api/login", loginRouter);
-app.use("/api/bestsellers", bestsellerRouter); // ✅ Add bestseller API
-app.use("/api/product", productRoutes); // ✅ Add product routes
+app.use("/register", userRouter);
+app.use("/login", loginRouter);
+app.use("/bestsellers", bestsellerRouter); // ✅ Add bestseller API
+app.use("/product", productRoutes); // ✅ Add product routes
 app.use("/api/cart", cartRoutes);
 app.use("/api/payment", paymentRoutes);
 app.use("/api/orders", orderRoutes);

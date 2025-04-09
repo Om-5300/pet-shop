@@ -53,7 +53,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 350px; /* Ensures uniform height for all product cards */
+  min-height: 350px; 
 }
 
 /* Product Image */
@@ -71,7 +71,7 @@
 .product-item h2 {
   font-size: 18px;
   margin-bottom: 5px;
-  min-height: 50px; /* Ensures uniform title height */
+  min-height: 50px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +84,7 @@
   color: #333;
   margin-bottom: 10px;
   text-align: center;
-  min-height: 40px; /* Ensures uniform description height */
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,10 +100,9 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: 700;
-  margin-top: auto; /* Pushes button to bottom */
+  margin-top: auto;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 1024px) {
   .sellerheading h1 {
     font-size: 28px;
@@ -139,6 +138,7 @@
   }
   .sellerheading h1 {
     font-size: 20px;
+
   }
   .shop {
     padding: 8px 16px;

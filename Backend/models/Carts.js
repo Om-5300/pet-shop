@@ -47,7 +47,6 @@ const CartSchema = new Schema({
   },
 });
 
-// Update the updatedAt field before saving
 CartSchema.pre("save", function (next) {
   this.updatedAt = Date.now();
   next();

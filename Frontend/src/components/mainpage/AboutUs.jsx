@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutUs.css";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const AboutUs = () => {
         </p>
         <button
           className="aboutusexplore"
-          onClick={() => navigate("/about-us-details")} // Ensure path matches App.js
+          onClick={() => navigate("/about-us-details")} 
         >
           Explore Now
         </button>

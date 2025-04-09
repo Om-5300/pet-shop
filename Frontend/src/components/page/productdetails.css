@@ -123,7 +123,6 @@
   margin-bottom: 10px;
 }
 
-/* 📱 Responsive Styles */
 
 /* Tablet View (Max 1024px) */
 @media (max-width: 1024px) {
@@ -133,7 +132,7 @@
   }
 
   .product-images {
-    order: -1; /* Move images on top */
+    order: -1; 
   }
 
   .product-info {

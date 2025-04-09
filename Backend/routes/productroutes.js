@@ -16,11 +16,11 @@ router.get("/", async (req, res) => {
 // GET a single product by ID
 router.get("/:id", async (req, res) => {
   try {
-    console.log("Fetching product with ID:", req.params.id); // Debugging
+    console.log("Fetching product with ID:", req.params.id);
     const product = await Product.findById(req.params.id);
 
     if (!product) {
-      console.log("Product not found"); // Debugging
+      console.log("Product not found"); 
       return res.status(404).json({ message: "Product not found" });
     }
 
