@@ -26,11 +26,14 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/register", {
-        name,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:5000/api/register",
+        {
+          name,
+          email,
+          password,
+        }
+      );
 
       toast.success(response.data.msg || "Registration successful!");
       setTimeout(() => navigate("/login"), 1000);

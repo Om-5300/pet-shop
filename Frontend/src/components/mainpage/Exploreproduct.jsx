@@ -11,7 +11,7 @@ const Seller = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/product")
+    fetch("http://localhost:5000/api/product")
       .then((res) => res.json())
       .then((data) => {
         const limitedProducts = data.flatMap((category) =>

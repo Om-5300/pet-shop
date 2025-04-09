@@ -40,10 +40,10 @@ connectMongodb(
   .catch((err) => console.log("❌ MongoDB Error:", err));
 
 // Routes
-app.use("/register", userRouter);
-app.use("/login", loginRouter);
-app.use("/bestsellers", bestsellerRouter); // ✅ Add bestseller API
-app.use("/product", productRoutes); // ✅ Add product routes
+app.use("/api/register", userRouter);
+app.use("/api/login", loginRouter);
+app.use("/api/bestsellers", bestsellerRouter); // ✅ Add bestseller API
+app.use("/api/product", productRoutes); // ✅ Add product routes
 app.use("/api/cart", cartRoutes);
 app.use("/api/payment", paymentRoutes);
 app.use("/api/orders", orderRoutes);
