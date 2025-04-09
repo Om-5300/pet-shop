@@ -128,7 +128,6 @@ const VeterinaryDoctors = () => {
 
       <footer className="vet-footer">
         <p>&copy; 2023 Utopia Pet Shop. All rights reserved.</p>
-        <p>For emergency cases, please call our 24/7 helpline: <a href="tel:+919876543210">+91 98765 43210</a></p>
       </footer>
     </div>
   );
