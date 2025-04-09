@@ -17,7 +17,7 @@
 .mainproduct .product1details,
 .mainproduct .product3details {
   margin-top: 50px;
-  margin-left: 0; /* Reset for mobile */
+  margin-left: 0; 
 }
 
 .mainproduct .product2details {
@@ -30,7 +30,7 @@
 .mainproduct .product3image {
   display: flex;
   justify-content: center;
-  width: 100%; /* Full width for mobile */
+  width: 100%;
 }
 
 .mainproduct .product1 h1,
@@ -38,7 +38,7 @@
 .mainproduct .product3 h1 {
   font-family: "Geologica", sans-serif;
   font-weight: 400;
-  font-size: 1rem; /* Base font size */
+  font-size: 1rem;
   line-height: 1.1;
   margin: 20px 0;
 }
@@ -48,10 +48,10 @@
 .mainproduct .product3 p {
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
-  font-size: 1rem; /* Base font size */
+  font-size: 1rem;
   line-height: 1.5;
   margin: 20px 0;
-  max-width: 90%; /* Adjust for smaller screens */
+  max-width: 90%;
 }
 
 .mainproduct .product1 h2,
@@ -59,9 +59,9 @@
 .mainproduct .product3 h2 {
   font-family: "DM Sans", sans-serif;
   font-weight: 700;
-  font-size: 1rem; /* Base font size */
+  font-size: 1rem;
   line-height: 1.2;
-  max-width: 20%; /* Full width for mobile */
+  max-width: 20%;
   padding: 12px 20px;
   border-radius: 100px;
   background-color: #147099;
@@ -80,14 +80,11 @@
 .mainproduct .product1image #dogbag,
 .mainproduct .product2image #catbelt,
 .mainproduct .product3image #vest {
-  max-width: 100%; /* Full width for mobile */
+  max-width: 100%;
   height: auto;
   margin: 20px 0;
 }
 
-/* Media Queries for Responsive Design */
-
-/* Tablets and Small Desktops (768px - 1024px) */
 @media (min-width: 768px) {
   .mainproduct .product1,
   .mainproduct .product2,
@@ -100,7 +97,7 @@
 
   .mainproduct .product1details,
   .mainproduct .product3details {
-    margin-left: 200px; /* Restore margin for larger screens */
+    margin-left: 200px;
   }
 
   .mainproduct .product2details {
@@ -109,36 +106,36 @@
 
   .mainproduct .product1 .product1image {
     justify-content: left;
-    width: 50%; /* Adjust width for larger screens */
+    width: 50%;
   }
 
   .mainproduct .product2image,
   .mainproduct .product3image {
     justify-content: center;
-    width: 50%; /* Adjust width for larger screens */
+    width: 50%;
   }
 
   .mainproduct .product1 h1,
   .mainproduct .product2 h1,
   .mainproduct .product3 h1 {
-    font-size: 2.5rem; /* Larger font size for tablets */
+    font-size: 2.5rem;
   }
 
   .mainproduct .product1 p,
   .mainproduct .product2 p,
   .mainproduct .product3 p {
-    font-size: 1.125rem; /* Larger font size for tablets */
-    max-width: 80%; /* Adjust width for larger screens */
+    font-size: 1.125rem;
+    max-width: 80%;
   }
 
   .mainproduct .product1image #dogbag {
-    max-width: 80%; /* Adjust image size for larger screens */
+    max-width: 80%;
     margin-top: 80px;
   }
 
   .mainproduct .product2image #catbelt,
   .mainproduct .product3image #vest {
-    max-width: 60%; /* Adjust image size for larger screens */
+    max-width: 60%;
     margin-top: 100px;
   }
 }
@@ -173,7 +170,6 @@
   }
 }
 
-/* Mobile Devices (up to 767px) */
 @media (max-width: 767px) {
   .mainproduct {
     display: flex;
@@ -215,7 +211,7 @@
   .mainproduct .product1 h1,
   .mainproduct .product2 h1,
   .mainproduct .product3 h1 {
-    font-size: 2rem; /* Smaller font size for mobile */
+    font-size: 2rem; 
     text-align: center;
     max-width: 100%;
   }
@@ -223,7 +219,7 @@
   .mainproduct .product1 p,
   .mainproduct .product2 p,
   .mainproduct .product3 p {
-    font-size: 0.875rem; /* Smaller font size for mobile */
+    font-size: 0.875rem;
     max-width: 60%;
     text-align: justify;
   }
@@ -231,24 +227,24 @@
   .mainproduct .product1 h2,
   .mainproduct .product2 h2,
   .mainproduct .product3 h2 {
-    font-size: 0.875rem; /* Smaller font size for mobile */
+    font-size: 0.875rem; 
     padding: 10px 30px;
     margin-top: 10px;
-    max-width: 100%; /* Full width for mobile */
+    max-width: 100%;
   }
 
   .mainproduct .product1image #dogbag {
-    max-width: 60%; /* Adjust image size for mobile */
+    max-width: 60%;
   }
 
   .mainproduct .product2image #catbelt,
   .mainproduct .product3image #vest {
     max-width: 60%;
-    max-height: 60%; /* Adjust image size for mobile */
+    max-height: 60%;
   }
 
   .mainproduct .product2 {
     display: flex;
-    flex-direction: column-reverse; /* Reverse layout for product2 on mobile */
+    flex-direction: column-reverse;
   }
 }

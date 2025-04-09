@@ -1,25 +1,25 @@
 .information {
-  padding: 100px 20px; /* Unified padding for all sides */
+  padding: 100px 20px;
   margin-top: 22px;
   background-color: #ebebeb;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  flex-wrap: wrap;
   overflow-x: auto;
 }
 
 .information .leftinformation {
   flex: 1;
   text-align: center;
-  max-width: 100%; /* Ensure it doesn't overflow */
+  max-width: 100%;
 }
 
 .information .rightinformation {
   flex: 2;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  max-width: 100%; /* Ensure it doesn't overflow */
+  max-width: 100%;
 }
 
 .leftinformation .leftbutton {
@@ -69,7 +69,7 @@
 }
 
 .rightinformation img {
-  width: 60px; /* Unified image size */
+  width: 60px;
   height: auto;
   margin-bottom: 10px;
 }
@@ -91,7 +91,6 @@
   line-height: 28px;
 }
 
-/* Responsive Styles */
 @media screen and (max-width: 1024px) {
   .information {
     flex-direction: column-reverse;
@@ -115,7 +114,7 @@
   }
 
   .rightinformation {
-    grid-template-columns: 1fr; /* Single column for tablets */
+    grid-template-columns: 1fr; 
     gap: 30px;
   }
 
@@ -147,7 +146,7 @@
   }
 
   .rightinformation img {
-    width: 50px; /* Smaller images for mobile */
+    width: 50px; 
   }
 
   .rightinformation .right1,
@@ -181,7 +180,7 @@
   }
 
   .rightinformation img {
-    width: 40px; /* Even smaller images for very small screens */
+    width: 40px; 
   }
 
   .rightinformation h3 {

@@ -6,10 +6,8 @@ const {
 } = require("../controllers/paymentController");
 const { verifyToken } = require("../middleware/authuser");
 
-// Process payment
 router.post("/process", verifyToken, processPayment);
 
-// Get order status
 router.get("/order/:orderId", verifyToken, getOrderStatus);
 
 module.exports = router;

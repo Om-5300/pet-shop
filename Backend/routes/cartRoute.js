@@ -9,7 +9,6 @@ const {
 } = require("../controllers/cartController");
 const {verifyToken} = require("../middleware/authuser");
 
-// ✅ Secure all routes with verifyToken middleware
 router.get("/", verifyToken, getCart);
 router.post("/add", verifyToken, addToCart);
 router.put("/update/:itemId", verifyToken, updateCartItem);

@@ -15,8 +15,8 @@ body, html {
 }
 
 .main-image-container {
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
+  width: 100vw; 
+  height: 100vh;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -27,9 +27,9 @@ body, html {
 }
 
 .main-image {
-  width: 100vw; /* Ensure it stretches to full width */
-  height: 100%; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensures it covers the full space */
+  width: 100vw; 
+  height: 100%; 
+  object-fit: cover;
   object-position: center;
   display: block;
 }
@@ -121,7 +121,7 @@ body, html {
 @media (max-width: 1024px) {
   .main-image-container {
       height: calc(100vh - 60px);
-      max-height: 500px; /* Adjust for tablets */
+      max-height: 500px;
   }
 
   .section {
@@ -155,7 +155,7 @@ body, html {
 
   .section {
       display: flex;
-      flex-direction: row; /* Ensure side-by-side layout */
+      flex-direction: row; 
       text-align: left;
       padding: 0%;
   }
@@ -191,7 +191,6 @@ body, html {
       height: auto;
   }
 
-  /* Stack content & image on mobile */
   .section {
       flex-direction: column;
       text-align: center;
@@ -221,7 +220,6 @@ body, html {
       max-width: 50%;
   }
 
-  /* Main Image Full Width on Mobile */
   .main-image {
       max-height: 300px;
   }
@@ -250,9 +248,8 @@ body, html {
   }
 }
 
-/* Fix body margin and overflow issues */
 body, html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }

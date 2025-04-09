@@ -29,7 +29,6 @@ import VeterinaryDoctors from "./components/page/VeterinaryDoctors";
 import "./App.css";
 import { Toaster } from "react-hot-toast";
 
-// ✅ Home component checks for JWT token instead of isAuthenticated
 const Home = () => {
   const token = localStorage.getItem("token");
 
@@ -57,7 +56,6 @@ const ProductDetailsPage = () => (
 
 const AboutUsDetailsPage = () => <AboutUsDetails />;
 
-// Protected route component to ensure authentication
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("token");
 

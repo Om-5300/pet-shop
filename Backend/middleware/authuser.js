@@ -43,11 +43,9 @@ const authenticateUser = async (req, res) => {
   }
 };
 
-// JWT Verification Middleware
 const verifyToken = (req, res, next) => {
   const authHeader = req.headers.authorization;
 
-  // Check for token in header
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ msg: "No token provided" });
   }
@@ -56,7 +54,7 @@ const verifyToken = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
-    req.user = decoded; // Attach decoded payload (like user id) to req
+    req.user = decoded;
     next();
   } catch (err) {
     console.error("Invalid token:", err);

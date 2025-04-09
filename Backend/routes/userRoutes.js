@@ -6,7 +6,6 @@ const {
   updateProfile,
 } = require("../controllers/profileController");
 
-// Profile routes
 router.get("/profile", verifyToken, getProfile);
 router.put("/profile", verifyToken, updateProfile);
 

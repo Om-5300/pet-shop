@@ -207,7 +207,7 @@
 @media screen and (max-width: 1024px) {
   .cart-item {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    grid-template-columns: 1fr 1fr 1fr; 
     align-items: center;
     gap: 10px;
     padding: 16px 0;

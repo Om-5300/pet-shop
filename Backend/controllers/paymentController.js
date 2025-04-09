@@ -4,13 +4,11 @@ const User = require("../models/register");
 
 // Mock UPI verification function (replace with actual UPI verification logic)
 const verifyUPI = async (upiId, pin) => {
-  // In a real implementation, this would verify with a UPI service provider
   return true;
 };
 
 // Mock balance check function (replace with actual balance check logic)
 const checkBalance = async (upiId, amount) => {
-  // In a real implementation, this would check with a payment service
   return true;
 };
 

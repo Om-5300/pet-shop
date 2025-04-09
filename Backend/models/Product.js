@@ -1,17 +1,17 @@
 const mongoose = require("mongoose");
 
 const ProductSchema = new mongoose.Schema({
-  productId: { type: Number }, // Add numeric productId field for easier lookup
+  productId: { type: Number }, 
   title: String,
-  images: { type: [String], default: ["/default-image.jpg"] }, // ✅ Default image
+  images: { type: [String], default: ["/default-image.jpg"] },
   price: {
     base: { type: String, default: "0" },
     discounted: { type: String, default: "0" },
     save: { type: String, default: "0%" },
   },
   description: { type: String, default: "No description available." },
-  weights: { type: [String], default: ["N/A"] }, // ✅ Default value
-  stock: { type: Number, default: 0 }, // Add stock tracking field
+  weights: { type: [String], default: ["N/A"] },
+  stock: { type: Number, default: 0 }, 
   relatedProducts: [
     {
       id: Number,

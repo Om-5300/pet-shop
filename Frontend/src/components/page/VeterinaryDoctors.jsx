@@ -5,7 +5,6 @@ import "./VeterinaryDoctors.css";
 const VeterinaryDoctors = () => {
   const navigate = useNavigate();
 
-  // Dummy data for veterinary doctors
   const doctors = [
     {
       id: 1,
