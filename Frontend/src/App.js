@@ -24,7 +24,7 @@ import ProductDetail from "./components/page/productdetails";
 import ShowAllProducts from "./components/page/showallproducts";
 import Cart from "./components/page/cart";
 import Orders from "./components/page/Orders";
-import UPIPayment from "./components/page/payment"; // Import the payment component
+import UPIPayment from "./components/page/payment";
 import VeterinaryDoctors from "./components/page/VeterinaryDoctors";
 import "./App.css";
 import { Toaster } from "react-hot-toast";
